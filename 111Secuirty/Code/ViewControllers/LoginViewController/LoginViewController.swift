@@ -15,6 +15,7 @@ class LoginViewController: UIViewController {
     @IBOutlet weak var signInButton: UIButton!
     
     func setupAppearance() {
+        
         loginTextField.layer.cornerRadius = CGRectGetHeight(loginTextField.frame) / 2
         passwordTextField.layer.cornerRadius = CGRectGetHeight(passwordTextField.frame) / 2
         signInButton.layer.cornerRadius = CGRectGetHeight(signInButton.frame) / 2

@@ -15,6 +15,7 @@ class MainViewController: UIViewController {
     @IBOutlet weak var logOutButton: UIButton!
     
     func setupAppearance() {
+        
         glassDoorButton.layer.cornerRadius = CGRectGetHeight(glassDoorButton.frame) / 2
         ironDoorButton.layer.cornerRadius = CGRectGetHeight(ironDoorButton.frame) / 2
         logOutButton.layer.cornerRadius = CGRectGetHeight(logOutButton.frame) / 2
