@@ -12,9 +12,28 @@ import UIKit
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
     var window: UIWindow?
-
+    
+   static func fillteredArray(array : [Int], f : (number : Int) -> Bool) {
+        f(number: 1)
+    }
 
     func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
+        
+        window = UIWindow(frame: UIScreen.mainScreen().bounds)
+        if let window = window {
+            
+            window.backgroundColor = UIColor.whiteColor()
+
+            let storyboard = UIStoryboard(name: "Main", bundle: nil)
+            
+            if SessionManager.getUserToken() != nil {
+                window.rootViewController = storyboard.instantiateViewControllerWithIdentifier("MainViewController")
+            } else {
+                window.rootViewController = storyboard.instantiateViewControllerWithIdentifier("LoginViewController")
+            }
+            
+            window.makeKeyAndVisible()
+        }
         
         return true
     }

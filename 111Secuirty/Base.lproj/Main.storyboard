@@ -8,7 +8,7 @@
         <!--Login View Controller-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="LoginViewController" customModule="_11Secuirty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="LoginViewController" id="BYZ-38-t0r" customClass="LoginViewController" customModule="_11Secuirty" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="y3c-jy-aDJ"/>
                         <viewControllerLayoutGuide type="bottom" id="wfy-db-euE"/>
@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Login" textAlignment="center" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="Rks-u2-5Wl">
-                                <rect key="frame" x="50" y="249" width="275" height="40"/>
+                                <rect key="frame" x="20" y="249" width="335" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="Bgi-5w-YBX"/>
@@ -27,7 +27,7 @@
                                 <textInputTraits key="textInputTraits"/>
                             </textField>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Password" textAlignment="center" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="anH-Au-FIM">
-                                <rect key="frame" x="50" y="314" width="275" height="40"/>
+                                <rect key="frame" x="20" y="314" width="335" height="40"/>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="LNL-5o-hpv"/>
@@ -36,7 +36,7 @@
                                 <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
                             </textField>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1x6-3S-fvB">
-                                <rect key="frame" x="50" y="379" width="275" height="40"/>
+                                <rect key="frame" x="20" y="379" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.24814405905130271" green="0.49489901928191493" blue="0.23666269785754868" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="szf-hH-QFd"/>
@@ -69,17 +69,17 @@
                         <color key="backgroundColor" red="0.43529411764705883" green="0.73333333333333328" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="anH-Au-FIM" firstAttribute="centerY" secondItem="8bC-Xf-vdC" secondAttribute="centerY" id="3LZ-G3-mJy"/>
-                            <constraint firstAttribute="trailing" secondItem="anH-Au-FIM" secondAttribute="trailing" constant="50" id="4cq-d8-Z3y"/>
-                            <constraint firstItem="1x6-3S-fvB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="5aN-pz-gsH"/>
-                            <constraint firstItem="Rks-u2-5Wl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="IGd-Xm-wym"/>
+                            <constraint firstAttribute="trailing" secondItem="anH-Au-FIM" secondAttribute="trailing" constant="20" id="4cq-d8-Z3y"/>
+                            <constraint firstItem="1x6-3S-fvB" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="5aN-pz-gsH"/>
+                            <constraint firstItem="Rks-u2-5Wl" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="IGd-Xm-wym"/>
                             <constraint firstItem="fuG-jd-YCV" firstAttribute="top" secondItem="8bC-Xf-vdC" secondAttribute="top" id="QfV-Cg-GxK"/>
                             <constraint firstAttribute="trailing" secondItem="fuG-jd-YCV" secondAttribute="trailing" id="YdP-vg-tta"/>
                             <constraint firstItem="Rks-u2-5Wl" firstAttribute="top" secondItem="fuG-jd-YCV" secondAttribute="bottom" id="b0w-2R-68Q"/>
-                            <constraint firstAttribute="trailing" secondItem="1x6-3S-fvB" secondAttribute="trailing" constant="50" id="inU-Uf-VXY"/>
+                            <constraint firstAttribute="trailing" secondItem="1x6-3S-fvB" secondAttribute="trailing" constant="20" id="inU-Uf-VXY"/>
                             <constraint firstItem="fuG-jd-YCV" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" id="l7C-U0-NYt"/>
-                            <constraint firstAttribute="trailing" secondItem="Rks-u2-5Wl" secondAttribute="trailing" constant="50" id="m3L-Zk-rFv"/>
+                            <constraint firstAttribute="trailing" secondItem="Rks-u2-5Wl" secondAttribute="trailing" constant="20" id="m3L-Zk-rFv"/>
                             <constraint firstItem="anH-Au-FIM" firstAttribute="top" secondItem="Rks-u2-5Wl" secondAttribute="bottom" constant="25" id="xE2-VO-1HV"/>
-                            <constraint firstItem="anH-Au-FIM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="50" id="xuX-Qx-ona"/>
+                            <constraint firstItem="anH-Au-FIM" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leading" constant="20" id="xuX-Qx-ona"/>
                             <constraint firstItem="1x6-3S-fvB" firstAttribute="top" secondItem="anH-Au-FIM" secondAttribute="bottom" constant="25" id="yaD-c8-ZNr"/>
                         </constraints>
                     </view>
@@ -87,6 +87,8 @@
                     <connections>
                         <outlet property="loginTextField" destination="Rks-u2-5Wl" id="2n5-Xb-6Ij"/>
                         <outlet property="passwordTextField" destination="anH-Au-FIM" id="UmT-FU-SNm"/>
+                        <outlet property="signInButton" destination="1x6-3S-fvB" id="WJA-VZ-9fU"/>
+                        <segue destination="XIa-Z9-N80" kind="show" identifier="mainControllerSegue" id="8Ne-Dj-c88"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
@@ -96,7 +98,7 @@
         <!--Main View Controller-->
         <scene sceneID="8kC-nf-QhK">
             <objects>
-                <viewController id="XIa-Z9-N80" customClass="MainViewController" customModule="_11Secuirty" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MainViewController" id="XIa-Z9-N80" customClass="MainViewController" customModule="_11Secuirty" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="Pe0-AI-zP3"/>
                         <viewControllerLayoutGuide type="bottom" id="Eus-be-pzi"/>
@@ -106,7 +108,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RBN-SD-gCU">
-                                <rect key="frame" x="50" y="577" width="275" height="40"/>
+                                <rect key="frame" x="20" y="577" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.24814405910000001" green="0.49489901930000002" blue="0.2366626979" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="g06-mx-vIT"/>
@@ -115,44 +117,59 @@
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="logOut:" destination="XIa-Z9-N80" eventType="touchUpInside" id="rJP-Bd-plG"/>
+                                    <segue destination="BYZ-38-t0r" kind="show" id="Ugd-tO-xhq"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="opg-2M-pIj">
-                                <rect key="frame" x="50" y="314" width="275" height="40"/>
+                                <rect key="frame" x="20" y="314" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.24814405910000001" green="0.49489901930000002" blue="0.2366626979" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="qCL-HL-yJl"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="Open door 2">
+                                <state key="normal" title="Open Iron Door">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="openIronDoor:" destination="XIa-Z9-N80" eventType="touchUpInside" id="OMg-sn-DbM"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uPs-DD-IRR">
-                                <rect key="frame" x="50" y="249" width="275" height="40"/>
+                                <rect key="frame" x="20" y="249" width="335" height="40"/>
                                 <color key="backgroundColor" red="0.24814405910000001" green="0.49489901930000002" blue="0.2366626979" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="40" id="I7E-3S-E7X"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="HelveticaNeue-Thin" family="Helvetica Neue" pointSize="25"/>
-                                <state key="normal" title="Open door 1">
+                                <state key="normal" title="Open Glass Door">
                                     <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
+                                <connections>
+                                    <action selector="openGlassDoor:" destination="XIa-Z9-N80" eventType="touchUpInside" id="QGG-2Q-4vT"/>
+                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.43529411764705883" green="0.73333333333333328" blue="0.40392156862745099" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstAttribute="trailing" secondItem="uPs-DD-IRR" secondAttribute="trailing" constant="50" id="6lr-f8-2Im"/>
-                            <constraint firstAttribute="trailing" secondItem="RBN-SD-gCU" secondAttribute="trailing" constant="50" id="A0w-oq-rOr"/>
-                            <constraint firstItem="opg-2M-pIj" firstAttribute="leading" secondItem="Feo-av-lje" secondAttribute="leading" constant="50" id="LTo-cB-dcP"/>
-                            <constraint firstItem="uPs-DD-IRR" firstAttribute="leading" secondItem="Feo-av-lje" secondAttribute="leading" constant="50" id="VBk-e8-7kJ"/>
+                            <constraint firstAttribute="trailing" secondItem="uPs-DD-IRR" secondAttribute="trailing" constant="20" id="6lr-f8-2Im"/>
+                            <constraint firstAttribute="trailing" secondItem="RBN-SD-gCU" secondAttribute="trailing" constant="20" id="A0w-oq-rOr"/>
+                            <constraint firstItem="opg-2M-pIj" firstAttribute="leading" secondItem="Feo-av-lje" secondAttribute="leading" constant="20" id="LTo-cB-dcP"/>
+                            <constraint firstItem="uPs-DD-IRR" firstAttribute="leading" secondItem="Feo-av-lje" secondAttribute="leading" constant="20" id="VBk-e8-7kJ"/>
                             <constraint firstItem="opg-2M-pIj" firstAttribute="centerY" secondItem="Feo-av-lje" secondAttribute="centerY" id="Zvs-DE-BiT"/>
                             <constraint firstItem="Eus-be-pzi" firstAttribute="top" secondItem="RBN-SD-gCU" secondAttribute="bottom" constant="50" id="aHI-q2-skk"/>
-                            <constraint firstAttribute="trailing" secondItem="opg-2M-pIj" secondAttribute="trailing" constant="50" id="cWE-HS-BrT"/>
-                            <constraint firstItem="RBN-SD-gCU" firstAttribute="leading" secondItem="Feo-av-lje" secondAttribute="leading" constant="50" id="nqU-va-HL1"/>
+                            <constraint firstAttribute="trailing" secondItem="opg-2M-pIj" secondAttribute="trailing" constant="20" id="cWE-HS-BrT"/>
+                            <constraint firstItem="RBN-SD-gCU" firstAttribute="leading" secondItem="Feo-av-lje" secondAttribute="leading" constant="20" id="nqU-va-HL1"/>
                             <constraint firstItem="opg-2M-pIj" firstAttribute="top" secondItem="uPs-DD-IRR" secondAttribute="bottom" constant="25" id="u7X-pF-uQs"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
+                    <connections>
+                        <outlet property="glassDoorButton" destination="uPs-DD-IRR" id="rBT-7e-PXc"/>
+                        <outlet property="ironDoorButton" destination="opg-2M-pIj" id="kqK-ao-UjM"/>
+                        <outlet property="logOutButton" destination="RBN-SD-gCU" id="Prn-eq-cbo"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZn-RS-Whh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
