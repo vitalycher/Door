@@ -8,6 +8,7 @@
 
 import UIKit
 import Alamofire
+import PKHUD
 
 class SessionManager {
     
@@ -52,8 +53,14 @@ class SessionManager {
         
         if let authToken = getUserToken() {
             
+            HUD.show(.Progress)
+            
             let headers = ["AUTH-TOKEN" : authToken]
             Alamofire.request(.POST, "https://door.111min.com/api/glass_door", headers : headers)
+                .responseJSON { response in
+                    
+                    HUD.flash(.Label("Welcome!"), delay:1.0)
+            }
         }
         
     }
@@ -64,6 +71,10 @@ class SessionManager {
             
             let headers = ["AUTH-TOKEN" : authToken]
             Alamofire.request(.POST, "https://door.111min.com/api/iron_door", headers : headers)
+                .responseJSON { response in
+                    
+                    HUD.flash(.Label("Welcome!"), delay:1.0)
+            }
         }
     }
 }

@@ -15,7 +15,7 @@
 		74887B191CC599B100EC677E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B181CC599B100EC677E /* MainViewController.swift */; };
 		74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B1A1CC59BD400EC677E /* SessionManager.swift */; };
 		74E6A5A11CCFC0E0009C8811 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E6A5A01CCFC0E0009C8811 /* Alamofire.framework */; };
-		74E6A5A21CCFC0E0009C8811 /* Alamofire.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 74E6A5A01CCFC0E0009C8811 /* Alamofire.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		99D9166DF8A8743E6B89CAA2 /* Pods_111Secuirty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AF580868394AC7D06C23D6 /* Pods_111Secuirty.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -25,7 +25,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				74E6A5A21CCFC0E0009C8811 /* Alamofire.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -33,7 +32,9 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		74887AFF1CC592D100EC677E /* 111Secuirty.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 111Secuirty.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.debug.xcconfig"; sourceTree = "<group>"; };
+		32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.release.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.release.xcconfig"; sourceTree = "<group>"; };
+		74887AFF1CC592D100EC677E /* 111 Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "111 Door.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74887B021CC592D100EC677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74887B071CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74887B091CC592D100EC677E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -44,6 +45,7 @@
 		74887B1A1CC59BD400EC677E /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Code/Services/APIManager/SessionManager.swift; sourceTree = "<group>"; };
 		74E6A59E1CCFBFFB009C8811 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
 		74E6A5A01CCFC0E0009C8811 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Alamofire.framework; path = "/Users/Egor/Library/Developer/Xcode/DerivedData/111Secuirty-bbzafejammekfhdclhjhfjqmdqcy/Build/Products/Debug-iphoneos/Alamofire.framework"; sourceTree = "<absolute>"; };
+		B5AF580868394AC7D06C23D6 /* Pods_111Secuirty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_111Secuirty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -52,12 +54,21 @@
 			buildActionMask = 2147483647;
 			files = (
 				74E6A5A11CCFC0E0009C8811 /* Alamofire.framework in Frameworks */,
+				99D9166DF8A8743E6B89CAA2 /* Pods_111Secuirty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		12FDC339921C0EE3975054CC /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				B5AF580868394AC7D06C23D6 /* Pods_111Secuirty.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		74887AF61CC592D100EC677E = {
 			isa = PBXGroup;
 			children = (
@@ -65,13 +76,15 @@
 				74E6A59E1CCFBFFB009C8811 /* Alamofire.framework */,
 				74887B011CC592D100EC677E /* 111Secuirty */,
 				74887B001CC592D100EC677E /* Products */,
+				968457A7444F096C482CFA73 /* Pods */,
+				12FDC339921C0EE3975054CC /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
 		74887B001CC592D100EC677E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74887AFF1CC592D100EC677E /* 111Secuirty.app */,
+				74887AFF1CC592D100EC677E /* 111 Door.app */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -91,6 +104,15 @@
 			path = 111Secuirty;
 			sourceTree = "<group>";
 		};
+		968457A7444F096C482CFA73 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */,
+				32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -98,10 +120,13 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74887B111CC592D100EC677E /* Build configuration list for PBXNativeTarget "111Secuirty" */;
 			buildPhases = (
+				FED50489DF8629A214724AB1 /* Check Pods Manifest.lock */,
 				74887AFB1CC592D100EC677E /* Sources */,
 				74887AFC1CC592D100EC677E /* Frameworks */,
 				74887AFD1CC592D100EC677E /* Resources */,
 				74E6A5A31CCFC0E0009C8811 /* Embed Frameworks */,
+				22A47169707F8B7F126EAFB4 /* Embed Pods Frameworks */,
+				9BDBD319864FC1DA664D01BB /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -109,7 +134,7 @@
 			);
 			name = 111Secuirty;
 			productName = 111Secuirty;
-			productReference = 74887AFF1CC592D100EC677E /* 111Secuirty.app */;
+			productReference = 74887AFF1CC592D100EC677E /* 111 Door.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
@@ -124,6 +149,7 @@
 				TargetAttributes = {
 					74887AFE1CC592D100EC677E = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = Y6ZXAWRWJ9;
 					};
 				};
 			};
@@ -157,6 +183,54 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		22A47169707F8B7F126EAFB4 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		9BDBD319864FC1DA664D01BB /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		FED50489DF8629A214724AB1 /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		74887AFB1CC592D100EC677E /* Sources */ = {
@@ -277,8 +351,10 @@
 		};
 		74887B121CC592D100EC677E /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -286,15 +362,18 @@
 				INFOPLIST_FILE = 111Secuirty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-11Minutes.-11Secuirty";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
+				PRODUCT_NAME = "111 Door";
+				PROVISIONING_PROFILE = "1c6d5f63-e1e2-4f7e-805d-9cfb670d432f";
 			};
 			name = Debug;
 		};
 		74887B131CC592D100EC677E /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -302,8 +381,9 @@
 				INFOPLIST_FILE = 111Secuirty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "-11Minutes.-11Secuirty";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
+				PRODUCT_NAME = "111 Door";
+				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
 			};
 			name = Release;
 		};

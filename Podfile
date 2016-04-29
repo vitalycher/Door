@@ -6,5 +6,7 @@ use_frameworks!
 target '111Secuirty' do
     pod 'Alamofire'
     pod 'SwiftyJSON'
+    pod 'PKHUD'
+    pod 'IQKeyboardManager'
 end
 

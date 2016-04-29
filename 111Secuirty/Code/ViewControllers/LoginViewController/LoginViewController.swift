@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import PKHUD
+
 
 class LoginViewController: UIViewController {
     
@@ -33,14 +35,29 @@ class LoginViewController: UIViewController {
     
     @IBAction func signIn(sender: UIButton) {
         
-        if loginTextField.text != nil && passwordTextField.text != nil {
+        if loginTextField.text == nil {
+            HUD.flash(.Label("Please enter email"), delay:1.0)
+            return
+        }
+        
+        if passwordTextField.text == nil {
+            HUD.flash(.Label("Please enter password"), delay:1.0)
+            return
+        }
+        
+        HUD.show(.Progress)
+        
+        SessionManager.loginUser(loginTextField.text!, password: passwordTextField.text!) { (token) in
             
-            SessionManager.loginUser(loginTextField.text!, password: passwordTextField.text!) { (token) in
-                if token != nil {
-                    SessionManager.setUserToken(token!)
-                    
-                    self.performSegueWithIdentifier("mainControllerSegue", sender: self)
-                }
+            if token != nil {
+                
+                HUD.hide()
+                SessionManager.setUserToken(token!)
+                self.performSegueWithIdentifier("mainControllerSegue", sender: self)
+                
+            } else {
+                
+                HUD.flash(.Label("Wrong email or password"), delay:1.0)
             }
         }
     }
