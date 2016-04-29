@@ -37,7 +37,6 @@
 		89CFF4AB1CD395F700F0097E /* SourceSansPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49F1CD395F700F0097E /* SourceSansPro-Semibold.ttf */; };
 		89CFF4AC1CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */; };
 		89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */; };
-		89CFF4BA1CD3B0D200F0097E /* iOS Lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4B91CD3B0D200F0097E /* iOS Lock.png */; };
 		89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 /* End PBXBuildFile section */
 
@@ -89,7 +88,6 @@
 		89CFF49F1CD395F700F0097E /* SourceSansPro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.ttf"; sourceTree = "<group>"; };
 		89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
 		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
-		89CFF4B91CD3B0D200F0097E /* iOS Lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Lock.png"; sourceTree = "<group>"; };
 		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -134,7 +132,6 @@
 			children = (
 				74887B061CC592D100EC677E /* Main.storyboard */,
 				74887B0B1CC592D100EC677E /* LaunchScreen.storyboard */,
-				89CFF4B91CD3B0D200F0097E /* iOS Lock.png */,
 				89CFF4AF1CD3A6AA00F0097E /* Code */,
 				89CFF47D1CD394F800F0097E /* Resources */,
 				74887B091CC592D100EC677E /* Assets.xcassets */,
@@ -370,7 +367,6 @@
 				74887B0D1CC592D100EC677E /* LaunchScreen.storyboard in Resources */,
 				89CFF4A41CD395F700F0097E /* SourceSansPro-BoldIt.ttf in Resources */,
 				89CFF4901CD395CF00F0097E /* KlartextMono-MediumItalic.ttf in Resources */,
-				89CFF4BA1CD3B0D200F0097E /* iOS Lock.png in Resources */,
 				89CFF4A51CD395F700F0097E /* SourceSansPro-ExtraLight.ttf in Resources */,
 				89CFF48A1CD395CF00F0097E /* KlartextMono-Bold.ttf in Resources */,
 				89CFF4AA1CD395F700F0097E /* SourceSansPro-Regular.ttf in Resources */,
