@@ -14,8 +14,31 @@
 		74887B171CC5997400EC677E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B161CC5997400EC677E /* LoginViewController.swift */; };
 		74887B191CC599B100EC677E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B181CC599B100EC677E /* MainViewController.swift */; };
 		74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B1A1CC59BD400EC677E /* SessionManager.swift */; };
-		74E6A5A11CCFC0E0009C8811 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 74E6A5A01CCFC0E0009C8811 /* Alamofire.framework */; };
-		99D9166DF8A8743E6B89CAA2 /* Pods_111Secuirty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = B5AF580868394AC7D06C23D6 /* Pods_111Secuirty.framework */; };
+		89CFF48A1CD395CF00F0097E /* KlartextMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4801CD395CF00F0097E /* KlartextMono-Bold.ttf */; };
+		89CFF48B1CD395CF00F0097E /* KlartextMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4811CD395CF00F0097E /* KlartextMono-BoldItalic.ttf */; };
+		89CFF48C1CD395CF00F0097E /* KlartextMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4821CD395CF00F0097E /* KlartextMono-Italic.ttf */; };
+		89CFF48D1CD395CF00F0097E /* KlartextMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4831CD395CF00F0097E /* KlartextMono-Light.ttf */; };
+		89CFF48E1CD395CF00F0097E /* KlartextMono-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4841CD395CF00F0097E /* KlartextMono-LightItalic.ttf */; };
+		89CFF48F1CD395CF00F0097E /* KlartextMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4851CD395CF00F0097E /* KlartextMono-Medium.ttf */; };
+		89CFF4901CD395CF00F0097E /* KlartextMono-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4861CD395CF00F0097E /* KlartextMono-MediumItalic.ttf */; };
+		89CFF4911CD395CF00F0097E /* KlartextMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4871CD395CF00F0097E /* KlartextMono-Regular.ttf */; };
+		89CFF4921CD395CF00F0097E /* KlartextMono-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4881CD395CF00F0097E /* KlartextMono-Thin.ttf */; };
+		89CFF4931CD395CF00F0097E /* KlartextMono-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4891CD395CF00F0097E /* KlartextMono-ThinItalic.ttf */; };
+		89CFF4A11CD395F700F0097E /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4951CD395F700F0097E /* SourceSansPro-Black.ttf */; };
+		89CFF4A21CD395F700F0097E /* SourceSansPro-BlackIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4961CD395F700F0097E /* SourceSansPro-BlackIt.ttf */; };
+		89CFF4A31CD395F700F0097E /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4971CD395F700F0097E /* SourceSansPro-Bold.ttf */; };
+		89CFF4A41CD395F700F0097E /* SourceSansPro-BoldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4981CD395F700F0097E /* SourceSansPro-BoldIt.ttf */; };
+		89CFF4A51CD395F700F0097E /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4991CD395F700F0097E /* SourceSansPro-ExtraLight.ttf */; };
+		89CFF4A61CD395F700F0097E /* SourceSansPro-ExtraLightIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49A1CD395F700F0097E /* SourceSansPro-ExtraLightIt.ttf */; };
+		89CFF4A71CD395F700F0097E /* SourceSansPro-It.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49B1CD395F700F0097E /* SourceSansPro-It.ttf */; };
+		89CFF4A81CD395F700F0097E /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49C1CD395F700F0097E /* SourceSansPro-Light.ttf */; };
+		89CFF4A91CD395F700F0097E /* SourceSansPro-LightIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49D1CD395F700F0097E /* SourceSansPro-LightIt.ttf */; };
+		89CFF4AA1CD395F700F0097E /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49E1CD395F700F0097E /* SourceSansPro-Regular.ttf */; };
+		89CFF4AB1CD395F700F0097E /* SourceSansPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49F1CD395F700F0097E /* SourceSansPro-Semibold.ttf */; };
+		89CFF4AC1CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */; };
+		89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */; };
+		89CFF4BA1CD3B0D200F0097E /* iOS Lock.png in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4B91CD3B0D200F0097E /* iOS Lock.png */; };
+		89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -35,17 +58,39 @@
 		15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.debug.xcconfig"; sourceTree = "<group>"; };
 		32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.release.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.release.xcconfig"; sourceTree = "<group>"; };
 		74887AFF1CC592D100EC677E /* 111 Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "111 Door.app"; sourceTree = BUILT_PRODUCTS_DIR; };
-		74887B021CC592D100EC677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74887B021CC592D100EC677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
 		74887B071CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74887B091CC592D100EC677E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74887B0C1CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74887B0E1CC592D100EC677E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74887B161CC5997400EC677E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = LoginViewController.swift; path = Code/ViewControllers/LoginViewController/LoginViewController.swift; sourceTree = "<group>"; };
-		74887B181CC599B100EC677E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = MainViewController.swift; path = Code/ViewControllers/HomeViewController/MainViewController.swift; sourceTree = "<group>"; };
-		74887B1A1CC59BD400EC677E /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SessionManager.swift; path = Code/Services/APIManager/SessionManager.swift; sourceTree = "<group>"; };
-		74E6A59E1CCFBFFB009C8811 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "Pods/../build/Debug-iphoneos/Alamofire.framework"; sourceTree = "<group>"; };
-		74E6A5A01CCFC0E0009C8811 /* Alamofire.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; name = Alamofire.framework; path = "/Users/Egor/Library/Developer/Xcode/DerivedData/111Secuirty-bbzafejammekfhdclhjhfjqmdqcy/Build/Products/Debug-iphoneos/Alamofire.framework"; sourceTree = "<absolute>"; };
-		B5AF580868394AC7D06C23D6 /* Pods_111Secuirty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_111Secuirty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		74887B161CC5997400EC677E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		74887B181CC599B100EC677E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		74887B1A1CC59BD400EC677E /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		89CFF4801CD395CF00F0097E /* KlartextMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-Bold.ttf"; sourceTree = "<group>"; };
+		89CFF4811CD395CF00F0097E /* KlartextMono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-BoldItalic.ttf"; sourceTree = "<group>"; };
+		89CFF4821CD395CF00F0097E /* KlartextMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-Italic.ttf"; sourceTree = "<group>"; };
+		89CFF4831CD395CF00F0097E /* KlartextMono-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-Light.ttf"; sourceTree = "<group>"; };
+		89CFF4841CD395CF00F0097E /* KlartextMono-LightItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-LightItalic.ttf"; sourceTree = "<group>"; };
+		89CFF4851CD395CF00F0097E /* KlartextMono-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-Medium.ttf"; sourceTree = "<group>"; };
+		89CFF4861CD395CF00F0097E /* KlartextMono-MediumItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-MediumItalic.ttf"; sourceTree = "<group>"; };
+		89CFF4871CD395CF00F0097E /* KlartextMono-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-Regular.ttf"; sourceTree = "<group>"; };
+		89CFF4881CD395CF00F0097E /* KlartextMono-Thin.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-Thin.ttf"; sourceTree = "<group>"; };
+		89CFF4891CD395CF00F0097E /* KlartextMono-ThinItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-ThinItalic.ttf"; sourceTree = "<group>"; };
+		89CFF4951CD395F700F0097E /* SourceSansPro-Black.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Black.ttf"; sourceTree = "<group>"; };
+		89CFF4961CD395F700F0097E /* SourceSansPro-BlackIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BlackIt.ttf"; sourceTree = "<group>"; };
+		89CFF4971CD395F700F0097E /* SourceSansPro-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Bold.ttf"; sourceTree = "<group>"; };
+		89CFF4981CD395F700F0097E /* SourceSansPro-BoldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-BoldIt.ttf"; sourceTree = "<group>"; };
+		89CFF4991CD395F700F0097E /* SourceSansPro-ExtraLight.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLight.ttf"; sourceTree = "<group>"; };
+		89CFF49A1CD395F700F0097E /* SourceSansPro-ExtraLightIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-ExtraLightIt.ttf"; sourceTree = "<group>"; };
+		89CFF49B1CD395F700F0097E /* SourceSansPro-It.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-It.ttf"; sourceTree = "<group>"; };
+		89CFF49C1CD395F700F0097E /* SourceSansPro-Light.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Light.ttf"; sourceTree = "<group>"; };
+		89CFF49D1CD395F700F0097E /* SourceSansPro-LightIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-LightIt.ttf"; sourceTree = "<group>"; };
+		89CFF49E1CD395F700F0097E /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
+		89CFF49F1CD395F700F0097E /* SourceSansPro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.ttf"; sourceTree = "<group>"; };
+		89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
+		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		89CFF4B91CD3B0D200F0097E /* iOS Lock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iOS Lock.png"; sourceTree = "<group>"; };
+		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -53,8 +98,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				74E6A5A11CCFC0E0009C8811 /* Alamofire.framework in Frameworks */,
-				99D9166DF8A8743E6B89CAA2 /* Pods_111Secuirty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -64,7 +107,6 @@
 		12FDC339921C0EE3975054CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				B5AF580868394AC7D06C23D6 /* Pods_111Secuirty.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -72,8 +114,6 @@
 		74887AF61CC592D100EC677E = {
 			isa = PBXGroup;
 			children = (
-				74E6A5A01CCFC0E0009C8811 /* Alamofire.framework */,
-				74E6A59E1CCFBFFB009C8811 /* Alamofire.framework */,
 				74887B011CC592D100EC677E /* 111Secuirty */,
 				74887B001CC592D100EC677E /* Products */,
 				968457A7444F096C482CFA73 /* Pods */,
@@ -92,16 +132,161 @@
 		74887B011CC592D100EC677E /* 111Secuirty */ = {
 			isa = PBXGroup;
 			children = (
-				74887B021CC592D100EC677E /* AppDelegate.swift */,
-				74887B1A1CC59BD400EC677E /* SessionManager.swift */,
-				74887B161CC5997400EC677E /* LoginViewController.swift */,
-				74887B181CC599B100EC677E /* MainViewController.swift */,
 				74887B061CC592D100EC677E /* Main.storyboard */,
-				74887B091CC592D100EC677E /* Assets.xcassets */,
 				74887B0B1CC592D100EC677E /* LaunchScreen.storyboard */,
+				89CFF4B91CD3B0D200F0097E /* iOS Lock.png */,
+				89CFF4AF1CD3A6AA00F0097E /* Code */,
+				89CFF47D1CD394F800F0097E /* Resources */,
+				74887B091CC592D100EC677E /* Assets.xcassets */,
 				74887B0E1CC592D100EC677E /* Info.plist */,
 			);
 			path = 111Secuirty;
+			sourceTree = "<group>";
+		};
+		89CFF47D1CD394F800F0097E /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF47E1CD3955900F0097E /* Fonts */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		89CFF47E1CD3955900F0097E /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4941CD395E200F0097E /* SourceSansPro */,
+				89CFF47F1CD395B700F0097E /* KlartextMono */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		89CFF47F1CD395B700F0097E /* KlartextMono */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4801CD395CF00F0097E /* KlartextMono-Bold.ttf */,
+				89CFF4811CD395CF00F0097E /* KlartextMono-BoldItalic.ttf */,
+				89CFF4821CD395CF00F0097E /* KlartextMono-Italic.ttf */,
+				89CFF4831CD395CF00F0097E /* KlartextMono-Light.ttf */,
+				89CFF4841CD395CF00F0097E /* KlartextMono-LightItalic.ttf */,
+				89CFF4851CD395CF00F0097E /* KlartextMono-Medium.ttf */,
+				89CFF4861CD395CF00F0097E /* KlartextMono-MediumItalic.ttf */,
+				89CFF4871CD395CF00F0097E /* KlartextMono-Regular.ttf */,
+				89CFF4881CD395CF00F0097E /* KlartextMono-Thin.ttf */,
+				89CFF4891CD395CF00F0097E /* KlartextMono-ThinItalic.ttf */,
+			);
+			path = KlartextMono;
+			sourceTree = "<group>";
+		};
+		89CFF4941CD395E200F0097E /* SourceSansPro */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4951CD395F700F0097E /* SourceSansPro-Black.ttf */,
+				89CFF4961CD395F700F0097E /* SourceSansPro-BlackIt.ttf */,
+				89CFF4971CD395F700F0097E /* SourceSansPro-Bold.ttf */,
+				89CFF4981CD395F700F0097E /* SourceSansPro-BoldIt.ttf */,
+				89CFF4991CD395F700F0097E /* SourceSansPro-ExtraLight.ttf */,
+				89CFF49A1CD395F700F0097E /* SourceSansPro-ExtraLightIt.ttf */,
+				89CFF49B1CD395F700F0097E /* SourceSansPro-It.ttf */,
+				89CFF49C1CD395F700F0097E /* SourceSansPro-Light.ttf */,
+				89CFF49D1CD395F700F0097E /* SourceSansPro-LightIt.ttf */,
+				89CFF49E1CD395F700F0097E /* SourceSansPro-Regular.ttf */,
+				89CFF49F1CD395F700F0097E /* SourceSansPro-Semibold.ttf */,
+				89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */,
+			);
+			path = SourceSansPro;
+			sourceTree = "<group>";
+		};
+		89CFF4AF1CD3A6AA00F0097E /* Code */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4BB1CD3C0FE00F0097E /* Common */,
+				89CFF4B51CD3A85000F0097E /* AppDelegate */,
+				89CFF4B11CD3A72A00F0097E /* Services */,
+				89CFF4B01CD3A6F600F0097E /* ViewControllers */,
+			);
+			path = Code;
+			sourceTree = "<group>";
+		};
+		89CFF4B01CD3A6F600F0097E /* ViewControllers */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4B61CD3ACA900F0097E /* ResetPasswordViewController */,
+				89CFF4B41CD3A7EE00F0097E /* HomeViewController */,
+				89CFF4B31CD3A7DD00F0097E /* LoginViewController */,
+			);
+			path = ViewControllers;
+			sourceTree = "<group>";
+		};
+		89CFF4B11CD3A72A00F0097E /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4B21CD3A73700F0097E /* APIManager */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		89CFF4B21CD3A73700F0097E /* APIManager */ = {
+			isa = PBXGroup;
+			children = (
+				74887B1A1CC59BD400EC677E /* SessionManager.swift */,
+			);
+			path = APIManager;
+			sourceTree = "<group>";
+		};
+		89CFF4B31CD3A7DD00F0097E /* LoginViewController */ = {
+			isa = PBXGroup;
+			children = (
+				74887B161CC5997400EC677E /* LoginViewController.swift */,
+			);
+			path = LoginViewController;
+			sourceTree = "<group>";
+		};
+		89CFF4B41CD3A7EE00F0097E /* HomeViewController */ = {
+			isa = PBXGroup;
+			children = (
+				74887B181CC599B100EC677E /* MainViewController.swift */,
+			);
+			path = HomeViewController;
+			sourceTree = "<group>";
+		};
+		89CFF4B51CD3A85000F0097E /* AppDelegate */ = {
+			isa = PBXGroup;
+			children = (
+				74887B021CC592D100EC677E /* AppDelegate.swift */,
+			);
+			path = AppDelegate;
+			sourceTree = "<group>";
+		};
+		89CFF4B61CD3ACA900F0097E /* ResetPasswordViewController */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */,
+			);
+			path = ResetPasswordViewController;
+			sourceTree = "<group>";
+		};
+		89CFF4BB1CD3C0FE00F0097E /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4BC1CD3C10D00F0097E /* Constants */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		89CFF4BC1CD3C10D00F0097E /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4BD1CD3C12000F0097E /* APIConstants */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		89CFF4BD1CD3C12000F0097E /* APIConstants */ = {
+			isa = PBXGroup;
+			children = (
+				89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */,
+			);
+			path = APIConstants;
 			sourceTree = "<group>";
 		};
 		968457A7444F096C482CFA73 /* Pods */ = {
@@ -176,9 +361,32 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				89CFF48F1CD395CF00F0097E /* KlartextMono-Medium.ttf in Resources */,
+				89CFF4A31CD395F700F0097E /* SourceSansPro-Bold.ttf in Resources */,
+				89CFF4A61CD395F700F0097E /* SourceSansPro-ExtraLightIt.ttf in Resources */,
+				89CFF4AB1CD395F700F0097E /* SourceSansPro-Semibold.ttf in Resources */,
+				89CFF48C1CD395CF00F0097E /* KlartextMono-Italic.ttf in Resources */,
+				89CFF4A21CD395F700F0097E /* SourceSansPro-BlackIt.ttf in Resources */,
 				74887B0D1CC592D100EC677E /* LaunchScreen.storyboard in Resources */,
+				89CFF4A41CD395F700F0097E /* SourceSansPro-BoldIt.ttf in Resources */,
+				89CFF4901CD395CF00F0097E /* KlartextMono-MediumItalic.ttf in Resources */,
+				89CFF4BA1CD3B0D200F0097E /* iOS Lock.png in Resources */,
+				89CFF4A51CD395F700F0097E /* SourceSansPro-ExtraLight.ttf in Resources */,
+				89CFF48A1CD395CF00F0097E /* KlartextMono-Bold.ttf in Resources */,
+				89CFF4AA1CD395F700F0097E /* SourceSansPro-Regular.ttf in Resources */,
+				89CFF4A71CD395F700F0097E /* SourceSansPro-It.ttf in Resources */,
+				89CFF4AC1CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf in Resources */,
 				74887B0A1CC592D100EC677E /* Assets.xcassets in Resources */,
+				89CFF4A81CD395F700F0097E /* SourceSansPro-Light.ttf in Resources */,
+				89CFF4911CD395CF00F0097E /* KlartextMono-Regular.ttf in Resources */,
 				74887B081CC592D100EC677E /* Main.storyboard in Resources */,
+				89CFF48E1CD395CF00F0097E /* KlartextMono-LightItalic.ttf in Resources */,
+				89CFF48B1CD395CF00F0097E /* KlartextMono-BoldItalic.ttf in Resources */,
+				89CFF4921CD395CF00F0097E /* KlartextMono-Thin.ttf in Resources */,
+				89CFF4A91CD395F700F0097E /* SourceSansPro-LightIt.ttf in Resources */,
+				89CFF48D1CD395CF00F0097E /* KlartextMono-Light.ttf in Resources */,
+				89CFF4A11CD395F700F0097E /* SourceSansPro-Black.ttf in Resources */,
+				89CFF4931CD395CF00F0097E /* KlartextMono-ThinItalic.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -239,6 +447,8 @@
 			files = (
 				74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */,
 				74887B191CC599B100EC677E /* MainViewController.swift in Sources */,
+				89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */,
+				89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */,
 				74887B171CC5997400EC677E /* LoginViewController.swift in Sources */,
 				74887B031CC592D100EC677E /* AppDelegate.swift in Sources */,
 			);
