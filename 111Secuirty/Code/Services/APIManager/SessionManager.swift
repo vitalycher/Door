@@ -35,7 +35,7 @@ class SessionManager {
     
     static func loginUser(login: String, password: String, succes : (token : String?) -> Void) {
        
-        Alamofire.request(.POST, "https://door.111min.com/api/sessions", parameters: ["email": login, "password" : password])
+        Alamofire.request(.POST, APIConstants.logIn, parameters: ["email": login, "password" : password])
             .responseJSON { response in
                 
                 if let JSON = response.result.value {
@@ -56,7 +56,7 @@ class SessionManager {
             HUD.show(.Progress)
             
             let headers = ["AUTH-TOKEN" : authToken]
-            Alamofire.request(.POST, "https://door.111min.com/api/glass_door", headers : headers)
+            Alamofire.request(.POST, APIConstants.glassDoor , headers : headers)
                 .responseJSON { response in
                     
                     HUD.flash(.Label("Welcome!"), delay:1.0)
@@ -70,11 +70,19 @@ class SessionManager {
         if let authToken = getUserToken() {
             
             let headers = ["AUTH-TOKEN" : authToken]
-            Alamofire.request(.POST, "https://door.111min.com/api/iron_door", headers : headers)
+            Alamofire.request(.POST, APIConstants.ironDoor, headers : headers)
                 .responseJSON { response in
                     
                     HUD.flash(.Label("Welcome!"), delay:1.0)
             }
+        }
+    }
+    
+    static func resetPassword(email: String) {
+        
+        Alamofire.request(.POST, APIConstants.resetPassword, parameters: ["email": email])
+            .responseJSON { response in
+                HUD.flash(.Label(NSLocalizedString("Password reset instructions have been sent to your email", comment: "")), delay:1.0)
         }
     }
 }

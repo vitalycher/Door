@@ -10,38 +10,41 @@ import UIKit
 import PKHUD
 
 
-class LoginViewController: UIViewController {
+class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var loginTextField: UITextField!
     @IBOutlet weak var passwordTextField: UITextField!
     @IBOutlet weak var signInButton: UIButton!
-    
-    func setupAppearance() {
-        
-        loginTextField.layer.cornerRadius = CGRectGetHeight(loginTextField.frame) / 2
-        passwordTextField.layer.cornerRadius = CGRectGetHeight(passwordTextField.frame) / 2
-        signInButton.layer.cornerRadius = CGRectGetHeight(signInButton.frame) / 2
-        
-        loginTextField.layer.masksToBounds = true
-        passwordTextField.layer.masksToBounds = true
-        signInButton.layer.masksToBounds = true
-    }
+    @IBOutlet weak var resetPasswordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupAppearance()
+        resetPasswordButton.titleLabel?.adjustsFontSizeToFitWidth = true
     }
+
+// MARK: - UITextFieldDelegate
+    
+    func textFieldShouldReturn(textField: UITextField) -> Bool {
+        if textField .isEqual(loginTextField) {
+            passwordTextField.becomeFirstResponder()
+        } else {
+            textField.resignFirstResponder()
+        }
+        return false
+    }
+ 
+// MARK: - Actions
     
     @IBAction func signIn(sender: UIButton) {
         
         if loginTextField.text == nil {
-            HUD.flash(.Label("Please enter email"), delay:1.0)
+            HUD.flash(.Label(NSLocalizedString("Please enter email", comment: "")), delay:1.0)
             return
         }
         
         if passwordTextField.text == nil {
-            HUD.flash(.Label("Please enter password"), delay:1.0)
+            HUD.flash(.Label(NSLocalizedString("Please enter password", comment: "")), delay:1.0)
             return
         }
         
@@ -57,7 +60,7 @@ class LoginViewController: UIViewController {
                 
             } else {
                 
-                HUD.flash(.Label("Wrong email or password"), delay:1.0)
+                HUD.flash(.Label(NSLocalizedString("Wrong email or password", comment: "")), delay:1.0)
             }
         }
     }

@@ -16,13 +16,6 @@ class MainViewController: UIViewController {
     
     func setupAppearance() {
         
-        glassDoorButton.layer.cornerRadius = CGRectGetHeight(glassDoorButton.frame) / 2
-        ironDoorButton.layer.cornerRadius = CGRectGetHeight(ironDoorButton.frame) / 2
-        logOutButton.layer.cornerRadius = CGRectGetHeight(logOutButton.frame) / 2
-        
-        glassDoorButton.layer.masksToBounds = true
-        ironDoorButton.layer.masksToBounds = true
-        logOutButton.layer.masksToBounds = true
     }
     
     override func viewDidLoad() {
@@ -41,5 +34,6 @@ class MainViewController: UIViewController {
     
     @IBAction func logOut(sender: AnyObject) {
         SessionManager.logoutUser()
+        self.dismissViewControllerAnimated(true, completion: nil)
     }
 }
