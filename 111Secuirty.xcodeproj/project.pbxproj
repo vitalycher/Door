@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		10217BC58AC43F2BCCA6C367 /* Pods_Door_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF675046DB6E085F004161E4 /* Pods_Door_Widget.framework */; };
+		3C17C4C5026C30EAA0B7DFF9 /* Pods_111Secuirty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F68D6CE0C33E0C1F511CEE /* Pods_111Secuirty.framework */; };
 		74887B031CC592D100EC677E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B021CC592D100EC677E /* AppDelegate.swift */; };
 		74887B081CC592D100EC677E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74887B061CC592D100EC677E /* Main.storyboard */; };
 		74887B0A1CC592D100EC677E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74887B091CC592D100EC677E /* Assets.xcassets */; };
@@ -14,6 +16,36 @@
 		74887B171CC5997400EC677E /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B161CC5997400EC677E /* LoginViewController.swift */; };
 		74887B191CC599B100EC677E /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B181CC599B100EC677E /* MainViewController.swift */; };
 		74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B1A1CC59BD400EC677E /* SessionManager.swift */; };
+		8908B4691CD9E94D005CC547 /* String+Validation.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8908B4681CD9E94D005CC547 /* String+Validation.swift */; };
+		8908B4701CD9F643005CC547 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8908B46F1CD9F643005CC547 /* NotificationCenter.framework */; };
+		8908B4731CD9F643005CC547 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8908B4721CD9F643005CC547 /* TodayViewController.swift */; };
+		8908B4761CD9F643005CC547 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8908B4741CD9F643005CC547 /* MainInterface.storyboard */; };
+		8908B47A1CD9F643005CC547 /* Door Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8908B46E1CD9F643005CC547 /* Door Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8908B47F1CDA111B005CC547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74887B091CC592D100EC677E /* Assets.xcassets */; };
+		898474DF1CDA304B000952B9 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4951CD395F700F0097E /* SourceSansPro-Black.ttf */; };
+		898474E01CDA304B000952B9 /* SourceSansPro-BlackIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4961CD395F700F0097E /* SourceSansPro-BlackIt.ttf */; };
+		898474E11CDA304B000952B9 /* SourceSansPro-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4971CD395F700F0097E /* SourceSansPro-Bold.ttf */; };
+		898474E21CDA304B000952B9 /* SourceSansPro-BoldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4981CD395F700F0097E /* SourceSansPro-BoldIt.ttf */; };
+		898474E31CDA304B000952B9 /* SourceSansPro-ExtraLight.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4991CD395F700F0097E /* SourceSansPro-ExtraLight.ttf */; };
+		898474E41CDA304B000952B9 /* SourceSansPro-ExtraLightIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49A1CD395F700F0097E /* SourceSansPro-ExtraLightIt.ttf */; };
+		898474E51CDA304B000952B9 /* SourceSansPro-It.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49B1CD395F700F0097E /* SourceSansPro-It.ttf */; };
+		898474E61CDA304B000952B9 /* SourceSansPro-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49C1CD395F700F0097E /* SourceSansPro-Light.ttf */; };
+		898474E71CDA304B000952B9 /* SourceSansPro-LightIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49D1CD395F700F0097E /* SourceSansPro-LightIt.ttf */; };
+		898474E81CDA304B000952B9 /* SourceSansPro-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49E1CD395F700F0097E /* SourceSansPro-Regular.ttf */; };
+		898474E91CDA304B000952B9 /* SourceSansPro-Semibold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF49F1CD395F700F0097E /* SourceSansPro-Semibold.ttf */; };
+		898474EA1CDA304B000952B9 /* SourceSansPro-SemiboldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */; };
+		898474EB1CDA3051000952B9 /* KlartextMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4801CD395CF00F0097E /* KlartextMono-Bold.ttf */; };
+		898474EC1CDA3051000952B9 /* KlartextMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4811CD395CF00F0097E /* KlartextMono-BoldItalic.ttf */; };
+		898474ED1CDA3051000952B9 /* KlartextMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4821CD395CF00F0097E /* KlartextMono-Italic.ttf */; };
+		898474EE1CDA3051000952B9 /* KlartextMono-Light.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4831CD395CF00F0097E /* KlartextMono-Light.ttf */; };
+		898474EF1CDA3051000952B9 /* KlartextMono-LightItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4841CD395CF00F0097E /* KlartextMono-LightItalic.ttf */; };
+		898474F01CDA3051000952B9 /* KlartextMono-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4851CD395CF00F0097E /* KlartextMono-Medium.ttf */; };
+		898474F11CDA3051000952B9 /* KlartextMono-MediumItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4861CD395CF00F0097E /* KlartextMono-MediumItalic.ttf */; };
+		898474F21CDA3051000952B9 /* KlartextMono-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4871CD395CF00F0097E /* KlartextMono-Regular.ttf */; };
+		898474F31CDA3051000952B9 /* KlartextMono-Thin.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4881CD395CF00F0097E /* KlartextMono-Thin.ttf */; };
+		898474F41CDA3051000952B9 /* KlartextMono-ThinItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4891CD395CF00F0097E /* KlartextMono-ThinItalic.ttf */; };
+		89CB458F1CDB2FC50085018B /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
+		89CB45901CDB2FEC0085018B /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B1A1CC59BD400EC677E /* SessionManager.swift */; };
 		89CFF48A1CD395CF00F0097E /* KlartextMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4801CD395CF00F0097E /* KlartextMono-Bold.ttf */; };
 		89CFF48B1CD395CF00F0097E /* KlartextMono-BoldItalic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4811CD395CF00F0097E /* KlartextMono-BoldItalic.ttf */; };
 		89CFF48C1CD395CF00F0097E /* KlartextMono-Italic.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4821CD395CF00F0097E /* KlartextMono-Italic.ttf */; };
@@ -40,6 +72,16 @@
 		89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 /* End PBXBuildFile section */
 
+/* Begin PBXContainerItemProxy section */
+		8908B4781CD9F643005CC547 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74887AF71CC592D100EC677E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 8908B46D1CD9F643005CC547;
+			remoteInfo = "Door Widget";
+		};
+/* End PBXContainerItemProxy section */
+
 /* Begin PBXCopyFilesBuildPhase section */
 		74E6A5A31CCFC0E0009C8811 /* Embed Frameworks */ = {
 			isa = PBXCopyFilesBuildPhase;
@@ -51,11 +93,23 @@
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8908B47E1CD9F644005CC547 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				8908B47A1CD9F643005CC547 /* Door Widget.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.debug.xcconfig"; sourceTree = "<group>"; };
 		32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.release.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.release.xcconfig"; sourceTree = "<group>"; };
+		46D04D57E70C068E95174B03 /* Pods-Door Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		74887AFF1CC592D100EC677E /* 111 Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "111 Door.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74887B021CC592D100EC677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
 		74887B071CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -65,6 +119,14 @@
 		74887B161CC5997400EC677E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		74887B181CC599B100EC677E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		74887B1A1CC59BD400EC677E /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		8908B4681CD9E94D005CC547 /* String+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
+		8908B46E1CD9F643005CC547 /* Door Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Door Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8908B46F1CD9F643005CC547 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		8908B4721CD9F643005CC547 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		8908B4751CD9F643005CC547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		8908B4771CD9F643005CC547 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		8908B4801CDA1193005CC547 /* 111 Door.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "111 Door.entitlements"; sourceTree = "<group>"; };
+		8908B4811CDA139A005CC547 /* Door Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.xml; path = "Door Widget.entitlements"; sourceTree = "<group>"; };
 		89CFF4801CD395CF00F0097E /* KlartextMono-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-Bold.ttf"; sourceTree = "<group>"; };
 		89CFF4811CD395CF00F0097E /* KlartextMono-BoldItalic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-BoldItalic.ttf"; sourceTree = "<group>"; };
 		89CFF4821CD395CF00F0097E /* KlartextMono-Italic.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "KlartextMono-Italic.ttf"; sourceTree = "<group>"; };
@@ -89,6 +151,9 @@
 		89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
 		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
 		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		A0F68D6CE0C33E0C1F511CEE /* Pods_111Secuirty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_111Secuirty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		BF675046DB6E085F004161E4 /* Pods_Door_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Door_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CF016307CA48E7F669ED9C09 /* Pods-Door Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +161,16 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3C17C4C5026C30EAA0B7DFF9 /* Pods_111Secuirty.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8908B46B1CD9F643005CC547 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8908B4701CD9F643005CC547 /* NotificationCenter.framework in Frameworks */,
+				10217BC58AC43F2BCCA6C367 /* Pods_Door_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -105,6 +180,9 @@
 		12FDC339921C0EE3975054CC /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				8908B46F1CD9F643005CC547 /* NotificationCenter.framework */,
+				A0F68D6CE0C33E0C1F511CEE /* Pods_111Secuirty.framework */,
+				BF675046DB6E085F004161E4 /* Pods_Door_Widget.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -113,6 +191,7 @@
 			isa = PBXGroup;
 			children = (
 				74887B011CC592D100EC677E /* 111Secuirty */,
+				8908B4711CD9F643005CC547 /* Door Widget */,
 				74887B001CC592D100EC677E /* Products */,
 				968457A7444F096C482CFA73 /* Pods */,
 				12FDC339921C0EE3975054CC /* Frameworks */,
@@ -123,6 +202,7 @@
 			isa = PBXGroup;
 			children = (
 				74887AFF1CC592D100EC677E /* 111 Door.app */,
+				8908B46E1CD9F643005CC547 /* Door Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -130,6 +210,7 @@
 		74887B011CC592D100EC677E /* 111Secuirty */ = {
 			isa = PBXGroup;
 			children = (
+				8908B4801CDA1193005CC547 /* 111 Door.entitlements */,
 				74887B061CC592D100EC677E /* Main.storyboard */,
 				74887B0B1CC592D100EC677E /* LaunchScreen.storyboard */,
 				89CFF4AF1CD3A6AA00F0097E /* Code */,
@@ -138,6 +219,33 @@
 				74887B0E1CC592D100EC677E /* Info.plist */,
 			);
 			path = 111Secuirty;
+			sourceTree = "<group>";
+		};
+		8908B4661CD9E90D005CC547 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+				8908B4671CD9E921005CC547 /* String+Validation */,
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		8908B4671CD9E921005CC547 /* String+Validation */ = {
+			isa = PBXGroup;
+			children = (
+				8908B4681CD9E94D005CC547 /* String+Validation.swift */,
+			);
+			path = "String+Validation";
+			sourceTree = "<group>";
+		};
+		8908B4711CD9F643005CC547 /* Door Widget */ = {
+			isa = PBXGroup;
+			children = (
+				8908B4811CDA139A005CC547 /* Door Widget.entitlements */,
+				8908B4721CD9F643005CC547 /* TodayViewController.swift */,
+				8908B4741CD9F643005CC547 /* MainInterface.storyboard */,
+				8908B4771CD9F643005CC547 /* Info.plist */,
+			);
+			path = "Door Widget";
 			sourceTree = "<group>";
 		};
 		89CFF47D1CD394F800F0097E /* Resources */ = {
@@ -265,6 +373,7 @@
 		89CFF4BB1CD3C0FE00F0097E /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				8908B4661CD9E90D005CC547 /* Extensions */,
 				89CFF4BC1CD3C10D00F0097E /* Constants */,
 			);
 			path = Common;
@@ -291,6 +400,8 @@
 			children = (
 				15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */,
 				32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */,
+				46D04D57E70C068E95174B03 /* Pods-Door Widget.debug.xcconfig */,
+				CF016307CA48E7F669ED9C09 /* Pods-Door Widget.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -309,15 +420,37 @@
 				74E6A5A31CCFC0E0009C8811 /* Embed Frameworks */,
 				22A47169707F8B7F126EAFB4 /* Embed Pods Frameworks */,
 				9BDBD319864FC1DA664D01BB /* Copy Pods Resources */,
+				8908B47E1CD9F644005CC547 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				8908B4791CD9F643005CC547 /* PBXTargetDependency */,
 			);
 			name = 111Secuirty;
 			productName = 111Secuirty;
 			productReference = 74887AFF1CC592D100EC677E /* 111 Door.app */;
 			productType = "com.apple.product-type.application";
+		};
+		8908B46D1CD9F643005CC547 /* Door Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8908B47B1CD9F644005CC547 /* Build configuration list for PBXNativeTarget "Door Widget" */;
+			buildPhases = (
+				99D373CB0D320DEF57814E9A /* Check Pods Manifest.lock */,
+				8908B46A1CD9F643005CC547 /* Sources */,
+				8908B46B1CD9F643005CC547 /* Frameworks */,
+				8908B46C1CD9F643005CC547 /* Resources */,
+				8AA4DBD8E5B0F3D37F2FE7D3 /* Embed Pods Frameworks */,
+				4673E6FEC82DB888FE03E39C /* Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "Door Widget";
+			productName = "Door Widget";
+			productReference = 8908B46E1CD9F643005CC547 /* Door Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -332,6 +465,20 @@
 					74887AFE1CC592D100EC677E = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = Y6ZXAWRWJ9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
+					};
+					8908B46D1CD9F643005CC547 = {
+						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = Y6ZXAWRWJ9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -349,6 +496,7 @@
 			projectRoot = "";
 			targets = (
 				74887AFE1CC592D100EC677E /* 111Secuirty */,
+				8908B46D1CD9F643005CC547 /* Door Widget */,
 			);
 		};
 /* End PBXProject section */
@@ -386,6 +534,37 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		8908B46C1CD9F643005CC547 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				898474E21CDA304B000952B9 /* SourceSansPro-BoldIt.ttf in Resources */,
+				898474F01CDA3051000952B9 /* KlartextMono-Medium.ttf in Resources */,
+				898474E31CDA304B000952B9 /* SourceSansPro-ExtraLight.ttf in Resources */,
+				898474EA1CDA304B000952B9 /* SourceSansPro-SemiboldIt.ttf in Resources */,
+				898474EC1CDA3051000952B9 /* KlartextMono-BoldItalic.ttf in Resources */,
+				898474E71CDA304B000952B9 /* SourceSansPro-LightIt.ttf in Resources */,
+				898474EE1CDA3051000952B9 /* KlartextMono-Light.ttf in Resources */,
+				8908B47F1CDA111B005CC547 /* Assets.xcassets in Resources */,
+				898474E61CDA304B000952B9 /* SourceSansPro-Light.ttf in Resources */,
+				898474DF1CDA304B000952B9 /* SourceSansPro-Black.ttf in Resources */,
+				898474E11CDA304B000952B9 /* SourceSansPro-Bold.ttf in Resources */,
+				898474E51CDA304B000952B9 /* SourceSansPro-It.ttf in Resources */,
+				898474E91CDA304B000952B9 /* SourceSansPro-Semibold.ttf in Resources */,
+				898474F41CDA3051000952B9 /* KlartextMono-ThinItalic.ttf in Resources */,
+				898474ED1CDA3051000952B9 /* KlartextMono-Italic.ttf in Resources */,
+				898474F11CDA3051000952B9 /* KlartextMono-MediumItalic.ttf in Resources */,
+				8908B4761CD9F643005CC547 /* MainInterface.storyboard in Resources */,
+				898474F31CDA3051000952B9 /* KlartextMono-Thin.ttf in Resources */,
+				898474E01CDA304B000952B9 /* SourceSansPro-BlackIt.ttf in Resources */,
+				898474EB1CDA3051000952B9 /* KlartextMono-Bold.ttf in Resources */,
+				898474EF1CDA3051000952B9 /* KlartextMono-LightItalic.ttf in Resources */,
+				898474F21CDA3051000952B9 /* KlartextMono-Regular.ttf in Resources */,
+				898474E41CDA304B000952B9 /* SourceSansPro-ExtraLightIt.ttf in Resources */,
+				898474E81CDA304B000952B9 /* SourceSansPro-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
@@ -402,6 +581,51 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4673E6FEC82DB888FE03E39C /* Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8AA4DBD8E5B0F3D37F2FE7D3 /* Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		99D373CB0D320DEF57814E9A /* Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9BDBD319864FC1DA664D01BB /* Copy Pods Resources */ = {
@@ -447,10 +671,29 @@
 				89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */,
 				74887B171CC5997400EC677E /* LoginViewController.swift in Sources */,
 				74887B031CC592D100EC677E /* AppDelegate.swift in Sources */,
+				8908B4691CD9E94D005CC547 /* String+Validation.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		8908B46A1CD9F643005CC547 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				89CB458F1CDB2FC50085018B /* APIConstants.swift in Sources */,
+				8908B4731CD9F643005CC547 /* TodayViewController.swift in Sources */,
+				89CB45901CDB2FEC0085018B /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		8908B4791CD9F643005CC547 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 8908B46D1CD9F643005CC547 /* Door Widget */;
+			targetProxy = 8908B4781CD9F643005CC547 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
 		74887B061CC592D100EC677E /* Main.storyboard */ = {
@@ -467,6 +710,14 @@
 				74887B0C1CC592D100EC677E /* Base */,
 			);
 			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+		8908B4741CD9F643005CC547 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				8908B4751CD9F643005CC547 /* Base */,
+			);
+			name = MainInterface.storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -509,7 +760,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -548,7 +799,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				VALIDATE_PRODUCT = YES;
@@ -560,7 +811,11 @@
 			baseConfigurationReference = 15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -570,7 +825,9 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
 				PRODUCT_NAME = "111 Door";
-				PROVISIONING_PROFILE = "1c6d5f63-e1e2-4f7e-805d-9cfb670d432f";
+				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -579,7 +836,11 @@
 			baseConfigurationReference = 32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -589,7 +850,47 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
 				PRODUCT_NAME = "111 Door";
-				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
+				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+			};
+			name = Release;
+		};
+		8908B47C1CD9F644005CC547 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 46D04D57E70C068E95174B03 /* Pods-Door Widget.debug.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Door Widget/Door Widget.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Door Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "db73bd76-d5e1-49df-89f0-6d23bd07a331";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		8908B47D1CD9F644005CC547 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = CF016307CA48E7F669ED9C09 /* Pods-Door Widget.release.xcconfig */;
+			buildSettings = {
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_ENTITLEMENTS = "Door Widget/Door Widget.entitlements";
+				CODE_SIGN_IDENTITY = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				INFOPLIST_FILE = "Door Widget/Info.plist";
+				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "db73bd76-d5e1-49df-89f0-6d23bd07a331";
+				SKIP_INSTALL = YES;
+				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
 		};
@@ -610,6 +911,15 @@
 			buildConfigurations = (
 				74887B121CC592D100EC677E /* Debug */,
 				74887B131CC592D100EC677E /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		8908B47B1CD9F644005CC547 /* Build configuration list for PBXNativeTarget "Door Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				8908B47C1CD9F644005CC547 /* Debug */,
+				8908B47D1CD9F644005CC547 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

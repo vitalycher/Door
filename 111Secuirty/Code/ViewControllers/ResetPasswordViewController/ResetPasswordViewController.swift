@@ -7,11 +7,12 @@
 //
 
 import UIKit
+import PKHUD
+
 
 class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
     @IBOutlet weak var emailTextField: UITextField!
-    
     
     
 // MARK: - UITextFieldDelegate
@@ -28,6 +29,17 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     }
     
     @IBAction func resetPasswordAction(sender: AnyObject) {
+        if (emailTextField.text ?? "").isEmpty {
+            HUD.flash(.Label(NSLocalizedString("Please enter email", comment: "")), delay:1.0)
+            return
+        }
+        HUD.show(.Progress)
         
+        if emailTextField.text!.isEmail() {
+            SessionManager.resetPassword(emailTextField.text!)
+        } else {
+            HUD.flash(.Label(NSLocalizedString("Please enter email", comment: "")), delay:1.0)
+            return
+        }
     }
 }

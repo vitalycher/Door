@@ -9,33 +9,29 @@
 import UIKit
 import Alamofire
 import PKHUD
+import NotificationCenter
 
 class SessionManager {
+    static var defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.111minutes.thedoor")!
+
     
     static func getUserToken() -> String? {
-       
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        return userDefaults.objectForKey("kAuthToken") as? String
+        return defaults.objectForKey("kAuthToken") as? String
     }
     
     static func setUserToken(token : String) {
-       
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        userDefaults.setObject(token, forKey: "kAuthToken")
+        defaults.setObject(token, forKey: "kAuthToken")
+        defaults.synchronize()
     }
     
     static func logoutUser() {
-        
-        let userDefaults = NSUserDefaults.standardUserDefaults()
-        
-        userDefaults.setObject(nil, forKey: "kAuthToken")
+        defaults.setObject(nil, forKey: "kAuthToken")
+        defaults.synchronize()
     }
     
     static func loginUser(login: String, password: String, succes : (token : String?) -> Void) {
        
-        Alamofire.request(.POST, APIConstants.logIn, parameters: ["email": login, "password" : password])
+        Alamofire.request(.POST, APIConstants.DoorAPI.logIn, parameters: ["email": login, "password" : password])
             .responseJSON { response in
                 
                 if let JSON = response.result.value {
@@ -56,7 +52,7 @@ class SessionManager {
             HUD.show(.Progress)
             
             let headers = ["AUTH-TOKEN" : authToken]
-            Alamofire.request(.POST, APIConstants.glassDoor , headers : headers)
+            Alamofire.request(.POST, APIConstants.DoorAPI.glassDoor , headers : headers)
                 .responseJSON { response in
                     
                     HUD.flash(.Label("Welcome!"), delay:1.0)
@@ -70,7 +66,7 @@ class SessionManager {
         if let authToken = getUserToken() {
             
             let headers = ["AUTH-TOKEN" : authToken]
-            Alamofire.request(.POST, APIConstants.ironDoor, headers : headers)
+            Alamofire.request(.POST, APIConstants.DoorAPI.ironDoor, headers : headers)
                 .responseJSON { response in
                     
                     HUD.flash(.Label("Welcome!"), delay:1.0)
@@ -80,10 +76,32 @@ class SessionManager {
     
     static func resetPassword(email: String) {
         
-        Alamofire.request(.POST, APIConstants.resetPassword, parameters: ["email": email])
+        Alamofire.request(.POST, APIConstants.DoorAPI.resetPassword, parameters: ["email": email])
             .responseJSON { response in
                 HUD.flash(.Label(NSLocalizedString("Password reset instructions have been sent to your email", comment: "")), delay:1.0)
         }
+    }
+    
+    
+    static func getQuote(succes: (quoteText: String?, quoteAuthor: String?) -> Void)  {
+        var quoteText: String?
+        var quoteAuthor: String?
+        
+        Alamofire.request(.POST, APIConstants.ForismaticAPI.getQuote,
+            parameters: ["method": "getQuote", "format" : "json", "key" : "door", "lang" : "en"])
+            
+            .responseJSON { response in
+                
+                if let JSON = response.result.value {
+                    
+                    let response = JSON as! NSDictionary
+                    quoteText = response["quoteText"] as? String
+                    quoteAuthor = response["quoteAuthor"] as? String
+                    
+                    succes(quoteText: quoteText, quoteAuthor: quoteAuthor)
+                }
+                
+            }
     }
 }
 

@@ -8,15 +8,16 @@
 
 import UIKit
 import IQKeyboardManager
+import ReachabilitySwift
 
 @UIApplicationMain
 
 
 class AppDelegate: UIResponder, UIApplicationDelegate {
-
+    
     var window: UIWindow?
     
-   static func fillteredArray(array : [Int], f : (number : Int) -> Bool) {
+    static func fillteredArray(array : [Int], f : (number : Int) -> Bool) {
         f(number: 1)
     }
 
