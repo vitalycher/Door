@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
             return
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
         do {
             try reachability?.startNotifier()
         } catch {
