@@ -38,19 +38,24 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
     
     @IBAction func signIn(sender: UIButton) {
         
-        if loginTextField.text == nil {
+        if (loginTextField.text ?? "").isEmpty {
             HUD.flash(.Label(NSLocalizedString("Please enter email", comment: "")), delay:1.0)
             return
         }
         
-        if passwordTextField.text == nil {
+        if !loginTextField.text!.isEmail() {
+            HUD.flash(.Label(NSLocalizedString("Please enter email", comment: "")), delay:1.0)
+            return
+        }
+        
+        if (passwordTextField.text ?? "").isEmpty {
             HUD.flash(.Label(NSLocalizedString("Please enter password", comment: "")), delay:1.0)
             return
         }
         
         HUD.show(.Progress)
         
-        SessionManager.loginUser(loginTextField.text!, password: passwordTextField.text!) { (token) in
+        SessionManager.loginUser(loginTextField.text!.lowercaseString, password: passwordTextField.text!) { (token) in
             
             if token != nil {
                 

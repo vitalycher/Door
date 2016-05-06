@@ -7,22 +7,45 @@
 //
 
 import UIKit
+import Alamofire
+import ReachabilitySwift
 
 class MainViewController: UIViewController {
 
     @IBOutlet weak var glassDoorButton: UIButton!
     @IBOutlet weak var ironDoorButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
-    
-    func setupAppearance() {
-        
-    }
-    
+    @IBOutlet weak var quoteTextLabel: UILabel!
+    @IBOutlet weak var quoteAuthorLabel: UILabel!
+    var reachability: Reachability?
+
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        setupAppearance()
     }
+
+    override func viewWillAppear(animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        do {
+            reachability = try Reachability.reachabilityForInternetConnection()
+        } catch {
+            print("Unable to create Reachability")
+            return
+        }
+        
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(MainViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
+        do {
+            try reachability?.startNotifier()
+        } catch {
+            print("could not start reachability notifier")
+        }
+        
+        if ((reachability?.isReachable()) != nil) {
+            getQuote()
+        }
+    }
+    
+//MARK: - Actions
     
     @IBAction func openGlassDoor(sender: AnyObject) {
         SessionManager.openGlassDoor()
@@ -34,6 +57,43 @@ class MainViewController: UIViewController {
     
     @IBAction func logOut(sender: AnyObject) {
         SessionManager.logoutUser()
-        self.dismissViewControllerAnimated(true, completion: nil)
+        self.performSegueWithIdentifier("loginViewControllerSegue", sender: self)
+    }
+    
+//MARK: - Help functions
+    
+    func getQuote() {
+        SessionManager.getQuote() { (quoteText, quoteAuthor) in
+            if quoteAuthor != nil && quoteText != nil {
+                self.quoteTextLabel.text = quoteText
+                self.quoteAuthorLabel.text = quoteAuthor
+            }
+        }
+    }
+    
+    func reachabilityChanged(note: NSNotification) {
+        
+        let reachability = note.object as! Reachability
+        
+        if reachability.isReachable() {
+            setupViewsOnline()
+        } else {
+            setupViewsOffine()
+        }
+    }
+    
+    func setupViewsOnline() {
+        ironDoorButton.enabled = true
+        glassDoorButton.enabled = true
+        ironDoorButton.layer.opacity = 1
+        glassDoorButton.layer.opacity = 1
+    }
+    
+    func setupViewsOffine() {
+        quoteTextLabel.text = NSLocalizedString("Please check your internet connection and try again", comment: "")
+        ironDoorButton.enabled = false
+        glassDoorButton.enabled = false
+        ironDoorButton.layer.opacity = 0.5
+        glassDoorButton.layer.opacity = 0.5
     }
 }

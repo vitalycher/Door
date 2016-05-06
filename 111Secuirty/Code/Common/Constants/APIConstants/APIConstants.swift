@@ -8,12 +8,19 @@
 
 import Foundation
 
-struct APIConstants {
-    static let baseUrl = "https://door.111min.com/api/"
-    
-    static let logIn            = baseUrl + "sessions"
-    static let glassDoor        = baseUrl + "glass_door"
-    static let ironDoor         = baseUrl + "iron_door"
-    static let resetPassword    = baseUrl + "reset_password"
-}
 
+struct APIConstants {
+    
+    struct DoorAPI {
+        static let baseUrl = "https://door.111min.com/api"
+
+        static let logIn            = baseUrl + "/sessions"
+        static let glassDoor        = baseUrl + "/glass_door"
+        static let ironDoor         = baseUrl + "/iron_door"
+        static let resetPassword    = baseUrl + "/reset_password"
+    }
+    
+    struct ForismaticAPI {
+        static let getQuote         = "http://api.forismatic.com/api/1.0/"
+    }
+}

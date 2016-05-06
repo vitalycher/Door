@@ -156,7 +156,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="296.5" y="399.5"/>
+            <point key="canvasLocation" x="320.5" y="377.5"/>
         </scene>
         <!--Main View Controller-->
         <scene sceneID="8kC-nf-QhK">
@@ -201,15 +201,17 @@
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="JSn-Sg-4zE">
                                 <rect key="frame" x="40" y="135" width="295" height="185"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="－ Buddha" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DYx-Ag-k0Y">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="right" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="12" translatesAutoresizingMaskIntoConstraints="NO" id="DYx-Ag-k0Y">
                                         <rect key="frame" x="0.0" y="160" width="295" height="25"/>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OnK-rL-7dA">
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" minimumFontSize="14" translatesAutoresizingMaskIntoConstraints="NO" id="OnK-rL-7dA">
                                         <rect key="frame" x="0.0" y="0.0" width="295" height="160"/>
-                                        <string key="text">There is nothing more dreadful than the habit of doubt. Doubt separates people. It is a poison that disintegrates friendships and breaks up pleasant relations. It is a thorn that irritates and hurts; it is a sword that kill.</string>
+                                        <constraints>
+                                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="60" id="xwB-hM-KUG"/>
+                                        </constraints>
                                         <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="26"/>
                                         <color key="textColor" red="0.29019607843137252" green="0.29019607843137252" blue="0.29019607843137252" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
@@ -256,7 +258,7 @@
                             <constraint firstItem="rLM-oB-jvJ" firstAttribute="top" secondItem="JSn-Sg-4zE" secondAttribute="bottom" constant="70" id="iRV-ox-X7y"/>
                             <constraint firstItem="rLM-oB-jvJ" firstAttribute="width" secondItem="rLM-oB-jvJ" secondAttribute="height" multiplier="335:51" id="tU1-pg-WTa"/>
                             <constraint firstItem="rLM-oB-jvJ" firstAttribute="leading" secondItem="Feo-av-lje" secondAttribute="leading" constant="20" id="va9-6s-0as"/>
-                            <constraint firstItem="Eus-be-pzi" firstAttribute="top" secondItem="q0j-1m-PxY" secondAttribute="bottom" constant="145" id="y4s-sr-6ri"/>
+                            <constraint firstItem="Eus-be-pzi" firstAttribute="top" secondItem="q0j-1m-PxY" secondAttribute="bottom" priority="999" constant="145" id="y4s-sr-6ri"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -264,6 +266,9 @@
                         <outlet property="glassDoorButton" destination="q0j-1m-PxY" id="A9Q-cT-aDf"/>
                         <outlet property="ironDoorButton" destination="rLM-oB-jvJ" id="oIW-ro-7gw"/>
                         <outlet property="logOutButton" destination="bAp-cc-8Q8" id="I3s-aE-uVx"/>
+                        <outlet property="quoteAuthorLabel" destination="DYx-Ag-k0Y" id="7LU-1O-DAw"/>
+                        <outlet property="quoteTextLabel" destination="OnK-rL-7dA" id="XLz-yQ-GUY"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="loginViewControllerSegue" id="FTs-lj-Y5S"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZn-RS-Whh" userLabel="First Responder" sceneMemberID="firstResponder"/>
