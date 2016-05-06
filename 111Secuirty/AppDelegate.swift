@@ -8,7 +8,7 @@
 
 import UIKit
 import IQKeyboardManager
-import ReachabilitySwift
+
 
 @UIApplicationMain
 

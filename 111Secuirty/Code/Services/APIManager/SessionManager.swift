@@ -32,16 +32,21 @@ class SessionManager {
     static func loginUser(login: String, password: String, succes : (token : String?) -> Void) {
        
         Alamofire.request(.POST, APIConstants.DoorAPI.logIn, parameters: ["email": login, "password" : password])
-            .responseJSON { response in
+        .responseJSON { response in
                 
-                if let JSON = response.result.value {
-                  
-                    let response = JSON as! NSDictionary
-                    let authToken = response["auth_token"] as? String
-                    
-                    succes(token: authToken)
-                    
-                }
+            if let JSON = response.result.value {
+              
+                let response = JSON as! NSDictionary
+                let authToken = response["auth_token"] as? String
+                
+                succes(token: authToken)
+                
+            }
+        }
+        .response { request, response, data, error in
+            if (error != nil) {
+                HUD.flash(.Label("\(error!.localizedDescription)"), delay:1.0)
+            }
         }
     }
     
@@ -77,8 +82,13 @@ class SessionManager {
     static func resetPassword(email: String) {
         
         Alamofire.request(.POST, APIConstants.DoorAPI.resetPassword, parameters: ["email": email])
-            .responseJSON { response in
-                HUD.flash(.Label(NSLocalizedString("Password reset instructions have been sent to your email", comment: "")), delay:1.0)
+        .responseJSON { response in
+            HUD.flash(.Label(NSLocalizedString("Password reset instructions have been sent to your email", comment: "")), delay:1.0)
+        }
+        .response { request, response, data, error in
+            if (error != nil) {
+                HUD.flash(.Label("\(error!.localizedDescription)"), delay:1.0)
+            }
         }
     }
     
@@ -90,18 +100,18 @@ class SessionManager {
         Alamofire.request(.POST, APIConstants.ForismaticAPI.getQuote,
             parameters: ["method": "getQuote", "format" : "json", "key" : "door", "lang" : "en"])
             
-            .responseJSON { response in
+        .responseJSON { response in
                 
-                if let JSON = response.result.value {
-                    
-                    let response = JSON as! NSDictionary
-                    quoteText = response["quoteText"] as? String
-                    quoteAuthor = response["quoteAuthor"] as? String
-                    
-                    succes(quoteText: quoteText, quoteAuthor: quoteAuthor)
-                }
+            if let JSON = response.result.value {
                 
+                let response = JSON as! NSDictionary
+                quoteText = response["quoteText"] as? String
+                quoteAuthor = response["quoteAuthor"] as? String
+                
+                succes(quoteText: quoteText, quoteAuthor: quoteAuthor)
             }
+            
+        }
     }
 }
 
