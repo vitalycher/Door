@@ -29,10 +29,10 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VHW-2N-YF3">
-                                <rect key="frame" x="165" y="5" width="155" height="52"/>
+                                <rect key="frame" x="165" y="5" width="155" height="51"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.1176470588" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="VHW-2N-YF3" secondAttribute="height" multiplier="155:52" id="UQr-1E-eUb"/>
+                                    <constraint firstAttribute="width" secondItem="VHW-2N-YF3" secondAttribute="height" multiplier="155:51" id="UQr-1E-eUb"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" name="KlartextMono-Bold" family="Klartext Mono" pointSize="22"/>
                                 <state key="normal" title="glass door">
@@ -43,7 +43,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wrE-5Z-xrM">
-                                <rect key="frame" x="20" y="66" width="280" height="51"/>
+                                <rect key="frame" x="20" y="65" width="280" height="51"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.1176470588" blue="0.1960784314" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wrE-5Z-xrM" secondAttribute="height" multiplier="280:51" id="dSf-53-mje"/>
@@ -70,8 +70,8 @@
                                     <action selector="openIronDoor:" destination="M4Y-Lb-cyx" eventType="touchUpInside" id="usK-VC-nJU"/>
                                 </connections>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Please check your internet connection and try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fix-E1-SCT">
-                                <rect key="frame" x="20" y="5" width="280" height="51"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="1000" text="Please check your internet connection and try again." textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fix-E1-SCT">
+                                <rect key="frame" x="20" y="5" width="280" height="50.5"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
                                 <color key="textColor" red="0.60784313729999995" green="0.60784313729999995" blue="0.60784313729999995" alpha="1" colorSpace="calibratedRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="calibratedRGB"/>
@@ -81,6 +81,7 @@
                             <constraint firstItem="Fix-E1-SCT" firstAttribute="top" secondItem="Ft6-oW-KC0" secondAttribute="bottom" constant="5" id="4SU-oh-2LO"/>
                             <constraint firstAttribute="trailing" secondItem="Fix-E1-SCT" secondAttribute="trailing" constant="20" id="6WH-Hd-u2U"/>
                             <constraint firstItem="wrE-5Z-xrM" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="20" id="7ih-4b-N23"/>
+                            <constraint firstItem="FKl-LY-JtV" firstAttribute="top" relation="greaterThanOrEqual" secondItem="Fix-E1-SCT" secondAttribute="bottom" constant="5" id="Eka-Ke-z7n"/>
                             <constraint firstItem="Fix-E1-SCT" firstAttribute="leading" secondItem="S3S-Oj-5AN" secondAttribute="leading" constant="20" id="Fn7-DU-Jda"/>
                             <constraint firstItem="VHW-2N-YF3" firstAttribute="leading" secondItem="Ymw-R2-8gH" secondAttribute="trailing" constant="10" id="HcE-sU-ThR"/>
                             <constraint firstAttribute="trailing" secondItem="wrE-5Z-xrM" secondAttribute="trailing" constant="20" id="JgG-TC-fHm"/>

@@ -815,7 +815,7 @@
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -825,7 +825,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
 				PRODUCT_NAME = "111 Door";
-				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
+				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -840,7 +840,7 @@
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = YES;
+				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
@@ -850,7 +850,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
 				PRODUCT_NAME = "111 Door";
-				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
+				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;

@@ -24,17 +24,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
 
     
     override func viewDidLoad() {
+        
         super.viewDidLoad()
-
+        
+        self.setupReachability()
     }
     
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        do {
-            reachability = try Reachability.reachabilityForInternetConnection()
-        } catch {
-            print("Unable to create Reachability")
-            return
+    func setupReachability() {
+        
+        if (reachability == nil) {
+            do {
+                reachability = try Reachability.reachabilityForInternetConnection()
+            } catch {
+                print("Unable to create Reachability")
+                return
+            }
         }
         
         NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
@@ -43,16 +47,6 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         } catch {
             print("could not start reachability notifier")
         }
-    }
-    
-    func widgetPerformUpdateWithCompletionHandler(completionHandler: ((NCUpdateResult) -> Void)) {
-        // Perform any setup necessary in order to update the view.
-
-        // If an error is encountered, use NCUpdateResult.Failed
-        // If there's no update required, use NCUpdateResult.NoData
-        // If there's an update, use NCUpdateResult.NewData
-
-        completionHandler(NCUpdateResult.NewData)
     }
     
     func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
@@ -82,7 +76,10 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         
         let reachability = note.object as! Reachability
         
+        print("reachabilityChanged")
+        
         if reachability.isReachable() {
+            
             if getUserToken() == nil {
                 setupViewsOfflineUnauthorized()
             } else {
@@ -90,34 +87,45 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             }
         } else {
             setupViewsOffline()
+            
         }
     }
     
     func setupViewsOffline() {
-        ironDoorButton.hidden = true
-        glassDoorButton.hidden = true
-        loginButton.hidden = true
-        descriptionLabel.hidden = false
-        descriptionLabel.text = NSLocalizedString("Please check your internet connection and try again", comment: "")
         
-        self.preferredContentSize = CGSizeMake(0, CGFloat(descriptionLabel.frame.size.height + hSpace))
+        dispatch_async(dispatch_get_main_queue()) { 
+            self.ironDoorButton.hidden = true
+            self.glassDoorButton.hidden = true
+            self.loginButton.hidden = true
+            self.descriptionLabel.hidden = false
+            self.descriptionLabel.text = NSLocalizedString("Please check your internet connection and try again", comment: "")
+            self.view.layoutSubviews()
+            self.preferredContentSize = CGSizeMake(0, CGFloat(self.descriptionLabel.frame.size.height + self.hSpace))
+        }
     }
     
     func setupViewsOnlineAuthorized() {
-        ironDoorButton.hidden = false
-        glassDoorButton.hidden = false
-        loginButton.hidden = true
-        descriptionLabel.hidden = true
-        self.preferredContentSize = CGSizeMake(0, CGFloat(ironDoorButton.frame.height + hSpace))
-
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.ironDoorButton.hidden = false
+            self.glassDoorButton.hidden = false
+            self.loginButton.hidden = true
+            self.descriptionLabel.hidden = true
+            self.view.layoutSubviews()
+            self.preferredContentSize = CGSizeMake(0, CGFloat(self.ironDoorButton.frame.height + self.hSpace))
+        }
     }
     
     func setupViewsOfflineUnauthorized() {
-        ironDoorButton.hidden = true
-        glassDoorButton.hidden = true
-        loginButton.hidden = false
-        descriptionLabel.hidden = false
-        descriptionLabel.text = NSLocalizedString("Login to your account", comment: "")
-        self.preferredContentSize = CGSizeMake(0, CGFloat(loginButton.frame.height + descriptionLabel.frame.size.height + hSpace * 2))
+        
+        dispatch_async(dispatch_get_main_queue()) {
+            self.ironDoorButton.hidden = true
+            self.glassDoorButton.hidden = true
+            self.loginButton.hidden = false
+            self.descriptionLabel.hidden = false
+            self.descriptionLabel.text = NSLocalizedString("Login to your account", comment: "")
+            self.view.layoutSubviews()
+            self.preferredContentSize = CGSizeMake(0, CGFloat(self.loginButton.frame.height + self.descriptionLabel.frame.size.height + self.hSpace * 2))
+        }
     }
 }
