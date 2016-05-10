@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import ReachabilitySwift
+import PKHUD
+
 
 class MainViewController: UIViewController {
 
@@ -44,12 +46,16 @@ class MainViewController: UIViewController {
 //MARK: - Actions
     
     @IBAction func openGlassDoor(sender: AnyObject) {
+        HUD.show(.Progress)
         SessionManager.openGlassDoor()
+        HUD.flash(.Label("Welcome!"), delay:1.0)
         getQuote()
     }
 
     @IBAction func openIronDoor(sender: AnyObject) {
+        HUD.show(.Progress)
         SessionManager.openIronDoor()
+        HUD.flash(.Label("Welcome!"), delay:1.0)
         getQuote()
     }
     
