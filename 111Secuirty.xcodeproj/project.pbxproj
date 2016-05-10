@@ -110,7 +110,7 @@
 		15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.debug.xcconfig"; sourceTree = "<group>"; };
 		32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.release.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.release.xcconfig"; sourceTree = "<group>"; };
 		46D04D57E70C068E95174B03 /* Pods-Door Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.debug.xcconfig"; sourceTree = "<group>"; };
-		74887AFF1CC592D100EC677E /* 111 Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "111 Door.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74887AFF1CC592D100EC677E /* 111_Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 111_Door.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74887B021CC592D100EC677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
 		74887B071CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74887B091CC592D100EC677E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -201,7 +201,7 @@
 		74887B001CC592D100EC677E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74887AFF1CC592D100EC677E /* 111 Door.app */,
+				74887AFF1CC592D100EC677E /* 111_Door.app */,
 				8908B46E1CD9F643005CC547 /* Door Widget.appex */,
 			);
 			name = Products;
@@ -429,7 +429,7 @@
 			);
 			name = 111Secuirty;
 			productName = 111Secuirty;
-			productReference = 74887AFF1CC592D100EC677E /* 111 Door.app */;
+			productReference = 74887AFF1CC592D100EC677E /* 111_Door.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8908B46D1CD9F643005CC547 /* Door Widget */ = {
@@ -814,7 +814,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -824,8 +824,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
-				PRODUCT_NAME = "111 Door";
-				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
+				PRODUCT_NAME = 111_Door;
+				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -839,7 +839,7 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -849,8 +849,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
-				PRODUCT_NAME = "111 Door";
-				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
+				PRODUCT_NAME = 111_Door;
+				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
@@ -861,8 +861,8 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Door Widget/Door Widget.entitlements";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
 				INFOPLIST_FILE = "Door Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
@@ -881,8 +881,8 @@
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Door Widget/Door Widget.entitlements";
-				CODE_SIGN_IDENTITY = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
 				INFOPLIST_FILE = "Door Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
