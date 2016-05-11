@@ -9,6 +9,8 @@
 import UIKit
 import Alamofire
 import ReachabilitySwift
+import PKHUD
+
 
 class MainViewController: UIViewController {
 
@@ -39,20 +41,22 @@ class MainViewController: UIViewController {
         } catch {
             print("could not start reachability notifier")
         }
-        
-        if ((reachability?.isReachable()) != nil) {
-            getQuote()
-        }
     }
     
 //MARK: - Actions
     
     @IBAction func openGlassDoor(sender: AnyObject) {
+        HUD.show(.Progress)
         SessionManager.openGlassDoor()
+        HUD.flash(.Label("Welcome!"), delay:1.0)
+        getQuote()
     }
 
     @IBAction func openIronDoor(sender: AnyObject) {
+        HUD.show(.Progress)
         SessionManager.openIronDoor()
+        HUD.flash(.Label("Welcome!"), delay:1.0)
+        getQuote()
     }
     
     @IBAction func logOut(sender: AnyObject) {
@@ -67,6 +71,7 @@ class MainViewController: UIViewController {
             if quoteAuthor != nil && quoteText != nil {
                 self.quoteTextLabel.text = quoteText
                 self.quoteAuthorLabel.text = quoteAuthor
+                self.view.layoutSubviews()
             }
         }
     }
@@ -83,17 +88,22 @@ class MainViewController: UIViewController {
     }
     
     func setupViewsOnline() {
-        ironDoorButton.enabled = true
-        glassDoorButton.enabled = true
-        ironDoorButton.layer.opacity = 1
-        glassDoorButton.layer.opacity = 1
+        dispatch_async(dispatch_get_main_queue()) {
+            self.ironDoorButton.enabled = true
+            self.glassDoorButton.enabled = true
+            self.ironDoorButton.layer.opacity = 1
+            self.glassDoorButton.layer.opacity = 1
+            self.getQuote()
+        }
     }
     
     func setupViewsOffine() {
-        quoteTextLabel.text = NSLocalizedString("Please check your internet connection and try again", comment: "")
-        ironDoorButton.enabled = false
-        glassDoorButton.enabled = false
-        ironDoorButton.layer.opacity = 0.5
-        glassDoorButton.layer.opacity = 0.5
+        dispatch_async(dispatch_get_main_queue()) {
+            self.ironDoorButton.enabled = false
+            self.glassDoorButton.enabled = false
+            self.ironDoorButton.layer.opacity = 0.5
+            self.glassDoorButton.layer.opacity = 0.5
+            self.getQuote()
+        }
     }
 }

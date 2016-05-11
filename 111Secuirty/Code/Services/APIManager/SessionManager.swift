@@ -53,15 +53,9 @@ class SessionManager {
     static func openGlassDoor() {
         
         if let authToken = getUserToken() {
-            
-            HUD.show(.Progress)
-            
+                        
             let headers = ["AUTH-TOKEN" : authToken]
             Alamofire.request(.POST, APIConstants.DoorAPI.glassDoor , headers : headers)
-                .responseJSON { response in
-                    
-                    HUD.flash(.Label("Welcome!"), delay:1.0)
-            }
         }
         
     }
@@ -72,10 +66,6 @@ class SessionManager {
             
             let headers = ["AUTH-TOKEN" : authToken]
             Alamofire.request(.POST, APIConstants.DoorAPI.ironDoor, headers : headers)
-                .responseJSON { response in
-                    
-                    HUD.flash(.Label("Welcome!"), delay:1.0)
-            }
         }
     }
     
@@ -111,6 +101,13 @@ class SessionManager {
                 succes(quoteText: quoteText, quoteAuthor: quoteAuthor)
             }
             
+        }
+        .response { request, response, data, error in
+            if (error != nil) {
+                HUD.flash(.Label("\(error!.localizedDescription)"), delay:1.0)
+                
+                succes(quoteText: NSLocalizedString("Please check your internet connection and try again", comment: ""), quoteAuthor: "")
+            }
         }
     }
 }
