@@ -125,7 +125,7 @@ class MainViewController: UIViewController {
             self.glassDoorButton.enabled = true
             self.ironDoorButton.layer.opacity = 1
             self.glassDoorButton.layer.opacity = 1
-            self.setQuote("Loading...", author: nil)
+            self.setQuote(nil, author: nil)
             self.getQuote()
         }
     }

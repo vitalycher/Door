@@ -20,7 +20,7 @@
 		8908B4701CD9F643005CC547 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8908B46F1CD9F643005CC547 /* NotificationCenter.framework */; };
 		8908B4731CD9F643005CC547 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8908B4721CD9F643005CC547 /* TodayViewController.swift */; };
 		8908B4761CD9F643005CC547 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8908B4741CD9F643005CC547 /* MainInterface.storyboard */; };
-		8908B47A1CD9F643005CC547 /* Door Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8908B46E1CD9F643005CC547 /* Door Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8908B47A1CD9F643005CC547 /* 111 Key Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8908B47F1CDA111B005CC547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74887B091CC592D100EC677E /* Assets.xcassets */; };
 		898474DF1CDA304B000952B9 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4951CD395F700F0097E /* SourceSansPro-Black.ttf */; };
 		898474E01CDA304B000952B9 /* SourceSansPro-BlackIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4961CD395F700F0097E /* SourceSansPro-BlackIt.ttf */; };
@@ -101,7 +101,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8908B47A1CD9F643005CC547 /* Door Widget.appex in Embed App Extensions */,
+				8908B47A1CD9F643005CC547 /* 111 Key Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -113,7 +113,7 @@
 		3CB95D01645E0FB6AF365BD3 /* Pods-Door Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.release.xcconfig"; sourceTree = "<group>"; };
 		4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_111Secuirty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D43854E1CE4BF8D00371DCB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		74887AFF1CC592D100EC677E /* 111_Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 111_Door.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		74887AFF1CC592D100EC677E /* 111 Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "111 Key.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		74887B021CC592D100EC677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
 		74887B071CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74887B091CC592D100EC677E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -125,7 +125,7 @@
 		7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Door_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4F90BC5CEBE0ECA1E9A6DE /* Pods-111Secuirty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.release.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.release.xcconfig"; sourceTree = "<group>"; };
 		8908B4681CD9E94D005CC547 /* String+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
-		8908B46E1CD9F643005CC547 /* Door Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Door Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "111 Key Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8908B46F1CD9F643005CC547 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		8908B4721CD9F643005CC547 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		8908B4751CD9F643005CC547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -223,8 +223,8 @@
 		74887B001CC592D100EC677E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74887AFF1CC592D100EC677E /* 111_Door.app */,
-				8908B46E1CD9F643005CC547 /* Door Widget.appex */,
+				74887AFF1CC592D100EC677E /* 111 Key.app */,
+				8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -441,7 +441,7 @@
 			);
 			name = 111Secuirty;
 			productName = 111Secuirty;
-			productReference = 74887AFF1CC592D100EC677E /* 111_Door.app */;
+			productReference = 74887AFF1CC592D100EC677E /* 111 Key.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8908B46D1CD9F643005CC547 /* Door Widget */ = {
@@ -461,7 +461,7 @@
 			);
 			name = "Door Widget";
 			productName = "Door Widget";
-			productReference = 8908B46E1CD9F643005CC547 /* Door Widget.appex */;
+			productReference = 8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -838,8 +838,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
-				PRODUCT_NAME = 111_Door;
-				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
+				PRODUCT_NAME = "111 Key";
+				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
@@ -863,8 +863,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
-				PRODUCT_NAME = 111_Door;
-				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
+				PRODUCT_NAME = "111 Key";
+				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 			};
 			name = Release;
@@ -881,7 +881,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "111 Key Widget";
 				PROVISIONING_PROFILE = "db73bd76-d5e1-49df-89f0-6d23bd07a331";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
@@ -901,7 +901,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "111 Key Widget";
 				PROVISIONING_PROFILE = "db73bd76-d5e1-49df-89f0-6d23bd07a331";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
