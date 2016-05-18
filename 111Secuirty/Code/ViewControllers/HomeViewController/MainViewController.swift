@@ -8,11 +8,14 @@
 
 import UIKit
 import Alamofire
-import ReachabilitySwift
 import PKHUD
 
 
+typealias DoorOpeningCompletion = (error: NSError?, errorString: String?) -> ()
+
+
 class MainViewController: UIViewController {
+    
 
     @IBOutlet weak var glassDoorButton: UIButton!
     @IBOutlet weak var ironDoorButton: UIButton!
@@ -20,6 +23,22 @@ class MainViewController: UIViewController {
     @IBOutlet weak var quoteTextLabel: UILabel!
     @IBOutlet weak var quoteAuthorLabel: UILabel!
     var reachability: Reachability?
+    
+    
+    let doorOpeningCompletion: DoorOpeningCompletion = {  (error, errorString) in
+        
+        var message: String
+        
+        if error?.localizedDescription != nil {
+            message = (error?.localizedDescription)!
+        } else if errorString != nil {
+            message = errorString!
+        } else {
+            message = "Welcome!"
+        }
+        
+        HUD.flash(.Label(message), delay:1.0)
+    }
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -35,7 +54,7 @@ class MainViewController: UIViewController {
             return
         }
         
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
+        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reachabilityChanged(_:)), name: ReachabilityChangedNotification,object: reachability)
         do {
             try reachability?.startNotifier()
         } catch {
@@ -47,16 +66,12 @@ class MainViewController: UIViewController {
     
     @IBAction func openGlassDoor(sender: AnyObject) {
         HUD.show(.Progress)
-        SessionManager.openGlassDoor()
-        HUD.flash(.Label("Welcome!"), delay:1.0)
-        getQuote()
+        SessionManager.openGlassDoor(doorOpeningCompletion)
     }
 
     @IBAction func openIronDoor(sender: AnyObject) {
         HUD.show(.Progress)
-        SessionManager.openIronDoor()
-        HUD.flash(.Label("Welcome!"), delay:1.0)
-        getQuote()
+        SessionManager.openIronDoor(doorOpeningCompletion)
     }
     
     @IBAction func logOut(sender: AnyObject) {
@@ -67,14 +82,31 @@ class MainViewController: UIViewController {
 //MARK: - Help functions
     
     func getQuote() {
-        SessionManager.getQuote() { (quoteText, quoteAuthor) in
+        SessionManager.getQuote() { (quoteText, quoteAuthor, quoteError) in
             if quoteAuthor != nil && quoteText != nil {
-                self.quoteTextLabel.text = quoteText
-                self.quoteAuthorLabel.text = quoteAuthor
-                self.view.layoutSubviews()
+                self.setQuote(quoteText, author: quoteAuthor)
+            }
+            
+            if quoteError != nil {
+                HUD.flash(.Label("\(quoteError!.localizedDescription)"), delay:1.0)
             }
         }
     }
+    
+    func setQuote(text: String?, author: String?) -> () {
+        
+        self.quoteTextLabel.text = text
+        if author != nil {
+            self.quoteAuthorLabel.text = "— " + author!
+        } else {
+            self.quoteAuthorLabel.text = nil
+        }
+        self.view.layoutSubviews()
+    }
+    
+    
+//MARK: - Reachability
+    
     
     func reachabilityChanged(note: NSNotification) {
         
@@ -93,6 +125,7 @@ class MainViewController: UIViewController {
             self.glassDoorButton.enabled = true
             self.ironDoorButton.layer.opacity = 1
             self.glassDoorButton.layer.opacity = 1
+            self.setQuote("Loading...", author: nil)
             self.getQuote()
         }
     }
@@ -103,7 +136,9 @@ class MainViewController: UIViewController {
             self.glassDoorButton.enabled = false
             self.ironDoorButton.layer.opacity = 0.5
             self.glassDoorButton.layer.opacity = 0.5
-            self.getQuote()
+            
+            self.setQuote(NSLocalizedString("Please check your internet connection and try again", comment: ""),
+                          author: NSLocalizedString("Offline", comment: ""))
         }
     }
 }

@@ -2,30 +2,20 @@ PODS:
   - Alamofire (3.3.1)
   - IQKeyboardManager (4.0.2)
   - PKHUD (3.1.0)
-  - ReachabilitySwift (2.3.3)
   - SwiftyJSON (2.3.2)
 
 DEPENDENCIES:
   - Alamofire
   - IQKeyboardManager
   - PKHUD
-  - ReachabilitySwift (from `https://github.com/ashleymills/Reachability.swift`)
   - SwiftyJSON
-
-EXTERNAL SOURCES:
-  ReachabilitySwift:
-    :git: https://github.com/ashleymills/Reachability.swift
-
-CHECKOUT OPTIONS:
-  ReachabilitySwift:
-    :commit: fa90df50c04f5743fbdf643cbe8d10562d75673d
-    :git: https://github.com/ashleymills/Reachability.swift
 
 SPEC CHECKSUMS:
   Alamofire: 369bc67b6f5ac33ded3648d7bd21c5bfb91c2ecc
   IQKeyboardManager: 2341089c4ae25fa2fa82ce356a259fcd267dc6b6
   PKHUD: 4167eccdb1b3a892fd80ce2b51cb6ba412a889ab
-  ReachabilitySwift: e0f6b6f280effb47731acfaaa2d5ffe223703793
   SwiftyJSON: 04ccea08915aa0109039157c7974cf0298da292a
 
-COCOAPODS: 0.39.0
+PODFILE CHECKSUM: 445375574d7af548b76a64ebfde626ffce39b6b9
+
+COCOAPODS: 1.0.0

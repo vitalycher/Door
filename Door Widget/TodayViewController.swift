@@ -9,7 +9,6 @@
 import UIKit
 import NotificationCenter
 import Alamofire
-import ReachabilitySwift
 
 
 class TodayViewController: UIViewController, NCWidgetProviding {
@@ -26,7 +25,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
+        self.setupViewsOnlineAuthorized()
         self.setupReachability()
     }
     
@@ -54,20 +53,21 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     }
     
 // MARK: - Actions
+    
     @IBAction func openIronDoor(sender: AnyObject) {
-        SessionManager.openIronDoor()
+        SessionManager.openIronDoor(nil)
     }
     
     @IBAction func openGlassDoor(sender: AnyObject) {
-        SessionManager.openGlassDoor()
+        SessionManager.openGlassDoor(nil)
     }
     
     @IBAction func loginAction(sender: AnyObject) {
         extensionContext?.openURL(NSURL(string: "door://")!, completionHandler: nil)
     }
     
-    
 //MARK: - Help functions
+    
     func getUserToken() -> String? {
         return defaults.objectForKey("kAuthToken") as? String
     }

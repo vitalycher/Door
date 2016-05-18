@@ -54,18 +54,16 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         HUD.show(.Progress)
-        
-        SessionManager.loginUser(loginTextField.text!.lowercaseString, password: passwordTextField.text!) { (token) in
-            
+
+        SessionManager.loginUser(loginTextField.text!.lowercaseString, password: passwordTextField.text!) { (token, error) in
             if token != nil {
-                
                 HUD.hide()
                 SessionManager.setUserToken(token!)
                 self.performSegueWithIdentifier("mainControllerSegue", sender: self)
-                
+            } else if (error != nil) {
+                HUD.flash(.Label("\(error!.localizedDescription)"), delay:1.0)
             } else {
-                
-                HUD.flash(.Label(NSLocalizedString("Wrong email or password", comment: "")), delay:1.0)
+                HUD.hide()
             }
         }
     }

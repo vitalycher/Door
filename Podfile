@@ -8,10 +8,9 @@ target '111Secuirty' do
     pod 'SwiftyJSON'
     pod 'PKHUD'
     pod 'IQKeyboardManager'
-    pod 'ReachabilitySwift', :git => 'https://github.com/ashleymills/Reachability.swift'
 end
 
-target 'Door Widget', :exclusive => true do
+target 'Door Widget' do
+    inherit! :search_paths
     pod 'Alamofire'
-    pod 'ReachabilitySwift', :git => 'https://github.com/ashleymills/Reachability.swift'
 end
