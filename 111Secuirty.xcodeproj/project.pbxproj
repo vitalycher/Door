@@ -113,7 +113,7 @@
 		3CB95D01645E0FB6AF365BD3 /* Pods-Door Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.release.xcconfig"; sourceTree = "<group>"; };
 		4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_111Secuirty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D43854E1CE4BF8D00371DCB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
-		74887AFF1CC592D100EC677E /* 111 Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "111 Key.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		74887AFF1CC592D100EC677E /* 111Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 111Key.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74887B021CC592D100EC677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
 		74887B071CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74887B091CC592D100EC677E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -223,7 +223,7 @@
 		74887B001CC592D100EC677E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74887AFF1CC592D100EC677E /* 111 Key.app */,
+				74887AFF1CC592D100EC677E /* 111Key.app */,
 				8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */,
 			);
 			name = Products;
@@ -425,14 +425,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74887B111CC592D100EC677E /* Build configuration list for PBXNativeTarget "111Secuirty" */;
 			buildPhases = (
-				027DA43EDB52BB772C3F6D02 /* 📦 Check Pods Manifest.lock */,
+				027DA43EDB52BB772C3F6D02 /* [CP] Check Pods Manifest.lock */,
 				74887AFB1CC592D100EC677E /* Sources */,
 				74887AFC1CC592D100EC677E /* Frameworks */,
 				74887AFD1CC592D100EC677E /* Resources */,
 				74E6A5A31CCFC0E0009C8811 /* Embed Frameworks */,
 				8908B47E1CD9F644005CC547 /* Embed App Extensions */,
-				A54CA618E304AEA2FE382DD9 /* 📦 Embed Pods Frameworks */,
-				2EFCFBFC6A534AF020DCC939 /* 📦 Copy Pods Resources */,
+				A54CA618E304AEA2FE382DD9 /* [CP] Embed Pods Frameworks */,
+				2EFCFBFC6A534AF020DCC939 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -441,19 +441,18 @@
 			);
 			name = 111Secuirty;
 			productName = 111Secuirty;
-			productReference = 74887AFF1CC592D100EC677E /* 111 Key.app */;
+			productReference = 74887AFF1CC592D100EC677E /* 111Key.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8908B46D1CD9F643005CC547 /* Door Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8908B47B1CD9F644005CC547 /* Build configuration list for PBXNativeTarget "Door Widget" */;
 			buildPhases = (
-				8D437042894D0331458F7C38 /* 📦 Check Pods Manifest.lock */,
+				8D437042894D0331458F7C38 /* [CP] Check Pods Manifest.lock */,
 				8908B46A1CD9F643005CC547 /* Sources */,
 				8908B46B1CD9F643005CC547 /* Frameworks */,
 				8908B46C1CD9F643005CC547 /* Resources */,
-				4B266164B213320A1315958B /* 📦 Embed Pods Frameworks */,
-				9FCD7E6D2C38250854EAA639 /* 📦 Copy Pods Resources */,
+				9FCD7E6D2C38250854EAA639 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -580,29 +579,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		027DA43EDB52BB772C3F6D02 /* 📦 Check Pods Manifest.lock */ = {
+		027DA43EDB52BB772C3F6D02 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		2EFCFBFC6A534AF020DCC939 /* 📦 Copy Pods Resources */ = {
+		2EFCFBFC6A534AF020DCC939 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -610,44 +609,29 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		4B266164B213320A1315958B /* 📦 Embed Pods Frameworks */ = {
+		8D437042894D0331458F7C38 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		8D437042894D0331458F7C38 /* 📦 Check Pods Manifest.lock */ = {
+		9FCD7E6D2C38250854EAA639 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9FCD7E6D2C38250854EAA639 /* 📦 Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "📦 Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -655,14 +639,14 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		A54CA618E304AEA2FE382DD9 /* 📦 Embed Pods Frameworks */ = {
+		A54CA618E304AEA2FE382DD9 /* [CP] Embed Pods Frameworks */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "📦 Embed Pods Frameworks";
+			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -779,6 +763,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -816,6 +801,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -838,10 +824,11 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
-				PRODUCT_NAME = "111 Key";
+				PRODUCT_NAME = 111Key;
 				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -863,9 +850,10 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
-				PRODUCT_NAME = "111 Key";
+				PRODUCT_NAME = 111Key;
 				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};
@@ -886,6 +874,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -905,6 +894,7 @@
 				PROVISIONING_PROFILE = "db73bd76-d5e1-49df-89f0-6d23bd07a331";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Release;
 		};

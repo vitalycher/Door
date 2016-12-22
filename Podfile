@@ -4,7 +4,7 @@ platform :ios, '8.0'
 use_frameworks!
 
 target '111Secuirty' do
-    pod 'Alamofire'
+    pod 'Alamofire', '~> 3.5'
     pod 'SwiftyJSON'
     pod 'PKHUD'
     pod 'IQKeyboardManager'
@@ -12,5 +12,5 @@ end
 
 target 'Door Widget' do
     inherit! :search_paths
-    pod 'Alamofire'
+    pod 'Alamofire', '~> 3.5'
 end

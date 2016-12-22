@@ -12,7 +12,7 @@ import Foundation
 struct APIConstants {
     
     struct DoorAPI {
-        static let baseUrl = "https://door.111min.com/api"
+        static let baseUrl = "http://door.111minutes.com/api"
 
         static let logIn            = baseUrl + "/sessions"
         static let glassDoor        = baseUrl + "/glass_door"
