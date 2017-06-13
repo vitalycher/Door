@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		5D43854F1CE4BF8D00371DCB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D43854E1CE4BF8D00371DCB /* Reachability.swift */; };
-		5D4385501CE4BF8D00371DCB /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D43854E1CE4BF8D00371DCB /* Reachability.swift */; };
-		74887B031CC592D100EC677E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B021CC592D100EC677E /* AppDelegate.swift */; };
+		5D5739161EEFE4C900704E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5739151EEFE4C900704E73 /* AppDelegate.swift */; };
 		74887B081CC592D100EC677E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74887B061CC592D100EC677E /* Main.storyboard */; };
 		74887B0A1CC592D100EC677E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74887B091CC592D100EC677E /* Assets.xcassets */; };
 		74887B0D1CC592D100EC677E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74887B0B1CC592D100EC677E /* LaunchScreen.storyboard */; };
@@ -112,15 +110,14 @@
 		13A7D5F116B5C8A5852EB976 /* Pods-111Secuirty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.debug.xcconfig"; sourceTree = "<group>"; };
 		3CB95D01645E0FB6AF365BD3 /* Pods-Door Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.release.xcconfig"; sourceTree = "<group>"; };
 		4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_111Secuirty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		5D43854E1CE4BF8D00371DCB /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
+		5D5739151EEFE4C900704E73 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		74887AFF1CC592D100EC677E /* 111Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 111Key.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		74887B021CC592D100EC677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
 		74887B071CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74887B091CC592D100EC677E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74887B0C1CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74887B0E1CC592D100EC677E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74887B161CC5997400EC677E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		74887B181CC599B100EC677E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		74887B161CC5997400EC677E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		74887B181CC599B100EC677E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MainViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		74887B1A1CC59BD400EC677E /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
 		7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Door_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7F4F90BC5CEBE0ECA1E9A6DE /* Pods-111Secuirty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.release.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.release.xcconfig"; sourceTree = "<group>"; };
@@ -154,7 +151,7 @@
 		89CFF49E1CD395F700F0097E /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		89CFF49F1CD395F700F0097E /* SourceSansPro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.ttf"; sourceTree = "<group>"; };
 		89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
-		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResetPasswordViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		D9BB408B3E06DCF5C034F9F4 /* Pods-Door Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -199,14 +196,6 @@
 				3CB95D01645E0FB6AF365BD3 /* Pods-Door Widget.release.xcconfig */,
 			);
 			name = Pods;
-			sourceTree = "<group>";
-		};
-		5D43854D1CE4BF8D00371DCB /* Reachability */ = {
-			isa = PBXGroup;
-			children = (
-				5D43854E1CE4BF8D00371DCB /* Reachability.swift */,
-			);
-			path = Reachability;
 			sourceTree = "<group>";
 		};
 		74887AF61CC592D100EC677E = {
@@ -347,7 +336,6 @@
 		89CFF4B11CD3A72A00F0097E /* Services */ = {
 			isa = PBXGroup;
 			children = (
-				5D43854D1CE4BF8D00371DCB /* Reachability */,
 				89CFF4B21CD3A73700F0097E /* APIManager */,
 			);
 			path = Services;
@@ -380,7 +368,7 @@
 		89CFF4B51CD3A85000F0097E /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				74887B021CC592D100EC677E /* AppDelegate.swift */,
+				5D5739151EEFE4C900704E73 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -476,6 +464,7 @@
 					74887AFE1CC592D100EC677E = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = Y6ZXAWRWJ9;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -485,6 +474,7 @@
 					8908B46D1CD9F643005CC547 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = Y6ZXAWRWJ9;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -591,7 +581,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		2EFCFBFC6A534AF020DCC939 /* [CP] Copy Pods Resources */ = {
@@ -621,7 +611,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		9FCD7E6D2C38250854EAA639 /* [CP] Copy Pods Resources */ = {
@@ -661,13 +651,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5739161EEFE4C900704E73 /* AppDelegate.swift in Sources */,
 				74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */,
 				74887B191CC599B100EC677E /* MainViewController.swift in Sources */,
 				89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */,
 				89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */,
 				74887B171CC5997400EC677E /* LoginViewController.swift in Sources */,
-				74887B031CC592D100EC677E /* AppDelegate.swift in Sources */,
-				5D43854F1CE4BF8D00371DCB /* Reachability.swift in Sources */,
 				8908B4691CD9E94D005CC547 /* String+Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -678,7 +667,6 @@
 			files = (
 				89CB458F1CDB2FC50085018B /* APIConstants.swift in Sources */,
 				8908B4731CD9F643005CC547 /* TodayViewController.swift in Sources */,
-				5D4385501CE4BF8D00371DCB /* Reachability.swift in Sources */,
 				89CB45901CDB2FEC0085018B /* SessionManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -815,6 +803,7 @@
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -825,10 +814,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
 				PRODUCT_NAME = 111Key;
-				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
+				PROVISIONING_PROFILE = "7764ef14-f552-41b6-8754-47f0a85fc0ce";
+				PROVISIONING_PROFILE_SPECIFIER = "The Door Enterprise";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -841,6 +831,7 @@
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -851,9 +842,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
 				PRODUCT_NAME = 111Key;
-				PROVISIONING_PROFILE = "c01c997e-232e-47d8-8000-5ad4982083bb";
+				PROVISIONING_PROFILE = "7764ef14-f552-41b6-8754-47f0a85fc0ce";
+				PROVISIONING_PROFILE_SPECIFIER = "The Door Enterprise";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
@@ -874,7 +866,7 @@
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -894,7 +886,7 @@
 				PROVISIONING_PROFILE = "db73bd76-d5e1-49df-89f0-6d23bd07a331";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 2.3;
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

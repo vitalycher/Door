@@ -21,6 +21,6 @@ struct APIConstants {
     }
     
     struct ForismaticAPI {
-        static let getQuote         = "http://api.forismatic.com/api/1.0/"
+        static let getQuote         = "http://api.forismatic.com/api/1.0/?method=getQuote&format=json&key=door&lang=en"
     }
 }

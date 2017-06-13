@@ -12,92 +12,96 @@ import NotificationCenter
 
 class SessionManager {
     
-    static var defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.111minutes.thedoor")!
-
-    static func getUserToken() -> String? {
-        return defaults.objectForKey("kAuthToken") as? String
+    enum Door {
+        case glass
+        case iron
     }
     
-    static func setUserToken(token : String) {
-        defaults.setObject(token, forKey: "kAuthToken")
-        defaults.synchronize()
+    static var defaults: UserDefaults = UserDefaults(suiteName: "group.com.111minutes.thedoor")!
+
+    static func getUserToken() -> String? {
+        return defaults.object(forKey: "kAuthToken") as? String
+    }
+    
+    static func setUserToken(_ token : String) {
+        defaults.set(token, forKey: "kAuthToken")
     }
     
     static func logoutUser() {
-        defaults.setObject(nil, forKey: "kAuthToken")
-        defaults.synchronize()
+        defaults.set(nil, forKey: "kAuthToken")
     }
     
-    static func loginUser(login: String, password: String, completion: (token: String?, error: NSError?) -> Void) {
-       
-        Alamofire.request(.POST, APIConstants.DoorAPI.logIn, parameters: ["email": login, "password" : password])
-        .responseJSON { response in
+    static func loginUser(_ login: String, password: String, completion: @escaping (_ token: String?, _ errorMessage: String?) -> Void) {
+        
+        Alamofire.request(APIConstants.DoorAPI.logIn, method: .post, parameters: ["email": login, "password" : password], encoding: JSONEncoding.default).responseJSON { response in
+
+            if let jsonDictionary = response.result.value as? Dictionary<String, AnyObject> {
                 
-            if let JSON = response.result.value {
-              
-                let response = JSON as! NSDictionary
-                let authToken = response["auth_token"] as? String
+                completion(jsonDictionary["auth_token"] as? String,
+                           jsonDictionary["errors"] as? String)
                 
-                completion(token: authToken, error: nil)
+            } else if let error = response.error {
+                completion(nil, error.localizedDescription)
+            } else {
+                completion(nil, "Unknown error")
             }
         }
-        .response { request, response, data, error in
-            completion(token: nil, error: error)
-        }
     }
     
-    static func resetPassword(email: String, completion: (error: NSError?) -> Void) {
+    static func resetPassword(_ email: String, completion: @escaping (_ errorMessage: String?) -> Void) {
         
-        Alamofire.request(.POST, APIConstants.DoorAPI.resetPassword, parameters: ["email": email])
-        .response { request, response, data, error in
-            completion(error: error)
+        Alamofire.request(APIConstants.DoorAPI.resetPassword, method: .post, parameters: ["email": email], encoding: JSONEncoding.default).responseJSON { response in
+            
+            if let error = response.error {
+                completion(error.localizedDescription)
+            } else {
+                completion(nil)
+            }
         }
-    }    
+    }
         
-    static func openGlassDoor(completion: ((error: NSError?, errorString: String?) -> ())?) {
+    static func openGlassDoor(_ completion: @escaping (_ errorMessage: String?) -> ()) {
         
-        self.openDoorWithMethod(APIConstants.DoorAPI.glassDoor, completion: completion)
+        self.openDoor(madeOf: .glass, completion: completion)
     }
     
-    static func openIronDoor(completion: ((error: NSError?, errorString: String?) -> ())?) {
+    static func openIronDoor(_ completion: @escaping (_ errorMessage: String?) -> ()) {
         
-        self.openDoorWithMethod(APIConstants.DoorAPI.ironDoor, completion: completion)
+        self.openDoor(madeOf: .iron, completion: completion)
     }
 
-    static func openDoorWithMethod(method: URLStringConvertible, completion: ((error: NSError?, errorString: String?) -> ())?) {
-        if let authToken = getUserToken() {
+    static func openDoor(madeOf: Door, completion: @escaping (_ errorMessage: String?) -> ()) {
+        
+        guard let authToken = getUserToken() else {
+            completion("Unauthorized")
+            return
+        }
+        
+        let path = madeOf == .glass ? APIConstants.DoorAPI.glassDoor : APIConstants.DoorAPI.ironDoor
+        
+        Alamofire.request(path, method: .post, encoding: JSONEncoding.default, headers: ["AUTH-TOKEN": authToken]).responseJSON { response in
             
-            let headers = ["AUTH-TOKEN" : authToken]
-            Alamofire.request(.POST, method, headers : headers)
-                .response { request, response, data, error in
-                    completion?(error: error, errorString: nil)
+            if response.response?.statusCode == 200 {
+                completion(nil)
+            } else if let jsonDictionary = response.result.value as? Dictionary<String, AnyObject>,
+                let errorMessage = jsonDictionary["errors"] as? String {
+                completion(errorMessage)
+            } else if let error = response.error {
+                completion(error.localizedDescription)
             }
-        } else {
-            completion?(error: nil, errorString: NSLocalizedString("Something wrong. Please log out and log in again", comment: ""))
         }
     }
 
-    static func getQuote(completion: (quoteText: String?, quoteAuthor: String?, quoteError: NSError?) -> Void)  {
+    static func getQuote(_ completion: @escaping (_ quoteText: String?, _ quoteAuthor: String?) -> Void)  {
         
-        Alamofire.request(.POST, APIConstants.ForismaticAPI.getQuote,
-            parameters: ["method": "getQuote", "format" : "json", "key" : "door", "lang" : "en"])
+        Alamofire.request(APIConstants.ForismaticAPI.getQuote, encoding: JSONEncoding.default).responseJSON { response in
             
-        .responseJSON { response in
-                
-            if let JSON = response.result.value {
-                
-                let response = JSON as! NSDictionary
-                
-                completion(quoteText: response["quoteText"] as? String,
-                         quoteAuthor: response["quoteAuthor"] as? String,
-                          quoteError: nil)
+            if let jsonDictionary = response.result.value as? Dictionary<String, AnyObject> {
+                completion(jsonDictionary["quoteText"] as? String,
+                           jsonDictionary["quoteAuthor"] as? String)
+            } else {
+                completion(nil, nil)
             }
-        }
-            
-        .response { request, response, data, error in
-            completion(quoteText: nil,
-                     quoteAuthor: nil,
-                      quoteError: error)
         }
     }
 }
