@@ -9,123 +9,120 @@
 import UIKit
 import NotificationCenter
 import Alamofire
-import ReachabilitySwift
 
 
 class TodayViewController: UIViewController, NCWidgetProviding {
 
-    var defaults: NSUserDefaults = NSUserDefaults(suiteName: "group.com.111minutes.thedoor")!
+    var defaults: UserDefaults = UserDefaults(suiteName: "group.com.111minutes.thedoor")!
     @IBOutlet weak var loginButton: UIButton!
     @IBOutlet weak var ironDoorButton: UIButton!
     @IBOutlet weak var glassDoorButton: UIButton!
     @IBOutlet weak var descriptionLabel: UILabel!
     let hSpace : CGFloat = 10
-    var reachability: Reachability?
-
     
     override func viewDidLoad() {
         
         super.viewDidLoad()
-        
-        self.setupReachability()
+        let os = ProcessInfo().operatingSystemVersion
+        if os.majorVersion < 10 {
+            descriptionLabel.textColor = UIColor.white
+        } else {
+            descriptionLabel.textColor = UIColor(colorLiteralRed: 180.0/255.0,
+                                                 green: 30.0/255.0,
+                                                 blue: 50.0/255.0,
+                                                 alpha: 1)
+        }
+        self.preferredContentSize = CGSize.zero
     }
     
-    func setupReachability() {
-        
-        if (reachability == nil) {
-            do {
-                reachability = try Reachability.reachabilityForInternetConnection()
-            } catch {
-                print("Unable to create Reachability")
-                return
-            }
-        }
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(TodayViewController.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
-        do {
-            try reachability?.startNotifier()
-        } catch {
-            print("could not start reachability notifier")
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        setupViews()
     }
     
-    func widgetMarginInsetsForProposedMarginInsets(defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
-        return UIEdgeInsetsZero
+    func widgetMarginInsets(forProposedMarginInsets defaultMarginInsets: UIEdgeInsets) -> UIEdgeInsets {
+        return UIEdgeInsets.zero
     }
     
 // MARK: - Actions
-    @IBAction func openIronDoor(sender: AnyObject) {
-        SessionManager.openIronDoor()
+    
+    @IBAction func openIronDoor(_ sender: AnyObject) {
+        SessionManager.openIronDoor { (completionMessage) in
+            self.show(completionMessage, {
+                self.setupViews()
+            })
+        }
     }
     
-    @IBAction func openGlassDoor(sender: AnyObject) {
-        SessionManager.openGlassDoor()
+    @IBAction func openGlassDoor(_ sender: AnyObject) {
+        SessionManager.openGlassDoor { (completionMessage) in
+            self.show(completionMessage, {
+                self.setupViews()
+            })
+        }
     }
     
-    @IBAction func loginAction(sender: AnyObject) {
-        extensionContext?.openURL(NSURL(string: "door://")!, completionHandler: nil)
+    @IBAction func loginAction(_ sender: AnyObject) {
+        extensionContext?.open(URL(string: "door://")!, completionHandler: nil)
     }
-    
     
 //MARK: - Help functions
-    func getUserToken() -> String? {
-        return defaults.objectForKey("kAuthToken") as? String
-    }
-    
-    func reachabilityChanged(note: NSNotification) {
+    private func show(_ message: String?, _ completion: @escaping () -> ()) {
+        guard let message = message, message != "" else {
+            return
+        }
         
-        let reachability = note.object as! Reachability
-        
-        print("reachabilityChanged")
-        
-        if reachability.isReachable() {
-            
-            if getUserToken() == nil {
-                setupViewsOfflineUnauthorized()
-            } else {
-                setupViewsOnlineAuthorized()
+        descriptionLabel.text = message
+
+        UIView.animate(withDuration: 0.3, animations: {
+            self.ironDoorButton.alpha = 0
+            self.glassDoorButton.alpha = 0
+            self.descriptionLabel.alpha = 1
+        }) { (done) in
+            DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                UIView.animate(withDuration: 0.3, animations: { 
+                    self.ironDoorButton.alpha = 1
+                    self.glassDoorButton.alpha = 1
+                    self.descriptionLabel.alpha = 0
+                })
             }
-        } else {
-            setupViewsOffline()
-            
         }
     }
+
+    private func getUserToken() -> String? {
+        return defaults.object(forKey: "kAuthToken") as? String
+    }
     
-    func setupViewsOffline() {
+    private func isLoggedIn() -> Bool {
+        return getUserToken() != nil
+    }
+    
+    private func setupViews() {
+        isLoggedIn() ? setupViewsAuthorized() : setupViewsUnauthorized()
+    }
+    
+    func setupViewsAuthorized() {
         
-        dispatch_async(dispatch_get_main_queue()) { 
-            self.ironDoorButton.hidden = true
-            self.glassDoorButton.hidden = true
-            self.loginButton.hidden = true
-            self.descriptionLabel.hidden = false
-            self.descriptionLabel.text = NSLocalizedString("Please check your internet connection and try again", comment: "")
+        DispatchQueue.main.async {
+            self.ironDoorButton.alpha = 1
+            self.glassDoorButton.alpha = 1
+            self.loginButton.alpha = 0
+            self.descriptionLabel.alpha = 0
             self.view.layoutSubviews()
-            self.preferredContentSize = CGSizeMake(0, CGFloat(self.descriptionLabel.frame.size.height + self.hSpace))
+            self.preferredContentSize = CGSize(width: 0, height: CGFloat(self.ironDoorButton.frame.height))
         }
     }
     
-    func setupViewsOnlineAuthorized() {
+    func setupViewsUnauthorized() {
         
-        dispatch_async(dispatch_get_main_queue()) {
-            self.ironDoorButton.hidden = false
-            self.glassDoorButton.hidden = false
-            self.loginButton.hidden = true
-            self.descriptionLabel.hidden = true
-            self.view.layoutSubviews()
-            self.preferredContentSize = CGSizeMake(0, CGFloat(self.ironDoorButton.frame.height + self.hSpace))
-        }
-    }
-    
-    func setupViewsOfflineUnauthorized() {
-        
-        dispatch_async(dispatch_get_main_queue()) {
-            self.ironDoorButton.hidden = true
-            self.glassDoorButton.hidden = true
-            self.loginButton.hidden = false
-            self.descriptionLabel.hidden = false
+        DispatchQueue.main.async {
+            self.ironDoorButton.alpha = 0
+            self.glassDoorButton.alpha = 0
+            self.loginButton.alpha = 1
+            self.descriptionLabel.alpha = 1
             self.descriptionLabel.text = NSLocalizedString("Login to your account", comment: "")
             self.view.layoutSubviews()
-            self.preferredContentSize = CGSizeMake(0, CGFloat(self.loginButton.frame.height + self.descriptionLabel.frame.size.height + self.hSpace * 2))
+            self.preferredContentSize = CGSize(width: 0, height: CGFloat(self.descriptionLabel.frame.size.height + self.hSpace))
         }
     }
 }

@@ -7,9 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		10217BC58AC43F2BCCA6C367 /* Pods_Door_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = BF675046DB6E085F004161E4 /* Pods_Door_Widget.framework */; };
-		3C17C4C5026C30EAA0B7DFF9 /* Pods_111Secuirty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A0F68D6CE0C33E0C1F511CEE /* Pods_111Secuirty.framework */; };
-		74887B031CC592D100EC677E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B021CC592D100EC677E /* AppDelegate.swift */; };
+		5D5739161EEFE4C900704E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5739151EEFE4C900704E73 /* AppDelegate.swift */; };
 		74887B081CC592D100EC677E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74887B061CC592D100EC677E /* Main.storyboard */; };
 		74887B0A1CC592D100EC677E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74887B091CC592D100EC677E /* Assets.xcassets */; };
 		74887B0D1CC592D100EC677E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74887B0B1CC592D100EC677E /* LaunchScreen.storyboard */; };
@@ -20,7 +18,7 @@
 		8908B4701CD9F643005CC547 /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8908B46F1CD9F643005CC547 /* NotificationCenter.framework */; };
 		8908B4731CD9F643005CC547 /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8908B4721CD9F643005CC547 /* TodayViewController.swift */; };
 		8908B4761CD9F643005CC547 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 8908B4741CD9F643005CC547 /* MainInterface.storyboard */; };
-		8908B47A1CD9F643005CC547 /* Door Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8908B46E1CD9F643005CC547 /* Door Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		8908B47A1CD9F643005CC547 /* 111 Key Widget.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		8908B47F1CDA111B005CC547 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74887B091CC592D100EC677E /* Assets.xcassets */; };
 		898474DF1CDA304B000952B9 /* SourceSansPro-Black.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4951CD395F700F0097E /* SourceSansPro-Black.ttf */; };
 		898474E01CDA304B000952B9 /* SourceSansPro-BlackIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4961CD395F700F0097E /* SourceSansPro-BlackIt.ttf */; };
@@ -70,6 +68,8 @@
 		89CFF4AC1CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */; };
 		89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */; };
 		89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
+		A5A8ED0BE510AD1A7FC28A74 /* Pods_111Secuirty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */; };
+		BD5866599EAD895CA65749E1 /* Pods_Door_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -99,7 +99,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				8908B47A1CD9F643005CC547 /* Door Widget.appex in Embed App Extensions */,
+				8908B47A1CD9F643005CC547 /* 111 Key Widget.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -107,20 +107,22 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.debug.xcconfig"; sourceTree = "<group>"; };
-		32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.release.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.release.xcconfig"; sourceTree = "<group>"; };
-		46D04D57E70C068E95174B03 /* Pods-Door Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.debug.xcconfig"; sourceTree = "<group>"; };
-		74887AFF1CC592D100EC677E /* 111_Door.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 111_Door.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		74887B021CC592D100EC677E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = AppDelegate.swift; path = ../../AppDelegate.swift; sourceTree = "<group>"; };
+		13A7D5F116B5C8A5852EB976 /* Pods-111Secuirty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.debug.xcconfig"; sourceTree = "<group>"; };
+		3CB95D01645E0FB6AF365BD3 /* Pods-Door Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.release.xcconfig"; sourceTree = "<group>"; };
+		4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_111Secuirty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5D5739151EEFE4C900704E73 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		74887AFF1CC592D100EC677E /* 111Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 111Key.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74887B071CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		74887B091CC592D100EC677E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		74887B0C1CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		74887B0E1CC592D100EC677E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		74887B161CC5997400EC677E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
-		74887B181CC599B100EC677E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
+		74887B161CC5997400EC677E /* LoginViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = LoginViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
+		74887B181CC599B100EC677E /* MainViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = MainViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		74887B1A1CC59BD400EC677E /* SessionManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SessionManager.swift; sourceTree = "<group>"; };
+		7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Door_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		7F4F90BC5CEBE0ECA1E9A6DE /* Pods-111Secuirty.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.release.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.release.xcconfig"; sourceTree = "<group>"; };
 		8908B4681CD9E94D005CC547 /* String+Validation.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Validation.swift"; sourceTree = "<group>"; };
-		8908B46E1CD9F643005CC547 /* Door Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "Door Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "111 Key Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		8908B46F1CD9F643005CC547 /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
 		8908B4721CD9F643005CC547 /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
 		8908B4751CD9F643005CC547 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
@@ -149,11 +151,9 @@
 		89CFF49E1CD395F700F0097E /* SourceSansPro-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Regular.ttf"; sourceTree = "<group>"; };
 		89CFF49F1CD395F700F0097E /* SourceSansPro-Semibold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-Semibold.ttf"; sourceTree = "<group>"; };
 		89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
-		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResetPasswordViewController.swift; sourceTree = "<group>"; };
+		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResetPasswordViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
-		A0F68D6CE0C33E0C1F511CEE /* Pods_111Secuirty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_111Secuirty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		BF675046DB6E085F004161E4 /* Pods_Door_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Door_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		CF016307CA48E7F669ED9C09 /* Pods-Door Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.release.xcconfig"; sourceTree = "<group>"; };
+		D9BB408B3E06DCF5C034F9F4 /* Pods-Door Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -161,7 +161,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C17C4C5026C30EAA0B7DFF9 /* Pods_111Secuirty.framework in Frameworks */,
+				A5A8ED0BE510AD1A7FC28A74 /* Pods_111Secuirty.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -170,7 +170,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				8908B4701CD9F643005CC547 /* NotificationCenter.framework in Frameworks */,
-				10217BC58AC43F2BCCA6C367 /* Pods_Door_Widget.framework in Frameworks */,
+				BD5866599EAD895CA65749E1 /* Pods_Door_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -181,10 +181,21 @@
 			isa = PBXGroup;
 			children = (
 				8908B46F1CD9F643005CC547 /* NotificationCenter.framework */,
-				A0F68D6CE0C33E0C1F511CEE /* Pods_111Secuirty.framework */,
-				BF675046DB6E085F004161E4 /* Pods_Door_Widget.framework */,
+				4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */,
+				7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		2EFC8E1ABD75A165E1746538 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				13A7D5F116B5C8A5852EB976 /* Pods-111Secuirty.debug.xcconfig */,
+				7F4F90BC5CEBE0ECA1E9A6DE /* Pods-111Secuirty.release.xcconfig */,
+				D9BB408B3E06DCF5C034F9F4 /* Pods-Door Widget.debug.xcconfig */,
+				3CB95D01645E0FB6AF365BD3 /* Pods-Door Widget.release.xcconfig */,
+			);
+			name = Pods;
 			sourceTree = "<group>";
 		};
 		74887AF61CC592D100EC677E = {
@@ -193,16 +204,16 @@
 				74887B011CC592D100EC677E /* 111Secuirty */,
 				8908B4711CD9F643005CC547 /* Door Widget */,
 				74887B001CC592D100EC677E /* Products */,
-				968457A7444F096C482CFA73 /* Pods */,
 				12FDC339921C0EE3975054CC /* Frameworks */,
+				2EFC8E1ABD75A165E1746538 /* Pods */,
 			);
 			sourceTree = "<group>";
 		};
 		74887B001CC592D100EC677E /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				74887AFF1CC592D100EC677E /* 111_Door.app */,
-				8908B46E1CD9F643005CC547 /* Door Widget.appex */,
+				74887AFF1CC592D100EC677E /* 111Key.app */,
+				8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -357,7 +368,7 @@
 		89CFF4B51CD3A85000F0097E /* AppDelegate */ = {
 			isa = PBXGroup;
 			children = (
-				74887B021CC592D100EC677E /* AppDelegate.swift */,
+				5D5739151EEFE4C900704E73 /* AppDelegate.swift */,
 			);
 			path = AppDelegate;
 			sourceTree = "<group>";
@@ -395,17 +406,6 @@
 			path = APIConstants;
 			sourceTree = "<group>";
 		};
-		968457A7444F096C482CFA73 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */,
-				32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */,
-				46D04D57E70C068E95174B03 /* Pods-Door Widget.debug.xcconfig */,
-				CF016307CA48E7F669ED9C09 /* Pods-Door Widget.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -413,14 +413,14 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 74887B111CC592D100EC677E /* Build configuration list for PBXNativeTarget "111Secuirty" */;
 			buildPhases = (
-				FED50489DF8629A214724AB1 /* Check Pods Manifest.lock */,
+				027DA43EDB52BB772C3F6D02 /* [CP] Check Pods Manifest.lock */,
 				74887AFB1CC592D100EC677E /* Sources */,
 				74887AFC1CC592D100EC677E /* Frameworks */,
 				74887AFD1CC592D100EC677E /* Resources */,
 				74E6A5A31CCFC0E0009C8811 /* Embed Frameworks */,
-				22A47169707F8B7F126EAFB4 /* Embed Pods Frameworks */,
-				9BDBD319864FC1DA664D01BB /* Copy Pods Resources */,
 				8908B47E1CD9F644005CC547 /* Embed App Extensions */,
+				A54CA618E304AEA2FE382DD9 /* [CP] Embed Pods Frameworks */,
+				2EFCFBFC6A534AF020DCC939 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -429,19 +429,18 @@
 			);
 			name = 111Secuirty;
 			productName = 111Secuirty;
-			productReference = 74887AFF1CC592D100EC677E /* 111_Door.app */;
+			productReference = 74887AFF1CC592D100EC677E /* 111Key.app */;
 			productType = "com.apple.product-type.application";
 		};
 		8908B46D1CD9F643005CC547 /* Door Widget */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = 8908B47B1CD9F644005CC547 /* Build configuration list for PBXNativeTarget "Door Widget" */;
 			buildPhases = (
-				99D373CB0D320DEF57814E9A /* Check Pods Manifest.lock */,
+				8D437042894D0331458F7C38 /* [CP] Check Pods Manifest.lock */,
 				8908B46A1CD9F643005CC547 /* Sources */,
 				8908B46B1CD9F643005CC547 /* Frameworks */,
 				8908B46C1CD9F643005CC547 /* Resources */,
-				8AA4DBD8E5B0F3D37F2FE7D3 /* Embed Pods Frameworks */,
-				4673E6FEC82DB888FE03E39C /* Copy Pods Resources */,
+				9FCD7E6D2C38250854EAA639 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -449,7 +448,7 @@
 			);
 			name = "Door Widget";
 			productName = "Door Widget";
-			productReference = 8908B46E1CD9F643005CC547 /* Door Widget.appex */;
+			productReference = 8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
 /* End PBXNativeTarget section */
@@ -465,6 +464,7 @@
 					74887AFE1CC592D100EC677E = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = Y6ZXAWRWJ9;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -474,6 +474,7 @@
 					8908B46D1CD9F643005CC547 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = Y6ZXAWRWJ9;
+						LastSwiftMigration = 0830;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -568,74 +569,29 @@
 /* End PBXResourcesBuildPhase section */
 
 /* Begin PBXShellScriptBuildPhase section */
-		22A47169707F8B7F126EAFB4 /* Embed Pods Frameworks */ = {
+		027DA43EDB52BB772C3F6D02 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Embed Pods Frameworks";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty-frameworks.sh\"\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
-		4673E6FEC82DB888FE03E39C /* Copy Pods Resources */ = {
+		2EFCFBFC6A534AF020DCC939 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		8AA4DBD8E5B0F3D37F2FE7D3 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		99D373CB0D320DEF57814E9A /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		9BDBD319864FC1DA664D01BB /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
+			name = "[CP] Copy Pods Resources";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -643,19 +599,49 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		FED50489DF8629A214724AB1 /* Check Pods Manifest.lock */ = {
+		8D437042894D0331458F7C38 /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
 			);
 			inputPaths = (
 			);
-			name = "Check Pods Manifest.lock";
+			name = "[CP] Check Pods Manifest.lock";
 			outputPaths = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+		9FCD7E6D2C38250854EAA639 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A54CA618E304AEA2FE382DD9 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -665,12 +651,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5D5739161EEFE4C900704E73 /* AppDelegate.swift in Sources */,
 				74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */,
 				74887B191CC599B100EC677E /* MainViewController.swift in Sources */,
 				89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */,
 				89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */,
 				74887B171CC5997400EC677E /* LoginViewController.swift in Sources */,
-				74887B031CC592D100EC677E /* AppDelegate.swift in Sources */,
 				8908B4691CD9E94D005CC547 /* String+Validation.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -765,6 +751,7 @@
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 2.3;
 			};
 			name = Debug;
 		};
@@ -802,19 +789,21 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
 		};
 		74887B121CC592D100EC677E /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 15E1F49B6315AC6CAAA9A6B2 /* Pods-111Secuirty.debug.xcconfig */;
+			baseConfigurationReference = 13A7D5F116B5C8A5852EB976 /* Pods-111Secuirty.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -824,22 +813,25 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
-				PRODUCT_NAME = 111_Door;
-				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
+				PRODUCT_NAME = 111Key;
+				PROVISIONING_PROFILE = "7764ef14-f552-41b6-8754-47f0a85fc0ce";
+				PROVISIONING_PROFILE_SPECIFIER = "The Door Enterprise";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		74887B131CC592D100EC677E /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32377478B6FFA6CC19EECAEE /* Pods-111Secuirty.release.xcconfig */;
+			baseConfigurationReference = 7F4F90BC5CEBE0ECA1E9A6DE /* Pods-111Secuirty.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
 				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -849,48 +841,56 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
-				PRODUCT_NAME = 111_Door;
-				PROVISIONING_PROFILE = "61a69b06-a42e-4de7-9925-caa08ef00964";
+				PRODUCT_NAME = 111Key;
+				PROVISIONING_PROFILE = "7764ef14-f552-41b6-8754-47f0a85fc0ce";
+				PROVISIONING_PROFILE_SPECIFIER = "The Door Enterprise";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
 		8908B47C1CD9F644005CC547 /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 46D04D57E70C068E95174B03 /* Pods-Door Widget.debug.xcconfig */;
+			baseConfigurationReference = D9BB408B3E06DCF5C034F9F4 /* Pods-Door Widget.debug.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Door Widget/Door Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
 				INFOPLIST_FILE = "Door Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "db73bd76-d5e1-49df-89f0-6d23bd07a331";
+				PRODUCT_NAME = "111 Key Widget";
+				PROVISIONING_PROFILE = "897db6f0-f43e-48b3-86f5-30f96375fd6b";
+				PROVISIONING_PROFILE_SPECIFIER = "111 Door Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
 		8908B47D1CD9F644005CC547 /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = CF016307CA48E7F669ED9C09 /* Pods-Door Widget.release.xcconfig */;
+			baseConfigurationReference = 3CB95D01645E0FB6AF365BD3 /* Pods-Door Widget.release.xcconfig */;
 			buildSettings = {
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Door Widget/Door Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
 				INFOPLIST_FILE = "Door Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				PROVISIONING_PROFILE = "db73bd76-d5e1-49df-89f0-6d23bd07a331";
+				PRODUCT_NAME = "111 Key Widget";
+				PROVISIONING_PROFILE = "897db6f0-f43e-48b3-86f5-30f96375fd6b";
+				PROVISIONING_PROFILE_SPECIFIER = "111 Door Widget";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};

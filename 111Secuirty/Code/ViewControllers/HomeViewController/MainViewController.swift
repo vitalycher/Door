@@ -8,102 +8,64 @@
 
 import UIKit
 import Alamofire
-import ReachabilitySwift
 import PKHUD
 
-
 class MainViewController: UIViewController {
-
+    
     @IBOutlet weak var glassDoorButton: UIButton!
     @IBOutlet weak var ironDoorButton: UIButton!
     @IBOutlet weak var logOutButton: UIButton!
     @IBOutlet weak var quoteTextLabel: UILabel!
     @IBOutlet weak var quoteAuthorLabel: UILabel!
-    var reachability: Reachability?
 
-    override func viewDidLoad() {
-        super.viewDidLoad()
-    }
-
-    override func viewWillAppear(animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        do {
-            reachability = try Reachability.reachabilityForInternetConnection()
-        } catch {
-            print("Unable to create Reachability")
-            return
-        }
-        
-        NSNotificationCenter.defaultCenter().addObserver(self, selector: #selector(self.reachabilityChanged(_:)),name: ReachabilityChangedNotification,object: reachability)
-        do {
-            try reachability?.startNotifier()
-        } catch {
-            print("could not start reachability notifier")
-        }
-    }
-    
 //MARK: - Actions
     
-    @IBAction func openGlassDoor(sender: AnyObject) {
-        HUD.show(.Progress)
-        SessionManager.openGlassDoor()
-        HUD.flash(.Label("Welcome!"), delay:1.0)
-        getQuote()
-    }
-
-    @IBAction func openIronDoor(sender: AnyObject) {
-        HUD.show(.Progress)
-        SessionManager.openIronDoor()
-        HUD.flash(.Label("Welcome!"), delay:1.0)
+    override func viewDidLoad() {
+        super.viewDidLoad()
         getQuote()
     }
     
-    @IBAction func logOut(sender: AnyObject) {
+    @IBAction func openGlassDoor(_ sender: AnyObject) {
+        HUD.show(.progress)
+        SessionManager.openGlassDoor { (completionMessage) in
+            let message = completionMessage == nil ? "Welcome!" : completionMessage
+            
+            HUD.flash(.label(message), delay: 2.0)
+        }
+    }
+
+    @IBAction func openIronDoor(_ sender: AnyObject) {
+        HUD.show(.progress)
+        SessionManager.openIronDoor { (completionMessage) in
+            let message = completionMessage == nil ? "Welcome!" : completionMessage
+            
+            HUD.flash(.label(message), delay: 2.0)
+        }
+    }
+    
+    @IBAction func logOut(_ sender: AnyObject) {
         SessionManager.logoutUser()
-        self.performSegueWithIdentifier("loginViewControllerSegue", sender: self)
+        self.performSegue(withIdentifier: "loginViewControllerSegue", sender: self)
     }
     
 //MARK: - Help functions
     
     func getQuote() {
         SessionManager.getQuote() { (quoteText, quoteAuthor) in
-            if quoteAuthor != nil && quoteText != nil {
-                self.quoteTextLabel.text = quoteText
-                self.quoteAuthorLabel.text = quoteAuthor
-                self.view.layoutSubviews()
-            }
+            self.setQuote(quoteText, author: quoteAuthor)
         }
     }
     
-    func reachabilityChanged(note: NSNotification) {
-        
-        let reachability = note.object as! Reachability
-        
-        if reachability.isReachable() {
-            setupViewsOnline()
+    func setQuote(_ text: String?, author: String?) -> () {
+        if let text = text {
+            quoteTextLabel.textAlignment = .left
+            quoteTextLabel.text = text
+            quoteAuthorLabel.text = (author == nil || author == "") ? nil : "— " + author!
         } else {
-            setupViewsOffine()
+            quoteTextLabel.textAlignment = .center
+            quoteTextLabel.text = "¯\\_(ツ)_/¯"
         }
-    }
-    
-    func setupViewsOnline() {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.ironDoorButton.enabled = true
-            self.glassDoorButton.enabled = true
-            self.ironDoorButton.layer.opacity = 1
-            self.glassDoorButton.layer.opacity = 1
-            self.getQuote()
-        }
-    }
-    
-    func setupViewsOffine() {
-        dispatch_async(dispatch_get_main_queue()) {
-            self.ironDoorButton.enabled = false
-            self.glassDoorButton.enabled = false
-            self.ironDoorButton.layer.opacity = 0.5
-            self.glassDoorButton.layer.opacity = 0.5
-            self.getQuote()
-        }
+
+        view.layoutSubviews()
     }
 }

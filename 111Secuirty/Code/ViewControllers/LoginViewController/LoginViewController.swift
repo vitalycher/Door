@@ -25,7 +25,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
 
 // MARK: - UITextFieldDelegate
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         if textField .isEqual(loginTextField) {
             passwordTextField.becomeFirstResponder()
         } else {
@@ -36,36 +36,35 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
  
 // MARK: - Actions
     
-    @IBAction func signIn(sender: UIButton) {
+    @IBAction func signIn(_ sender: UIButton) {
         
         if (loginTextField.text ?? "").isEmpty {
-            HUD.flash(.Label(NSLocalizedString("Please enter email", comment: "")), delay:1.0)
+            HUD.flash(.label(NSLocalizedString("Please enter email", comment: "")), delay: 2.0)
             return
         }
         
         if !loginTextField.text!.isEmail() {
-            HUD.flash(.Label(NSLocalizedString("Please enter email", comment: "")), delay:1.0)
+            HUD.flash(.label(NSLocalizedString("Please enter email", comment: "")), delay: 2.0)
             return
         }
         
         if (passwordTextField.text ?? "").isEmpty {
-            HUD.flash(.Label(NSLocalizedString("Please enter password", comment: "")), delay:1.0)
+            HUD.flash(.label(NSLocalizedString("Please enter password", comment: "")), delay: 2.0)
             return
         }
         
-        HUD.show(.Progress)
-        
-        SessionManager.loginUser(loginTextField.text!.lowercaseString, password: passwordTextField.text!) { (token) in
+        HUD.show(.progress)
+
+        SessionManager.loginUser(loginTextField.text!.lowercased(), password: passwordTextField.text!) { (token, errorMessage) in
             
-            if token != nil {
-                
+            if let token = token {
                 HUD.hide()
-                SessionManager.setUserToken(token!)
-                self.performSegueWithIdentifier("mainControllerSegue", sender: self)
-                
+                SessionManager.setUserToken(token)
+                self.performSegue(withIdentifier: "mainControllerSegue", sender: self)
+            } else if let errorMessage = errorMessage {
+                HUD.flash(.label(errorMessage), delay: 2.0)
             } else {
-                
-                HUD.flash(.Label(NSLocalizedString("Wrong email or password", comment: "")), delay:1.0)
+                HUD.hide()
             }
         }
     }

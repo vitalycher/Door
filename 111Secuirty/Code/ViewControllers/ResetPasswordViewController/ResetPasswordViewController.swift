@@ -17,29 +17,38 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
 // MARK: - UITextFieldDelegate
     
-    func textFieldShouldReturn(textField: UITextField) -> Bool {
+    func textFieldShouldReturn(_ textField: UITextField) -> Bool {
         textField.resignFirstResponder()
         return false
     }
     
 // MARK: - Actions
     
-    @IBAction func goBackAction(sender: AnyObject) {
-        self.dismissViewControllerAnimated(true, completion: nil)
+    @IBAction func goBackAction(_ sender: AnyObject) {
+        self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func resetPasswordAction(sender: AnyObject) {
+    @IBAction func resetPasswordAction(_ sender: AnyObject) {
+        
         if (emailTextField.text ?? "").isEmpty {
-            HUD.flash(.Label(NSLocalizedString("Please enter email", comment: "")), delay:1.0)
+            HUD.flash(.label(NSLocalizedString("Please enter email", comment: "")), delay: 2.0)
             return
         }
-        HUD.show(.Progress)
+        
+        HUD.show(.progress)
         
         if emailTextField.text!.isEmail() {
-            SessionManager.resetPassword(emailTextField.text!)
+            SessionManager.resetPassword(emailTextField.text!, completion: { (errorMessage) in
+                if let errorMessage = errorMessage {
+                    HUD.flash(.label(errorMessage), delay: 2.0)
+                } else {
+                    self.dismiss(animated: false, completion: nil)
+                    HUD.flash(.label(NSLocalizedString("Password reset instructions have been sent to your email",
+                                                       comment: "")), delay:2.0)
+                }
+            })
         } else {
-            HUD.flash(.Label(NSLocalizedString("Please enter email", comment: "")), delay:1.0)
-            return
+            HUD.flash(.label(NSLocalizedString("It's something wrong with your email", comment: "")), delay: 2.0)
         }
     }
 }
