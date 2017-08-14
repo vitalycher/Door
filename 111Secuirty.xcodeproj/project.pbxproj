@@ -70,6 +70,7 @@
 		89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 		A5A8ED0BE510AD1A7FC28A74 /* Pods_111Secuirty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */; };
 		AA3DB8791F39F51000040966 /* PhraseAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */; };
+		AA9EB9821F41D5DF00E77DE7 /* Animator+Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */; };
 		AACB07021F39CB9300A56675 /* MrKeeSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */; };
 		AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */; };
 		BD5866599EAD895CA65749E1 /* Pods_Door_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */; };
@@ -157,6 +158,7 @@
 		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResetPasswordViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseAnalyzer.swift; sourceTree = "<group>"; };
+		AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animator+Behaviors.swift"; sourceTree = "<group>"; };
 		AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrKeeSpeechRecognizer.swift; sourceTree = "<group>"; };
 		AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsGenerator.swift; sourceTree = "<group>"; };
 		D9BB408B3E06DCF5C034F9F4 /* Pods-Door Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.debug.xcconfig"; sourceTree = "<group>"; };
@@ -342,6 +344,7 @@
 		89CFF4B11CD3A72A00F0097E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AA9EB9801F41D5A700E77DE7 /* Animator+Behaviors */,
 				AAF31FA81F3DE28B009433A4 /* TipsGenerator */,
 				AA3DB8771F39F4F700040966 /* PhraseAnalyzer */,
 				AA48F5D21F39C98B008F5545 /* SpeechRecognizer */,
@@ -429,6 +432,14 @@
 				AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */,
 			);
 			path = SpeechRecognizer;
+			sourceTree = "<group>";
+		};
+		AA9EB9801F41D5A700E77DE7 /* Animator+Behaviors */ = {
+			isa = PBXGroup;
+			children = (
+				AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */,
+			);
+			path = "Animator+Behaviors";
 			sourceTree = "<group>";
 		};
 		AAF31FA81F3DE28B009433A4 /* TipsGenerator */ = {
@@ -696,6 +707,7 @@
 				74887B171CC5997400EC677E /* LoginViewController.swift in Sources */,
 				8908B4691CD9E94D005CC547 /* String+Validation.swift in Sources */,
 				AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */,
+				AA9EB9821F41D5DF00E77DE7 /* Animator+Behaviors.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

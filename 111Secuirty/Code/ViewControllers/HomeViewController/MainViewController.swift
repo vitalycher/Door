@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import PKHUD
 import Speech
+import CoreMotion
 
 class MainViewController: UIViewController {
     
@@ -19,20 +20,18 @@ class MainViewController: UIViewController {
     @IBOutlet weak private var quoteTextLabel: UILabel!
     @IBOutlet weak private var quoteAuthorLabel: UILabel!
     
-    private var animator: UIDynamicAnimator!
-    private var gravity: UIGravityBehavior!
-    private var collision: UICollisionBehavior!
-    private var itemBehaviour: UIDynamicItemBehavior!
-    
     private let mrKeeRecognizer = MrKeeSpeechRecognizer()
+    private let animator = Animator()
     private let phraseAnalyzer = PhraseAnalyzer()
+    
+    let motionManager = CMMotionManager()
 
 //MARK: - Actions
     
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        behaviorsInitialSetup()
+        animator.setupBehaviorsFor(view: view)
         mrKeeRecognizer.mrKeeDelegate = self
     }
     
@@ -41,27 +40,35 @@ class MainViewController: UIViewController {
         
         mrKeeRecognizer.authorizeAndStartRecordingIfPossible()
 
-        if successWithProbability(percentage: 65) {
+        if successWithProbability(percentage: 70) {
             getQuote()
         } else {
             setQuote(TipsGenerator().generateTip(), author: "111 team")
         }
+    }
+    
+    override func viewDidAppear(_ animated: Bool) {
+        super.viewDidAppear(animated)
+        
+        motionManager.startDeviceMotionUpdates(to: OperationQueue(), withHandler: gravityUpdated)
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         mrKeeRecognizer.stopRecording()
+        motionManager.stopDeviceMotionUpdates()
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            cleanAllKeyViews()
+            animator.cleanAllKeyViews()
         }
     }
 
     @IBAction private func openGlassDoor(_ sender: AnyObject) {
-        openGlassDoor()
+//        openGlassDoor()
+        animator.animateObject(newFallingKey())
     }
 
     @IBAction private func openIronDoor(_ sender: AnyObject) {
@@ -73,7 +80,7 @@ class MainViewController: UIViewController {
     }
 
     private func openGlassDoor() {
-        createNewFallingKey()
+        animator.animateObject(newFallingKey())
         HUD.show(.progress)
         SessionManager.openGlassDoor { (completionMessage) in
             let message = completionMessage == nil ? "Welcome!" : completionMessage
@@ -83,7 +90,7 @@ class MainViewController: UIViewController {
     }
 
     private func openIronDoor() {
-        createNewFallingKey()
+        animator.animateObject(newFallingKey())
         HUD.show(.progress)
         SessionManager.openIronDoor { (completionMessage) in
             let message = completionMessage == nil ? "Welcome!" : completionMessage
@@ -116,45 +123,6 @@ class MainViewController: UIViewController {
         view.layoutSubviews()
     }
 
-    private func behaviorsInitialSetup() {
-        animator = UIDynamicAnimator(referenceView: view)
-
-        gravity = UIGravityBehavior()
-        gravity.magnitude = 1.5
-        animator.addBehavior(gravity)
-
-        collision = UICollisionBehavior()
-        collision.translatesReferenceBoundsIntoBoundary = true
-        animator.addBehavior(collision)
-
-
-        itemBehaviour = UIDynamicItemBehavior()
-        itemBehaviour.elasticity = 0.5
-        animator.addBehavior(itemBehaviour)
-    }
-
-    private func createNewFallingKey() {
-        let keyView = UIImageView(frame: CGRect(x: randomInt(min: Int(view.frame.width / 2 - view.frame.width / 4), max: Int(view.frame.width / 2 + view.frame.width / 4)), y: 80, width: 30, height: 30))
-        keyView.image = UIImage.init(named: "AppIcon")
-        view.addSubview(keyView)
-
-        gravity.addItem(keyView)
-        collision.addItem(keyView)
-        itemBehaviour.addItem(keyView)
-    }
-    
-    private func cleanAllKeyViews() {
-        collision.translatesReferenceBoundsIntoBoundary = false
-        restartCollision()
-    }
-    
-    private func restartCollision() {
-        collision = nil
-        collision = UICollisionBehavior()
-        collision.translatesReferenceBoundsIntoBoundary = true
-        animator.addBehavior(collision)
-    }
-
     private func randomInt(min: Int, max: Int) -> Int {
         return min + Int(arc4random_uniform(UInt32(max - min + 1)))
     }
@@ -162,13 +130,47 @@ class MainViewController: UIViewController {
     private func successWithProbability(percentage: Int) -> Bool {
         return arc4random_uniform(100) < percentage
     }
+    
+    private func newFallingKey() -> UIImageView {
+        let keyView = UIImageView(frame: CGRect(x: randomInt(min: Int(view.frame.width / 2 - view.frame.width / 4), max: Int(view.frame.width / 2 + view.frame.width / 4)), y: 80, width: 30, height: 30))
+        keyView.image = UIImage.init(named: "AppIcon")
+        return keyView
+    }
+    
+    private func gravityUpdated(motion: CMDeviceMotion?, error: Error?) {
+        if let error = error { print(error) }
+        
+        let gravity : CMAcceleration = motion!.gravity;
+        
+        let x = CGFloat(gravity.x);
+        let y = CGFloat(gravity.y);
+        var point = CGPoint.init(x: x, y: y)
+        
+        switch UIApplication.shared.statusBarOrientation {
+        case .landscapeLeft:
+            let temp = point.x
+            point.x = 0 - point.y
+            point.y = temp
+        case .landscapeRight:
+            let temp = point.x
+            point.x = point.y
+            point.y = 0 - temp
+        case .portraitUpsideDown:
+            point.x *= -1
+            point.y *= -1
+        default: break
+        }
+        
+        let vector = CGVector.init(dx: point.x, dy: 0.0 - point.y)
+        animator.setupGravityDirection(with: vector)
+    }
 
 }
 
 extension MainViewController: MrKeeRecognizerDelegate {
     
     func didRecognizeWord(_ newPhrase: String) {
-        createNewFallingKey()
+        animator.animateObject(newFallingKey())
         phraseAnalyzer.analyze(newPhrase) { (analyzableType) in
             mrKeeRecognizer.stopRecording()
             if let doorType = analyzableType as? DoorType {
@@ -178,7 +180,7 @@ extension MainViewController: MrKeeRecognizerDelegate {
                 }
             } else if let secondaryType = analyzableType as? SecondaryType {
                 switch secondaryType {
-                case .clean: self.cleanAllKeyViews()
+                case .clean: animator.cleanAllKeyViews()
                 case .logout: self.logOut()
                 }
             }
