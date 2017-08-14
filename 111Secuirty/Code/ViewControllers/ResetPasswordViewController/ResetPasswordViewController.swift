@@ -9,11 +9,9 @@
 import UIKit
 import PKHUD
 
-
 class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var emailTextField: UITextField!
-    
+    @IBOutlet weak private var emailTextField: UITextField!
     
 // MARK: - UITextFieldDelegate
     
@@ -24,12 +22,11 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
     
 // MARK: - Actions
     
-    @IBAction func goBackAction(_ sender: AnyObject) {
+    @IBAction private func goBackAction(_ sender: AnyObject) {
         self.dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func resetPasswordAction(_ sender: AnyObject) {
-        
+    @IBAction private func resetPasswordAction(_ sender: AnyObject) {
         if (emailTextField.text ?? "").isEmpty {
             HUD.flash(.label(NSLocalizedString("Please enter email", comment: "")), delay: 2.0)
             return
@@ -51,4 +48,5 @@ class ResetPasswordViewController: UIViewController, UITextFieldDelegate {
             HUD.flash(.label(NSLocalizedString("It's something wrong with your email", comment: "")), delay: 2.0)
         }
     }
+    
 }

@@ -69,6 +69,9 @@
 		89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */; };
 		89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 		A5A8ED0BE510AD1A7FC28A74 /* Pods_111Secuirty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */; };
+		AA3DB8791F39F51000040966 /* PhraseAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */; };
+		AACB07021F39CB9300A56675 /* MrKeeSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */; };
+		AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */; };
 		BD5866599EAD895CA65749E1 /* Pods_Door_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */; };
 /* End PBXBuildFile section */
 
@@ -153,6 +156,9 @@
 		89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
 		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResetPasswordViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseAnalyzer.swift; sourceTree = "<group>"; };
+		AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrKeeSpeechRecognizer.swift; sourceTree = "<group>"; };
+		AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsGenerator.swift; sourceTree = "<group>"; };
 		D9BB408B3E06DCF5C034F9F4 /* Pods-Door Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -336,6 +342,9 @@
 		89CFF4B11CD3A72A00F0097E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AAF31FA81F3DE28B009433A4 /* TipsGenerator */,
+				AA3DB8771F39F4F700040966 /* PhraseAnalyzer */,
+				AA48F5D21F39C98B008F5545 /* SpeechRecognizer */,
 				89CFF4B21CD3A73700F0097E /* APIManager */,
 			);
 			path = Services;
@@ -406,6 +415,30 @@
 			path = APIConstants;
 			sourceTree = "<group>";
 		};
+		AA3DB8771F39F4F700040966 /* PhraseAnalyzer */ = {
+			isa = PBXGroup;
+			children = (
+				AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */,
+			);
+			path = PhraseAnalyzer;
+			sourceTree = "<group>";
+		};
+		AA48F5D21F39C98B008F5545 /* SpeechRecognizer */ = {
+			isa = PBXGroup;
+			children = (
+				AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */,
+			);
+			path = SpeechRecognizer;
+			sourceTree = "<group>";
+		};
+		AAF31FA81F3DE28B009433A4 /* TipsGenerator */ = {
+			isa = PBXGroup;
+			children = (
+				AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */,
+			);
+			path = TipsGenerator;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -458,13 +491,14 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0730;
-				LastUpgradeCheck = 0730;
+				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Egor Bozko";
 				TargetAttributes = {
 					74887AFE1CC592D100EC677E = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = Y6ZXAWRWJ9;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -474,7 +508,8 @@
 					8908B46D1CD9F643005CC547 = {
 						CreatedOnToolsVersion = 7.3;
 						DevelopmentTeam = Y6ZXAWRWJ9;
-						LastSwiftMigration = 0830;
+						LastSwiftMigration = 0900;
+						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
 								enabled = 1;
@@ -652,12 +687,15 @@
 			buildActionMask = 2147483647;
 			files = (
 				5D5739161EEFE4C900704E73 /* AppDelegate.swift in Sources */,
+				AA3DB8791F39F51000040966 /* PhraseAnalyzer.swift in Sources */,
 				74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */,
+				AACB07021F39CB9300A56675 /* MrKeeSpeechRecognizer.swift in Sources */,
 				74887B191CC599B100EC677E /* MainViewController.swift in Sources */,
 				89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */,
 				89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */,
 				74887B171CC5997400EC677E /* LoginViewController.swift in Sources */,
 				8908B4691CD9E94D005CC547 /* String+Validation.swift in Sources */,
+				AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -718,13 +756,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -764,13 +810,21 @@
 				CLANG_CXX_LIBRARY = "libc++";
 				CLANG_ENABLE_MODULES = YES;
 				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
 				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_EMPTY_BODY = YES;
 				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
 				CLANG_WARN_UNREACHABLE_CODE = YES;
 				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
@@ -789,6 +843,7 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_VERSION = 2.3;
 				VALIDATE_PRODUCT = YES;
 			};
@@ -798,27 +853,29 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 13A7D5F116B5C8A5852EB976 /* Pods-111Secuirty.debug.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = 111Secuirty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
 				PRODUCT_NAME = 111Key;
-				PROVISIONING_PROFILE = "7764ef14-f552-41b6-8754-47f0a85fc0ce";
-				PROVISIONING_PROFILE_SPECIFIER = "The Door Enterprise";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -826,26 +883,28 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F4F90BC5CEBE0ECA1E9A6DE /* Pods-111Secuirty.release.xcconfig */;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
-				EMBEDDED_CONTENT_CONTAINS_SWIFT = "$(inherited)";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/build/Debug-iphoneos",
 				);
 				INFOPLIST_FILE = 111Secuirty/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
 				PRODUCT_NAME = 111Key;
-				PROVISIONING_PROFILE = "7764ef14-f552-41b6-8754-47f0a85fc0ce";
-				PROVISIONING_PROFILE_SPECIFIER = "The Door Enterprise";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};
@@ -856,19 +915,21 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Door Widget/Door Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Door Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
 				PRODUCT_NAME = "111 Key Widget";
-				PROVISIONING_PROFILE = "897db6f0-f43e-48b3-86f5-30f96375fd6b";
-				PROVISIONING_PROFILE_SPECIFIER = "111 Door Widget";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Debug;
 		};
@@ -879,18 +940,20 @@
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "Door Widget/Door Widget.entitlements";
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution: 111 minutes LLC";
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = "";
 				INFOPLIST_FILE = "Door Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
 				PRODUCT_NAME = "111 Key Widget";
-				PROVISIONING_PROFILE = "897db6f0-f43e-48b3-86f5-30f96375fd6b";
-				PROVISIONING_PROFILE_SPECIFIER = "111 Door Widget";
+				PROVISIONING_PROFILE = "";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
 				SWIFT_OBJC_BRIDGING_HEADER = "";
-				SWIFT_VERSION = 3.0;
+				SWIFT_SWIFT3_OBJC_INFERENCE = On;
+				SWIFT_VERSION = 4.0;
 			};
 			name = Release;
 		};

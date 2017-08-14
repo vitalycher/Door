@@ -1,7 +1,7 @@
 PODS:
-  - Alamofire (4.4.0)
-  - IQKeyboardManager (4.0.8)
-  - PKHUD (4.2.0)
+  - Alamofire (4.5.0)
+  - IQKeyboardManager (4.0.11)
+  - PKHUD (4.2.3)
   - SwiftyJSON (3.1.4)
 
 DEPENDENCIES:
@@ -11,9 +11,9 @@ DEPENDENCIES:
   - SwiftyJSON
 
 SPEC CHECKSUMS:
-  Alamofire: dc44b1600b800eb63da6a19039a0083d62a6a62d
-  IQKeyboardManager: 1a8189fa153bf09044355ee0ad36826f6767e7f7
-  PKHUD: 48af884cf00c2213b0313b739d914e6cab1c0f5e
+  Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
+  IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
+  PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
 PODFILE CHECKSUM: 445375574d7af548b76a64ebfde626ffce39b6b9

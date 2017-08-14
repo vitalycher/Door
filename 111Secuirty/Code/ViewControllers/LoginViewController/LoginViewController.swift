@@ -9,13 +9,12 @@
 import UIKit
 import PKHUD
 
-
 class LoginViewController: UIViewController, UITextFieldDelegate {
     
-    @IBOutlet weak var loginTextField: UITextField!
-    @IBOutlet weak var passwordTextField: UITextField!
-    @IBOutlet weak var signInButton: UIButton!
-    @IBOutlet weak var resetPasswordButton: UIButton!
+    @IBOutlet weak private var loginTextField: UITextField!
+    @IBOutlet weak private var passwordTextField: UITextField!
+    @IBOutlet weak private var signInButton: UIButton!
+    @IBOutlet weak private var resetPasswordButton: UIButton!
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -36,8 +35,7 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
  
 // MARK: - Actions
     
-    @IBAction func signIn(_ sender: UIButton) {
-        
+    @IBAction private func signIn(_ sender: UIButton) {
         if (loginTextField.text ?? "").isEmpty {
             HUD.flash(.label(NSLocalizedString("Please enter email", comment: "")), delay: 2.0)
             return
@@ -68,4 +66,5 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
             }
         }
     }
+    
 }

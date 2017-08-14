@@ -10,33 +10,31 @@ import UIKit
 import NotificationCenter
 import Alamofire
 
-
 class TodayViewController: UIViewController, NCWidgetProviding {
 
-    var defaults: UserDefaults = UserDefaults(suiteName: "group.com.111minutes.thedoor")!
-    @IBOutlet weak var loginButton: UIButton!
-    @IBOutlet weak var ironDoorButton: UIButton!
-    @IBOutlet weak var glassDoorButton: UIButton!
-    @IBOutlet weak var descriptionLabel: UILabel!
-    let hSpace : CGFloat = 10
+    private var defaults: UserDefaults = UserDefaults(suiteName: "group.com.111minutes.thedoor")!
+    private let hSpace : CGFloat = 10
+    
+    @IBOutlet private weak var loginButton: UIButton!
+    @IBOutlet private weak var ironDoorButton: UIButton!
+    @IBOutlet private weak var glassDoorButton: UIButton!
+    @IBOutlet private weak var descriptionLabel: UILabel!
     
     override func viewDidLoad() {
-        
         super.viewDidLoad()
+        
         let os = ProcessInfo().operatingSystemVersion
         if os.majorVersion < 10 {
             descriptionLabel.textColor = UIColor.white
         } else {
-            descriptionLabel.textColor = UIColor(colorLiteralRed: 180.0/255.0,
-                                                 green: 30.0/255.0,
-                                                 blue: 50.0/255.0,
-                                                 alpha: 1)
+            descriptionLabel.textColor = UIColor.init(red: 180.0/255.0, green: 30.0/255.0, blue: 50.0/255.0, alpha: 1.0)
         }
-        self.preferredContentSize = CGSize.zero
+        preferredContentSize = CGSize.zero
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        
         setupViews()
     }
     
@@ -46,7 +44,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
     
 // MARK: - Actions
     
-    @IBAction func openIronDoor(_ sender: AnyObject) {
+    @IBAction private func openIronDoor(_ sender: AnyObject) {
         SessionManager.openIronDoor { (completionMessage) in
             self.show(completionMessage, {
                 self.setupViews()
@@ -54,7 +52,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
-    @IBAction func openGlassDoor(_ sender: AnyObject) {
+    @IBAction private func openGlassDoor(_ sender: AnyObject) {
         SessionManager.openGlassDoor { (completionMessage) in
             self.show(completionMessage, {
                 self.setupViews()
@@ -62,15 +60,13 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
-    @IBAction func loginAction(_ sender: AnyObject) {
+    @IBAction private func loginAction(_ sender: AnyObject) {
         extensionContext?.open(URL(string: "door://")!, completionHandler: nil)
     }
     
 //MARK: - Help functions
     private func show(_ message: String?, _ completion: @escaping () -> ()) {
-        guard let message = message, message != "" else {
-            return
-        }
+        guard let message = message, message != "" else { return }
         
         descriptionLabel.text = message
 
@@ -101,8 +97,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         isLoggedIn() ? setupViewsAuthorized() : setupViewsUnauthorized()
     }
     
-    func setupViewsAuthorized() {
-        
+    private func setupViewsAuthorized() {
         DispatchQueue.main.async {
             self.ironDoorButton.alpha = 1
             self.glassDoorButton.alpha = 1
@@ -113,8 +108,7 @@ class TodayViewController: UIViewController, NCWidgetProviding {
         }
     }
     
-    func setupViewsUnauthorized() {
-        
+    private func setupViewsUnauthorized() {
         DispatchQueue.main.async {
             self.ironDoorButton.alpha = 0
             self.glassDoorButton.alpha = 0
@@ -125,4 +119,5 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             self.preferredContentSize = CGSize(width: 0, height: CGFloat(self.descriptionLabel.frame.size.height + self.hSpace))
         }
     }
+    
 }
