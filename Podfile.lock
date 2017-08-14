@@ -7,15 +7,25 @@ PODS:
 DEPENDENCIES:
   - Alamofire
   - IQKeyboardManager
-  - PKHUD
+  - PKHUD (from `https://github.com/pkluz/PKHUD.git`, branch `release/swift4`)
   - SwiftyJSON
+
+EXTERNAL SOURCES:
+  PKHUD:
+    :branch: release/swift4
+    :git: https://github.com/pkluz/PKHUD.git
+
+CHECKOUT OPTIONS:
+  PKHUD:
+    :commit: 4d8fbf70ae912dd72280cde0a5c1440ada9a7306
+    :git: https://github.com/pkluz/PKHUD.git
 
 SPEC CHECKSUMS:
   Alamofire: f28cdffd29de33a7bfa022cbd63ae95a27fae140
   IQKeyboardManager: 83eae5318483a34eb2069ef413d195b97605232e
-  PKHUD: c7692163a09875cbf15827dc581df3c5cf7f1015
+  PKHUD: 351011b853e6b942e7ee8ad335864cc84c787241
   SwiftyJSON: c2842d878f95482ffceec5709abc3d05680c0220
 
-PODFILE CHECKSUM: 445375574d7af548b76a64ebfde626ffce39b6b9
+PODFILE CHECKSUM: 3c9c6a379e8e75bee27c96fdf575fadf5369f1b0
 
 COCOAPODS: 1.2.1

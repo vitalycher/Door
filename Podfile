@@ -6,7 +6,7 @@ use_frameworks!
 target '111Secuirty' do
     pod 'Alamofire'
     pod 'SwiftyJSON'
-    pod 'PKHUD'
+    pod 'PKHUD', :git => 'https://github.com/pkluz/PKHUD.git', :branch => 'release/swift4'
     pod 'IQKeyboardManager'
 end
 
