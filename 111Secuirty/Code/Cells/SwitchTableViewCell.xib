@@ -32,6 +32,9 @@
                     </label>
                     <switch opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="750" verticalHuggingPriority="750" contentHorizontalAlignment="center" contentVerticalAlignment="center" on="YES" translatesAutoresizingMaskIntoConstraints="NO" id="zf6-Hs-Mxt">
                         <rect key="frame" x="241" y="6" width="51" height="31"/>
+                        <connections>
+                            <action selector="switchTapped:" destination="KGk-i7-Jjw" eventType="valueChanged" id="Ey8-mv-oey"/>
+                        </connections>
                     </switch>
                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="GAZ-WP-J4n" userLabel="ResetUnderLineView">
                         <rect key="frame" x="15" y="42" width="305" height="2"/>
@@ -54,6 +57,10 @@
             </tableViewCellContentView>
             <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="settingLabel" destination="JbB-he-SqZ" id="QBF-kc-fx2"/>
+                <outlet property="settingSwitch" destination="zf6-Hs-Mxt" id="sCx-zT-Teg"/>
+            </connections>
             <point key="canvasLocation" x="10" y="43"/>
         </tableViewCell>
     </objects>
