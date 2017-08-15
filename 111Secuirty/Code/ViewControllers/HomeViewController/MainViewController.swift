@@ -97,11 +97,6 @@ class MainViewController: UIViewController {
             HUD.flash(.label(message), delay: 2.0)
         }
     }
-    
-    private func logOut() {
-        SessionManager.logoutUser()
-        self.performSegue(withIdentifier: "loginViewControllerSegue", sender: self)
-    }
 
 //MARK: - Help functions
 
@@ -180,7 +175,7 @@ extension MainViewController: MrKeeRecognizerDelegate {
             } else if let secondaryType = analyzableType as? SecondaryType {
                 switch secondaryType {
                 case .clean: animator.cleanAllKeyViews()
-                case .logout: self.logOut()
+                default: break
                 }
             }
         }

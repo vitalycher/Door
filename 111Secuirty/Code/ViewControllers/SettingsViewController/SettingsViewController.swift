@@ -19,4 +19,9 @@ class SettingsViewController: UIViewController {
         dismiss(animated: true, completion: nil)
     }
     
+    @IBAction func logout(_ sender: Any) {
+        SessionManager.logoutUser()
+        self.performSegue(withIdentifier: "loginViewControllerSegue", sender: self)
+    }
+    
 }

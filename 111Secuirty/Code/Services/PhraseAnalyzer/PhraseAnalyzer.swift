@@ -42,7 +42,7 @@ class PhraseAnalyzer {
                 } else if let secondaryType = doorKeywords[key] as? SecondaryType {
                     switch secondaryType {
                     case .clean: successfulAnalysis(SecondaryType.clean)
-                    case .logout: successfulAnalysis(SecondaryType.logout)
+                    default: break
                     }
                 }
                 break
