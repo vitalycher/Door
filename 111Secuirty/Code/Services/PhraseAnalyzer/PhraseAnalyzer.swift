@@ -28,7 +28,6 @@ class PhraseAnalyzer {
                                                        "second door" : DoorType.glass,
                                                        "hello minutes" : DoorType.glass,
                                                        "it is me" : DoorType.glass,
-                                                       "vitaly" : DoorType.glass,
                                                        "open iron door" : DoorType.iron,
                                                        "iron door" : DoorType.iron,
                                                        "first door" : DoorType.iron,

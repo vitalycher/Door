@@ -16,7 +16,6 @@ class MainViewController: UIViewController {
     
     @IBOutlet weak private var glassDoorButton: UIButton!
     @IBOutlet weak private var ironDoorButton: UIButton!
-    @IBOutlet weak private var logOutButton: UIButton!
     @IBOutlet weak private var quoteTextLabel: UILabel!
     @IBOutlet weak private var quoteAuthorLabel: UILabel!
     
@@ -75,8 +74,8 @@ class MainViewController: UIViewController {
         openIronDoor()
     }
     
-    @IBAction private func logOut(_ sender: AnyObject) {
-        logOut()
+    @IBAction private func goToSettings(_ sender: AnyObject) {
+        performSegue(withIdentifier: "settingsSegue", sender: self)
     }
 
     private func openGlassDoor() {

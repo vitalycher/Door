@@ -223,14 +223,15 @@
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bAp-cc-8Q8">
-                                <rect key="frame" x="328" y="33" width="27" height="20"/>
+                                <rect key="frame" x="325" y="28" width="30" height="30"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="27" id="YEM-EU-TVl"/>
-                                    <constraint firstAttribute="height" constant="20" id="eRG-Om-AGk"/>
+                                    <constraint firstAttribute="width" constant="30" id="YEM-EU-TVl"/>
+                                    <constraint firstAttribute="height" constant="30" id="eRG-Om-AGk"/>
                                 </constraints>
-                                <state key="normal" image="logout"/>
+                                <state key="normal" image="settings"/>
                                 <connections>
-                                    <action selector="logOut:" destination="XIa-Z9-N80" eventType="touchUpInside" id="Eqs-Ie-YiJ"/>
+                                    <action selector="goToSettings:" destination="XIa-Z9-N80" eventType="touchUpInside" id="I45-rc-ziR"/>
+                                    <segue destination="2LM-mw-fYc" kind="show" identifier="settingsSegue" id="yYS-IM-U3l"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -258,7 +259,6 @@
                     <connections>
                         <outlet property="glassDoorButton" destination="q0j-1m-PxY" id="A9Q-cT-aDf"/>
                         <outlet property="ironDoorButton" destination="rLM-oB-jvJ" id="oIW-ro-7gw"/>
-                        <outlet property="logOutButton" destination="bAp-cc-8Q8" id="I3s-aE-uVx"/>
                         <outlet property="quoteAuthorLabel" destination="DYx-Ag-k0Y" id="7LU-1O-DAw"/>
                         <outlet property="quoteTextLabel" destination="OnK-rL-7dA" id="XLz-yQ-GUY"/>
                         <segue destination="BYZ-38-t0r" kind="show" identifier="loginViewControllerSegue" id="FTs-lj-Y5S"/>
@@ -267,6 +267,84 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="tZn-RS-Whh" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1469.5999999999999" y="-125.4872563718141"/>
+        </scene>
+        <!--Settings View Controller-->
+        <scene sceneID="UvV-cr-oNA">
+            <objects>
+                <viewController id="2LM-mw-fYc" customClass="SettingsViewController" customModule="_11Key" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="TV4-Wp-a7s"/>
+                        <viewControllerLayoutGuide type="bottom" id="wyP-SW-XXH"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="WeJ-MF-hIL">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="settings_logo" translatesAutoresizingMaskIntoConstraints="NO" id="KeL-8S-MCQ">
+                                <rect key="frame" x="20" y="20" width="232" height="45"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="KeL-8S-MCQ" secondAttribute="height" multiplier="232:45" id="tz3-XD-CFX"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3gd-ax-6ZW">
+                                <rect key="frame" x="310" y="20.5" width="50" height="50"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="R0O-YE-7Ka"/>
+                                    <constraint firstAttribute="width" constant="50" id="ZBu-oq-6v5"/>
+                                </constraints>
+                                <state key="normal" image="logout"/>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="arrow_icon" translatesAutoresizingMaskIntoConstraints="NO" id="UyN-2v-5j3">
+                                <rect key="frame" x="20" y="103" width="15" height="15"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="15" id="2bc-yj-OLf"/>
+                                    <constraint firstAttribute="height" constant="15" id="4Rh-sn-gMt"/>
+                                    <constraint firstAttribute="width" constant="15" id="Am5-2L-onO"/>
+                                    <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="15" id="rZZ-Jc-aDv"/>
+                                </constraints>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIV-Us-oCq">
+                                <rect key="frame" x="43" y="95.5" width="117" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="ll7-x2-9Mb"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" name="SourceSansPro-Semibold" family="Source Sans Pro" pointSize="20"/>
+                                <state key="normal" title="Back to home">
+                                    <color key="titleColor" red="0.25098039220000001" green="0.25098039220000001" blue="0.25098039220000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="backToHome:" destination="2LM-mw-fYc" eventType="touchUpInside" id="zEh-97-up0"/>
+                                    <action selector="goBackAction:" destination="dHa-BC-rFl" eventType="touchUpInside" id="Dyf-yP-yKr"/>
+                                </connections>
+                            </button>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Vbv-Ka-fhY" userLabel="ResetUnderLineView">
+                                <rect key="frame" x="43" y="125" width="117" height="2"/>
+                                <color key="backgroundColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="2" id="cU4-Vr-LoK"/>
+                                </constraints>
+                            </view>
+                        </subviews>
+                        <color key="backgroundColor" red="0.96078431369999995" green="0.96078431369999995" blue="0.96078431369999995" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstAttribute="trailing" secondItem="3gd-ax-6ZW" secondAttribute="trailing" constant="15" id="028-ZT-gO3"/>
+                            <constraint firstItem="ZIV-Us-oCq" firstAttribute="leading" secondItem="UyN-2v-5j3" secondAttribute="trailing" constant="8" id="0Fg-X7-csg"/>
+                            <constraint firstItem="KeL-8S-MCQ" firstAttribute="leading" secondItem="WeJ-MF-hIL" secondAttribute="leading" constant="20" id="4Kb-XZ-kFI"/>
+                            <constraint firstItem="Vbv-Ka-fhY" firstAttribute="leading" secondItem="ZIV-Us-oCq" secondAttribute="leading" id="4Q6-8t-ZTJ"/>
+                            <constraint firstItem="KeL-8S-MCQ" firstAttribute="top" secondItem="TV4-Wp-a7s" secondAttribute="bottom" id="5ci-G9-w3g"/>
+                            <constraint firstItem="UyN-2v-5j3" firstAttribute="top" secondItem="KeL-8S-MCQ" secondAttribute="bottom" constant="38" id="REF-bU-stU"/>
+                            <constraint firstItem="UyN-2v-5j3" firstAttribute="leading" secondItem="WeJ-MF-hIL" secondAttribute="leading" constant="20" id="XdB-Wf-0Yr"/>
+                            <constraint firstItem="ZIV-Us-oCq" firstAttribute="centerY" secondItem="UyN-2v-5j3" secondAttribute="centerY" id="ZF4-7m-bGE"/>
+                            <constraint firstItem="3gd-ax-6ZW" firstAttribute="centerY" secondItem="KeL-8S-MCQ" secondAttribute="centerY" constant="3" id="b8p-Pi-Q3c"/>
+                            <constraint firstItem="Vbv-Ka-fhY" firstAttribute="top" secondItem="ZIV-Us-oCq" secondAttribute="bottom" id="hVt-nY-iNO"/>
+                            <constraint firstItem="KeL-8S-MCQ" firstAttribute="width" secondItem="WeJ-MF-hIL" secondAttribute="width" multiplier="232:375" id="t1g-oR-muc"/>
+                            <constraint firstItem="Vbv-Ka-fhY" firstAttribute="trailing" secondItem="ZIV-Us-oCq" secondAttribute="trailing" id="wU8-JF-rvT"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="PSY-x1-gMO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2442" y="377"/>
         </scene>
         <!--Reset Password View Controller-->
         <scene sceneID="LuR-3b-qEL">
@@ -287,7 +365,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your email" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="wyB-s4-GZC">
-                                <rect key="frame" x="20" y="258.5" width="335" height="53"/>
+                                <rect key="frame" x="20" y="256.5" width="335" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wyB-s4-GZC" secondAttribute="height" multiplier="335:53" id="DDi-a5-RGZ"/>
                                 </constraints>
@@ -295,14 +373,14 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0J-gM-CY0" userLabel="LoginUnderLineView">
-                                <rect key="frame" x="20" y="311.5" width="335" height="2"/>
+                                <rect key="frame" x="20" y="309.5" width="335" height="2"/>
                                 <color key="backgroundColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="T8Z-tQ-cmY"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kk9-Pa-w6U">
-                                <rect key="frame" x="20" y="439.5" width="335" height="51"/>
+                                <rect key="frame" x="20" y="441" width="335" height="51"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.1176470588" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kk9-Pa-w6U" secondAttribute="height" multiplier="335:51" id="Y4f-Pk-cv4"/>
@@ -316,20 +394,20 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions for resetting password will be sent to this email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-bO-tXT">
-                                <rect key="frame" x="20" y="344.5" width="335" height="47"/>
+                                <rect key="frame" x="20" y="342.5" width="335" height="50.5"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                             </label>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Gj5-So-RsH" userLabel="ResetUnderLineView">
-                                <rect key="frame" x="38" y="125" width="118" height="2"/>
+                                <rect key="frame" x="38" y="125" width="112" height="2"/>
                                 <color key="backgroundColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="XO8-QE-ZlA"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JvD-nQ-wmu">
-                                <rect key="frame" x="38" y="95" width="118" height="30"/>
+                                <rect key="frame" x="38" y="95" width="112" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="HcO-cu-xUW"/>
                                 </constraints>
@@ -381,12 +459,14 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Zxd-7J-LR4" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1598" y="643"/>
+            <point key="canvasLocation" x="1470" y="641"/>
         </scene>
     </scenes>
     <resources>
         <image name="arrow_icon" width="15" height="15"/>
         <image name="logo_icon" width="232" height="45"/>
         <image name="logout" width="27" height="20"/>
+        <image name="settings" width="512" height="512"/>
+        <image name="settings_logo" width="700" height="129"/>
     </resources>
 </document>
