@@ -19,7 +19,7 @@ class TipsGenerator {
                 NSLocalizedString("Just tell 'it is me' and let the magic happen.", comment: "")]
     
     public func generateTip() -> String {
-        let randomPhraseNumber = arc4random_uniform(UInt32(tips.count + 1))
+        let randomPhraseNumber = arc4random_uniform(UInt32(tips.count))
         return tips[Int(randomPhraseNumber)]
     }
     

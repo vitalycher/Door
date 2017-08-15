@@ -12,7 +12,7 @@ class SettingsViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        
     }
 
     @IBAction func backToHome(_ sender: Any) {

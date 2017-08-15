@@ -60,14 +60,11 @@ class MainViewController: UIViewController {
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if motion == .motionShake {
-            animator.cleanAllKeyViews()
-        }
+        if motion == .motionShake { animator.cleanAllKeyViews() }
     }
 
     @IBAction private func openGlassDoor(_ sender: AnyObject) {
-//        openGlassDoor()
-        animator.animateObject(newFallingKey())
+        openGlassDoor()
     }
 
     @IBAction private func openIronDoor(_ sender: AnyObject) {
