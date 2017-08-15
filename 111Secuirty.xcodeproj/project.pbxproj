@@ -73,6 +73,8 @@
 		AA9EB9821F41D5DF00E77DE7 /* Animator+Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */; };
 		AA9EB9851F431D1B00E77DE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */; };
 		AACB07021F39CB9300A56675 /* MrKeeSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */; };
+		AAE7EB9D1F4333EB00C9E566 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EB9B1F4333EB00C9E566 /* SwitchTableViewCell.swift */; };
+		AAE7EB9E1F4333EB00C9E566 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE7EB9C1F4333EB00C9E566 /* SwitchTableViewCell.xib */; };
 		AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */; };
 		BD5866599EAD895CA65749E1 /* Pods_Door_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */; };
 /* End PBXBuildFile section */
@@ -162,6 +164,8 @@
 		AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animator+Behaviors.swift"; sourceTree = "<group>"; };
 		AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrKeeSpeechRecognizer.swift; sourceTree = "<group>"; };
+		AAE7EB9B1F4333EB00C9E566 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
+		AAE7EB9C1F4333EB00C9E566 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsGenerator.swift; sourceTree = "<group>"; };
 		D9BB408B3E06DCF5C034F9F4 /* Pods-Door Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -325,6 +329,7 @@
 		89CFF4AF1CD3A6AA00F0097E /* Code */ = {
 			isa = PBXGroup;
 			children = (
+				AAE7EB9A1F4333B700C9E566 /* Cells */,
 				89CFF4BB1CD3C0FE00F0097E /* Common */,
 				89CFF4B51CD3A85000F0097E /* AppDelegate */,
 				89CFF4B11CD3A72A00F0097E /* Services */,
@@ -451,6 +456,15 @@
 				AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */,
 			);
 			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		AAE7EB9A1F4333B700C9E566 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				AAE7EB9B1F4333EB00C9E566 /* SwitchTableViewCell.swift */,
+				AAE7EB9C1F4333EB00C9E566 /* SwitchTableViewCell.xib */,
+			);
+			path = Cells;
 			sourceTree = "<group>";
 		};
 		AAF31FA81F3DE28B009433A4 /* TipsGenerator */ = {
@@ -586,6 +600,7 @@
 				89CFF48B1CD395CF00F0097E /* KlartextMono-BoldItalic.ttf in Resources */,
 				89CFF4921CD395CF00F0097E /* KlartextMono-Thin.ttf in Resources */,
 				89CFF4A91CD395F700F0097E /* SourceSansPro-LightIt.ttf in Resources */,
+				AAE7EB9E1F4333EB00C9E566 /* SwitchTableViewCell.xib in Resources */,
 				89CFF48D1CD395CF00F0097E /* KlartextMono-Light.ttf in Resources */,
 				89CFF4A11CD395F700F0097E /* SourceSansPro-Black.ttf in Resources */,
 				89CFF4931CD395CF00F0097E /* KlartextMono-ThinItalic.ttf in Resources */,
@@ -713,6 +728,7 @@
 				74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */,
 				AACB07021F39CB9300A56675 /* MrKeeSpeechRecognizer.swift in Sources */,
 				74887B191CC599B100EC677E /* MainViewController.swift in Sources */,
+				AAE7EB9D1F4333EB00C9E566 /* SwitchTableViewCell.swift in Sources */,
 				89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */,
 				89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */,
 				74887B171CC5997400EC677E /* LoginViewController.swift in Sources */,

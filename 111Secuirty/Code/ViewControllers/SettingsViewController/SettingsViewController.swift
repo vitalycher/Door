@@ -10,18 +10,58 @@ import UIKit
 
 class SettingsViewController: UIViewController {
 
+    @IBOutlet weak private var tableView: UITableView!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+       
+        tableView.dataSource = self
+        tableView.delegate = self
+        registerCells()
     }
 
-    @IBAction func backToHome(_ sender: Any) {
+    @IBAction private func backToHome(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
     
-    @IBAction func logout(_ sender: Any) {
+    @IBAction private func logout(_ sender: Any) {
         SessionManager.logoutUser()
         self.performSegue(withIdentifier: "loginViewControllerSegue", sender: self)
+    }
+    
+    private func registerCells() {
+        let registerNibForCellClass: (UITableViewCell.Type) -> Void = {
+            self.tableView.register(UINib(nibName: String(describing: $0), bundle: nil), forCellReuseIdentifier: String(describing: $0))
+        }
+        registerNibForCellClass(SwitchTableViewCell.self)
+    }
+    
+}
+
+extension SettingsViewController: UITableViewDataSource {
+    
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 1
+    }
+    
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        return 10
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        if let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchTableViewCell") as? SwitchTableViewCell {
+        return cell
+        } else {
+            return UITableViewCell.init()
+        }
+    }
+    
+}
+
+extension SettingsViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 60.0
     }
     
 }
