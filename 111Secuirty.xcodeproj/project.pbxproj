@@ -69,6 +69,7 @@
 		89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */; };
 		89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 		A5A8ED0BE510AD1A7FC28A74 /* Pods_111Secuirty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */; };
+		AA1780D11F444933009C0D27 /* SettingCellsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1780D01F444933009C0D27 /* SettingCellsSet.swift */; };
 		AA3DB8791F39F51000040966 /* PhraseAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */; };
 		AA9EB9821F41D5DF00E77DE7 /* Animator+Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */; };
 		AA9EB9851F431D1B00E77DE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */; };
@@ -160,6 +161,7 @@
 		89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
 		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResetPasswordViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		AA1780D01F444933009C0D27 /* SettingCellsSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellsSet.swift; sourceTree = "<group>"; };
 		AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseAnalyzer.swift; sourceTree = "<group>"; };
 		AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animator+Behaviors.swift"; sourceTree = "<group>"; };
 		AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -352,6 +354,7 @@
 		89CFF4B11CD3A72A00F0097E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AA1780D21F44494C009C0D27 /* SettingsAdapter */,
 				AA9EB9801F41D5A700E77DE7 /* Animator+Behaviors */,
 				AAF31FA81F3DE28B009433A4 /* TipsGenerator */,
 				AA3DB8771F39F4F700040966 /* PhraseAnalyzer */,
@@ -424,6 +427,14 @@
 				89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */,
 			);
 			path = APIConstants;
+			sourceTree = "<group>";
+		};
+		AA1780D21F44494C009C0D27 /* SettingsAdapter */ = {
+			isa = PBXGroup;
+			children = (
+				AA1780D01F444933009C0D27 /* SettingCellsSet.swift */,
+			);
+			path = SettingsAdapter;
 			sourceTree = "<group>";
 		};
 		AA3DB8771F39F4F700040966 /* PhraseAnalyzer */ = {
@@ -733,6 +744,7 @@
 				89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */,
 				74887B171CC5997400EC677E /* LoginViewController.swift in Sources */,
 				8908B4691CD9E94D005CC547 /* String+Validation.swift in Sources */,
+				AA1780D11F444933009C0D27 /* SettingCellsSet.swift in Sources */,
 				AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */,
 				AA9EB9821F41D5DF00E77DE7 /* Animator+Behaviors.swift in Sources */,
 				AA9EB9851F431D1B00E77DE7 /* SettingsViewController.swift in Sources */,

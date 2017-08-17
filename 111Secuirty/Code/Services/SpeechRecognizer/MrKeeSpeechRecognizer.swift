@@ -70,11 +70,11 @@ class MrKeeSpeechRecognizer {
     }
     
     public func stopRecording() {
-        audioEngine.stop()
-        request.endAudio()
-        request = nil
-        recognitionTask?.cancel()
-        mrKeeDelegate?.didFinishRecognition(recognizer: self)
+            self.audioEngine.stop()
+            self.request.endAudio()
+            self.request = nil
+            self.recognitionTask?.cancel()
+            self.mrKeeDelegate?.didFinishRecognition(recognizer: self)
     }
     
 }

@@ -230,7 +230,6 @@
                                 </constraints>
                                 <state key="normal" image="settings"/>
                                 <connections>
-                                    <action selector="goToSettings:" destination="XIa-Z9-N80" eventType="touchUpInside" id="I45-rc-ziR"/>
                                     <segue destination="2LM-mw-fYc" kind="show" identifier="settingsSegue" id="yYS-IM-U3l"/>
                                 </connections>
                             </button>
@@ -380,7 +379,7 @@
                                 </constraints>
                             </imageView>
                             <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="Your email" minimumFontSize="15" translatesAutoresizingMaskIntoConstraints="NO" id="wyB-s4-GZC">
-                                <rect key="frame" x="20" y="259" width="335" height="53"/>
+                                <rect key="frame" x="20" y="258.5" width="335" height="53"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="wyB-s4-GZC" secondAttribute="height" multiplier="335:53" id="DDi-a5-RGZ"/>
                                 </constraints>
@@ -388,14 +387,14 @@
                                 <textInputTraits key="textInputTraits" autocorrectionType="no" keyboardType="emailAddress"/>
                             </textField>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S0J-gM-CY0" userLabel="LoginUnderLineView">
-                                <rect key="frame" x="20" y="312" width="335" height="2"/>
+                                <rect key="frame" x="20" y="311.5" width="335" height="2"/>
                                 <color key="backgroundColor" red="0.59215686270000001" green="0.59215686270000001" blue="0.59215686270000001" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="2" id="T8Z-tQ-cmY"/>
                                 </constraints>
                             </view>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Kk9-Pa-w6U">
-                                <rect key="frame" x="20" y="440" width="335" height="51"/>
+                                <rect key="frame" x="20" y="439.5" width="335" height="51"/>
                                 <color key="backgroundColor" red="0.70588235290000001" green="0.1176470588" blue="0.1960784314" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="width" secondItem="Kk9-Pa-w6U" secondAttribute="height" multiplier="335:51" id="Y4f-Pk-cv4"/>
@@ -409,7 +408,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructions for resetting password will be sent to this email" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Wg-bO-tXT">
-                                <rect key="frame" x="20" y="345" width="335" height="47"/>
+                                <rect key="frame" x="20" y="344.5" width="335" height="47"/>
                                 <fontDescription key="fontDescription" name="SourceSansPro-Regular" family="Source Sans Pro" pointSize="20"/>
                                 <color key="textColor" red="0.60784313725490191" green="0.60784313725490191" blue="0.60784313725490191" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <color key="highlightedColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>

@@ -11,6 +11,9 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak private var tableView: UITableView!
+    fileprivate var cellPrototypes: [SettingType] {
+        return SettingCellsSet().settingsCells()
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -45,23 +48,20 @@ extension SettingsViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 10
+        return cellPrototypes.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        if let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchTableViewCell") as? SwitchTableViewCell {
+        let cellPrototype = cellPrototypes[indexPath.row]
+        let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchTableViewCell") as! SwitchTableViewCell
+        cell.fill(with: cellPrototype)
         return cell
-        } else {
-            return UITableViewCell.init()
-        }
     }
     
 }
 
 extension SettingsViewController: UITableViewDelegate {
-    
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
     }
-    
 }

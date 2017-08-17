@@ -11,14 +11,7 @@ import UIKit
 
 class Animator {
     
-    private var viewsOnTheScreen: [UIView] = [] {
-        didSet {
-            if viewsOnTheScreen.count > 20 {
-                cleanAllKeyViews()
-                viewsOnTheScreen.removeAll()
-            }
-        }
-    }
+    private var viewsOnTheScreen: [UIView] = []
     
     private var parentView: UIView!
     private var animator: UIDynamicAnimator!
@@ -49,10 +42,12 @@ class Animator {
         gravity.addItem(object)
         collision.addItem(object)
         itemBehaviour.addItem(object)
+        if viewsOnTheScreen.count == 20 { cleanAllKeyViews() }
     }
     
     public func cleanAllKeyViews() {
         collision.translatesReferenceBoundsIntoBoundary = false
+        viewsOnTheScreen.removeAll()
         restartCollision()
     }
     
@@ -63,8 +58,14 @@ class Animator {
         animator.addBehavior(collision)
     }
     
-    func setupGravityDirection(with vector: CGVector) {
+    public func setupGravityDirection(with vector: CGVector) {
         gravity.gravityDirection = vector
+    }
+    
+    public func deleteSquaresFromSuperview(success: (() -> Void)?) {
+        viewsOnTheScreen.forEach { $0.removeFromSuperview() }
+        viewsOnTheScreen.removeAll()
+        success?()
     }
     
 }

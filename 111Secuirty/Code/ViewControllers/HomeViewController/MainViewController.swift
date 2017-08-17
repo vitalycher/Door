@@ -19,8 +19,8 @@ class MainViewController: UIViewController {
     @IBOutlet weak private var quoteTextLabel: UILabel!
     @IBOutlet weak private var quoteAuthorLabel: UILabel!
     
-    private let mrKeeRecognizer = MrKeeSpeechRecognizer()
-    private let animator = Animator()
+    private var mrKeeRecognizer: MrKeeSpeechRecognizer?
+    private var animator: Animator?
     private let phraseAnalyzer = PhraseAnalyzer()
     
     let motionManager = CMMotionManager()
@@ -29,21 +29,19 @@ class MainViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        animator.setupBehaviorsFor(view: view)
-        mrKeeRecognizer.mrKeeDelegate = self
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
         
-        mrKeeRecognizer.authorizeAndStartRecordingIfPossible()
-
         if successWithProbability(percentage: 70) {
             getQuote()
         } else {
             setQuote(TipsGenerator().generateTip(), author: "111 team")
         }
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        mrKeeRecognizer?.authorizeAndStartRecordingIfPossible()
+        setupSettings()
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -55,28 +53,25 @@ class MainViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        mrKeeRecognizer.stopRecording()
-        motionManager.stopDeviceMotionUpdates()
+//        mrKeeRecognizer?.stopRecording()
+//        motionManager.stopDeviceMotionUpdates()
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if motion == .motionShake { animator.cleanAllKeyViews() }
+        if motion == .motionShake { animator?.cleanAllKeyViews() }
     }
 
     @IBAction private func openGlassDoor(_ sender: AnyObject) {
-        openGlassDoor()
+//        openGlassDoor()
+        animator?.animateObject(newFallingKey())
     }
 
     @IBAction private func openIronDoor(_ sender: AnyObject) {
         openIronDoor()
     }
-    
-    @IBAction private func goToSettings(_ sender: AnyObject) {
-        performSegue(withIdentifier: "settingsSegue", sender: self)
-    }
 
     private func openGlassDoor() {
-        animator.animateObject(newFallingKey())
+        animator?.animateObject(newFallingKey())
         HUD.show(.progress)
         SessionManager.openGlassDoor { (completionMessage) in
             let message = completionMessage == nil ? "Welcome!" : completionMessage
@@ -86,7 +81,7 @@ class MainViewController: UIViewController {
     }
 
     private func openIronDoor() {
-        animator.animateObject(newFallingKey())
+        animator?.animateObject(newFallingKey())
         HUD.show(.progress)
         SessionManager.openIronDoor { (completionMessage) in
             let message = completionMessage == nil ? "Welcome!" : completionMessage
@@ -153,7 +148,30 @@ class MainViewController: UIViewController {
         }
         
         let vector = CGVector.init(dx: point.x, dy: 0.0 - point.y)
-        animator.setupGravityDirection(with: vector)
+        animator?.setupGravityDirection(with: vector)
+    }
+    
+    private func setupSettings() {
+        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue) {
+            if animator == nil {
+                animator = Animator()
+                animator?.setupBehaviorsFor(view: view)
+            }
+        } else {
+            self.animator?.deleteSquaresFromSuperview {
+                self.animator = nil
+                print(">>> Animator = nil")
+            }
+        }
+        
+        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue) {
+            if mrKeeRecognizer == nil {
+                mrKeeRecognizer = MrKeeSpeechRecognizer()
+                mrKeeRecognizer?.mrKeeDelegate = self
+            }
+        } else {
+            mrKeeRecognizer = nil
+        }
     }
 
 }
@@ -161,9 +179,9 @@ class MainViewController: UIViewController {
 extension MainViewController: MrKeeRecognizerDelegate {
     
     func didRecognizeWord(_ newPhrase: String) {
-        animator.animateObject(newFallingKey())
+        animator?.animateObject(newFallingKey())
         phraseAnalyzer.analyze(newPhrase) { (analyzableType) in
-            mrKeeRecognizer.stopRecording()
+            mrKeeRecognizer?.stopRecording()
             if let doorType = analyzableType as? DoorType {
                 switch doorType {
                 case .glass: self.openGlassDoor()
@@ -171,7 +189,7 @@ extension MainViewController: MrKeeRecognizerDelegate {
                 }
             } else if let secondaryType = analyzableType as? SecondaryType {
                 switch secondaryType {
-                case .clean: animator.cleanAllKeyViews()
+                case .clean: animator?.cleanAllKeyViews()
                 default: break
                 }
             }
