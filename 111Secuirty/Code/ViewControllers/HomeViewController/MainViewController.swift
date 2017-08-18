@@ -11,6 +11,7 @@ import Alamofire
 import PKHUD
 import Speech
 import CoreMotion
+import AudioToolbox
 
 class MainViewController: UIViewController {
     
@@ -19,16 +20,29 @@ class MainViewController: UIViewController {
     @IBOutlet weak private var quoteTextLabel: UILabel!
     @IBOutlet weak private var quoteAuthorLabel: UILabel!
     
-    private var mrKeeRecognizer: MrKeeSpeechRecognizer?
-    private var animator: Animator?
+    private var mrKeeRecognizer = MrKeeSpeechRecognizer()
+    private var animator = Animator()
     private let phraseAnalyzer = PhraseAnalyzer()
+    private let motionManager = CMMotionManager()
     
-    let motionManager = CMMotionManager()
-
+    private var isSquareWaterfallEnabled: Bool!
+    private var isSpeechRecognitionEnabled: Bool!
+    
 //MARK: - Actions
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillResignActive), name: .UIApplicationWillResignActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        
+        mrKeeRecognizer.mrKeeDelegate = self
+        mrKeeRecognizer.authorize()
+        animator.setupBehaviorsFor(view: view)
         
         if successWithProbability(percentage: 70) {
             getQuote()
@@ -40,30 +54,41 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        mrKeeRecognizer?.authorizeAndStartRecordingIfPossible()
         setupSettings()
+        startRecordingIfAllowedBySettings()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        motionManager.startDeviceMotionUpdates(to: OperationQueue(), withHandler: gravityUpdated)
+        motionManager.gyroUpdateInterval = 0.2
+        motionManager.startDeviceMotionUpdates(to: OperationQueue.current!) { (data, error) in
+            if let data = data {
+                if data.rotationRate.x > 0.1 || data.rotationRate.y > 0.1 || data.rotationRate.z > 0.1 {
+                    self.gyroscopeVectorDidUpdate(motion: data, error: error)
+                }
+            }
+        }
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-//        mrKeeRecognizer?.stopRecording()
-//        motionManager.stopDeviceMotionUpdates()
+        mrKeeRecognizer.stopRecording()
+        motionManager.stopDeviceMotionUpdates()
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
-        if motion == .motionShake { animator?.cleanAllKeyViews() }
+        if motion == .motionShake {
+            //(chernysh) Vibration worked 1-2 times and then just refused working. Wtf?
+            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
+            animator.cleanAllKeyViews()
+        }
     }
 
     @IBAction private func openGlassDoor(_ sender: AnyObject) {
 //        openGlassDoor()
-        animator?.animateObject(newFallingKey())
+        createFallingKeyIfAllowed()
     }
 
     @IBAction private func openIronDoor(_ sender: AnyObject) {
@@ -71,7 +96,7 @@ class MainViewController: UIViewController {
     }
 
     private func openGlassDoor() {
-        animator?.animateObject(newFallingKey())
+        createFallingKeyIfAllowed()
         HUD.show(.progress)
         SessionManager.openGlassDoor { (completionMessage) in
             let message = completionMessage == nil ? "Welcome!" : completionMessage
@@ -81,7 +106,7 @@ class MainViewController: UIViewController {
     }
 
     private func openIronDoor() {
-        animator?.animateObject(newFallingKey())
+        createFallingKeyIfAllowed()
         HUD.show(.progress)
         SessionManager.openIronDoor { (completionMessage) in
             let message = completionMessage == nil ? "Welcome!" : completionMessage
@@ -123,11 +148,10 @@ class MainViewController: UIViewController {
         return keyView
     }
     
-    private func gravityUpdated(motion: CMDeviceMotion?, error: Error?) {
+    private func gyroscopeVectorDidUpdate(motion: CMDeviceMotion, error: Error?) {
         if let error = error { print(error) }
         
-        let gravity : CMAcceleration = motion!.gravity;
-        
+        let gravity: CMAcceleration = motion.gravity;
         let x = CGFloat(gravity.x);
         let y = CGFloat(gravity.y);
         var point = CGPoint.init(x: x, y: y)
@@ -148,40 +172,42 @@ class MainViewController: UIViewController {
         }
         
         let vector = CGVector.init(dx: point.x, dy: 0.0 - point.y)
-        animator?.setupGravityDirection(with: vector)
+        animator.setupGravityDirection(with: vector)
     }
     
     private func setupSettings() {
-        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue) {
-            if animator == nil {
-                animator = Animator()
-                animator?.setupBehaviorsFor(view: view)
-            }
-        } else {
-            self.animator?.deleteSquaresFromSuperview {
-                self.animator = nil
-                print(">>> Animator = nil")
-            }
-        }
-        
-        if UserDefaults.standard.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue) {
-            if mrKeeRecognizer == nil {
-                mrKeeRecognizer = MrKeeSpeechRecognizer()
-                mrKeeRecognizer?.mrKeeDelegate = self
-            }
-        } else {
-            mrKeeRecognizer = nil
-        }
+        isSquareWaterfallEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue)
+        isSpeechRecognitionEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
     }
-
+    
+    private func createFallingKeyIfAllowed() {
+        guard isSquareWaterfallEnabled else { return }
+        animator.animateObject(newFallingKey())
+    }
+    
+    private func startRecordingIfAllowedBySettings() {
+        guard isSpeechRecognitionEnabled else { return }
+        mrKeeRecognizer.startRecordingIfAuthorized()
+    }
+    
+    @objc private func applicationWillResignActive() {
+        mrKeeRecognizer.stopRecording()
+    }
+    
+    @objc private func applicationDidBecomeActive() {
+        startRecordingIfAllowedBySettings()
+    }
+    
 }
 
 extension MainViewController: MrKeeRecognizerDelegate {
     
     func didRecognizeWord(_ newPhrase: String) {
-        animator?.animateObject(newFallingKey())
+        createFallingKeyIfAllowed()
         phraseAnalyzer.analyze(newPhrase) { (analyzableType) in
-            mrKeeRecognizer?.stopRecording()
+            mrKeeRecognizer.stopRecording() {
+                self.mrKeeRecognizer.startRecordingIfAuthorized()
+            }
             if let doorType = analyzableType as? DoorType {
                 switch doorType {
                 case .glass: self.openGlassDoor()
@@ -189,19 +215,14 @@ extension MainViewController: MrKeeRecognizerDelegate {
                 }
             } else if let secondaryType = analyzableType as? SecondaryType {
                 switch secondaryType {
-                case .clean: animator?.cleanAllKeyViews()
+                case .clean: animator.cleanAllKeyViews()
                 default: break
                 }
             }
         }
     }
 
-    func didFinishRecognition(recognizer: MrKeeSpeechRecognizer) {
-        do {
-            try recognizer.startRecording()
-        } catch let error {
-            print("There was a problem starting recording: \(error.localizedDescription)")
-        }
-    }
-
+    func didFinishRecognition(recognizer: MrKeeSpeechRecognizer) { }
+    
 }
+
