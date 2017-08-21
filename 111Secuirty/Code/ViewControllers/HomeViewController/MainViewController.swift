@@ -10,10 +10,9 @@ import UIKit
 import Alamofire
 import PKHUD
 import Speech
-import CoreMotion
 import AudioToolbox
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, Gyroscopable {
     
     @IBOutlet weak private var glassDoorButton: UIButton!
     @IBOutlet weak private var ironDoorButton: UIButton!
@@ -23,7 +22,6 @@ class MainViewController: UIViewController {
     private var mrKeeRecognizer = MrKeeSpeechRecognizer()
     private var animator = Animator()
     private let phraseAnalyzer = PhraseAnalyzer()
-    private let motionManager = CMMotionManager()
     
     private var isSquareWaterfallEnabled: Bool!
     private var isSpeechRecognitionEnabled: Bool!
@@ -37,6 +35,8 @@ class MainViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        gyroscope.delegate = self
+
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillResignActive), name: .UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
         
@@ -57,31 +57,15 @@ class MainViewController: UIViewController {
         setupSettings()
         startRecordingIfAllowedBySettings()
     }
-    
-    override func viewDidAppear(_ animated: Bool) {
-        super.viewDidAppear(animated)
-        
-        motionManager.gyroUpdateInterval = 0.2
-        motionManager.startDeviceMotionUpdates(to: OperationQueue.current!) { (data, error) in
-            if let data = data {
-                if data.rotationRate.x > 0.1 || data.rotationRate.y > 0.1 || data.rotationRate.z > 0.1 {
-                    self.gyroscopeVectorDidUpdate(motion: data, error: error)
-                }
-            }
-        }
-    }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
         mrKeeRecognizer.stopRecording()
-        motionManager.stopDeviceMotionUpdates()
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
         if motion == .motionShake {
-            //(chernysh) Vibration worked 1-2 times and then just refused working. Wtf?
-            AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
             animator.cleanAllKeyViews()
         }
     }
@@ -113,6 +97,12 @@ class MainViewController: UIViewController {
 
             HUD.flash(.label(message), delay: 2.0)
         }
+    }
+    
+    func vectorDidUpdate(with vector: CGVector) {
+        print(vector)
+        //NE WORKAET
+        //WORKAROUND ABOUT ETOM
     }
 
 //MARK: - Help functions
@@ -146,33 +136,6 @@ class MainViewController: UIViewController {
         let keyView = UIImageView(frame: CGRect(x: randomInt(min: Int(view.frame.width / 2 - view.frame.width / 4), max: Int(view.frame.width / 2 + view.frame.width / 4)), y: 80, width: 30, height: 30))
         keyView.image = UIImage.init(named: "AppIcon")
         return keyView
-    }
-    
-    private func gyroscopeVectorDidUpdate(motion: CMDeviceMotion, error: Error?) {
-        if let error = error { print(error) }
-        
-        let gravity: CMAcceleration = motion.gravity;
-        let x = CGFloat(gravity.x);
-        let y = CGFloat(gravity.y);
-        var point = CGPoint.init(x: x, y: y)
-        
-        switch UIApplication.shared.statusBarOrientation {
-        case .landscapeLeft:
-            let temp = point.x
-            point.x = 0 - point.y
-            point.y = temp
-        case .landscapeRight:
-            let temp = point.x
-            point.x = point.y
-            point.y = 0 - temp
-        case .portraitUpsideDown:
-            point.x *= -1
-            point.y *= -1
-        default: break
-        }
-        
-        let vector = CGVector.init(dx: point.x, dy: 0.0 - point.y)
-        animator.setupGravityDirection(with: vector)
     }
     
     private func setupSettings() {

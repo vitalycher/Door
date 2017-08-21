@@ -74,6 +74,8 @@
 		AA9EB9821F41D5DF00E77DE7 /* Animator+Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */; };
 		AA9EB9851F431D1B00E77DE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */; };
 		AACB07021F39CB9300A56675 /* MrKeeSpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */; };
+		AACEDE9F1F49D6B6000E703F /* GyroscopeManagerViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACEDE9E1F49D6B6000E703F /* GyroscopeManagerViewController.swift */; };
+		AACEDEA31F49DCB5000E703F /* Gyroscopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACEDEA21F49DCB5000E703F /* Gyroscopable.swift */; };
 		AAE7EB9D1F4333EB00C9E566 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EB9B1F4333EB00C9E566 /* SwitchTableViewCell.swift */; };
 		AAE7EB9E1F4333EB00C9E566 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE7EB9C1F4333EB00C9E566 /* SwitchTableViewCell.xib */; };
 		AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */; };
@@ -166,6 +168,8 @@
 		AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animator+Behaviors.swift"; sourceTree = "<group>"; };
 		AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		AACB07011F39CB9300A56675 /* MrKeeSpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MrKeeSpeechRecognizer.swift; sourceTree = "<group>"; };
+		AACEDE9E1F49D6B6000E703F /* GyroscopeManagerViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeManagerViewController.swift; sourceTree = "<group>"; };
+		AACEDEA21F49DCB5000E703F /* Gyroscopable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gyroscopable.swift; sourceTree = "<group>"; };
 		AAE7EB9B1F4333EB00C9E566 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		AAE7EB9C1F4333EB00C9E566 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsGenerator.swift; sourceTree = "<group>"; };
@@ -251,6 +255,7 @@
 		8908B4661CD9E90D005CC547 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AACEDEA11F49DC90000E703F /* GyroscopeManager+runtime */,
 				8908B4671CD9E921005CC547 /* String+Validation */,
 			);
 			path = Extensions;
@@ -347,6 +352,7 @@
 				89CFF4B61CD3ACA900F0097E /* ResetPasswordViewController */,
 				89CFF4B41CD3A7EE00F0097E /* HomeViewController */,
 				89CFF4B31CD3A7DD00F0097E /* LoginViewController */,
+				AACEDEA01F49D7EB000E703F /* Gyroscope View Controller */,
 			);
 			path = ViewControllers;
 			sourceTree = "<group>";
@@ -467,6 +473,22 @@
 				AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */,
 			);
 			path = SettingsViewController;
+			sourceTree = "<group>";
+		};
+		AACEDEA01F49D7EB000E703F /* Gyroscope View Controller */ = {
+			isa = PBXGroup;
+			children = (
+				AACEDE9E1F49D6B6000E703F /* GyroscopeManagerViewController.swift */,
+			);
+			path = "Gyroscope View Controller";
+			sourceTree = "<group>";
+		};
+		AACEDEA11F49DC90000E703F /* GyroscopeManager+runtime */ = {
+			isa = PBXGroup;
+			children = (
+				AACEDEA21F49DCB5000E703F /* Gyroscopable.swift */,
+			);
+			path = "GyroscopeManager+runtime";
 			sourceTree = "<group>";
 		};
 		AAE7EB9A1F4333B700C9E566 /* Cells */ = {
@@ -734,12 +756,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACEDE9F1F49D6B6000E703F /* GyroscopeManagerViewController.swift in Sources */,
 				5D5739161EEFE4C900704E73 /* AppDelegate.swift in Sources */,
 				AA3DB8791F39F51000040966 /* PhraseAnalyzer.swift in Sources */,
 				74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */,
 				AACB07021F39CB9300A56675 /* MrKeeSpeechRecognizer.swift in Sources */,
 				74887B191CC599B100EC677E /* MainViewController.swift in Sources */,
 				AAE7EB9D1F4333EB00C9E566 /* SwitchTableViewCell.swift in Sources */,
+				AACEDEA31F49DCB5000E703F /* Gyroscopable.swift in Sources */,
 				89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */,
 				89CFF4B81CD3ACCD00F0097E /* ResetPasswordViewController.swift in Sources */,
 				74887B171CC5997400EC677E /* LoginViewController.swift in Sources */,
