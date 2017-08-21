@@ -35,7 +35,7 @@ class MainViewController: UIViewController, Gyroscopable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gyroscope.delegate = self
+        gyroscope.attach()
 
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillResignActive), name: .UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
@@ -98,12 +98,6 @@ class MainViewController: UIViewController, Gyroscopable {
             HUD.flash(.label(message), delay: 2.0)
         }
     }
-    
-    func vectorDidUpdate(with vector: CGVector) {
-        print(vector)
-        //NE WORKAET
-        //WORKAROUND ABOUT ETOM
-    }
 
 //MARK: - Help functions
 
@@ -159,6 +153,10 @@ class MainViewController: UIViewController, Gyroscopable {
     
     @objc private func applicationDidBecomeActive() {
         startRecordingIfAllowedBySettings()
+    }
+    
+    func gyroscopeVectorDidUpdate(with vector: CGVector, gyroscope: GyroscopeManagerViewController) {
+        animator.setupGravityDirection(with: vector)
     }
     
 }

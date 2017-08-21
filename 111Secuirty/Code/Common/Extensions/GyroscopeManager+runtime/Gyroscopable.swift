@@ -14,7 +14,7 @@ private struct AssociatedKeys {
 
 protocol Gyroscopable: class {
     var gyroscope: GyroscopeManagerViewController { get }
-    func vectorDidUpdate(with vector: CGVector)
+    func gyroscopeVectorDidUpdate(with vector: CGVector, gyroscope: GyroscopeManagerViewController)
 }
 
 extension Gyroscopable where Self: UIViewController {
@@ -25,19 +25,15 @@ extension Gyroscopable where Self: UIViewController {
             
             if (gyroscope == nil) {
                 gyroscope = GyroscopeManagerViewController()
-                
                 objc_setAssociatedObject(self, &AssociatedKeys.GyroscopeAssociatedKey, gyroscope, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
-                attachMenuToParent()
+                addChildViewController(gyroscope!)
+                view.addSubview(gyroscope!.view)
+                gyroscope!.didMove(toParentViewController: self)
+                gyroscope?.delegate = self
             }
+            
             return gyroscope!
         }
-    }
-    
-    private func attachMenuToParent() {
-        let gyroscopeManagerViewController = GyroscopeManagerViewController()
-        addChildViewController(gyroscopeManagerViewController)
-        view.addSubview(gyroscopeManagerViewController.view)
-        gyroscopeManagerViewController.didMove(toParentViewController: self)
     }
     
 }

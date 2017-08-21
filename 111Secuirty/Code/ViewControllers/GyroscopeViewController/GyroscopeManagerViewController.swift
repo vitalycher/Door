@@ -11,33 +11,32 @@ import CoreMotion
 
 class GyroscopeManagerViewController: UIViewController {
     
-    private var motionManager = CMMotionManager()
+    private var gyroscopeManager = GyroscopeManager()
     weak var delegate: Gyroscopable?
-
+    
     override func loadView() {
        view = UIView(frame: CGRect.init())
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        
+        gyroscopeManager.delegate = self
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        motionManager.gyroUpdateInterval = 0.2
-        motionManager.startDeviceMotionUpdates(to: OperationQueue.current!) { (data, error) in
-            if let data = data {
-                if data.rotationRate.x > 0.1 || data.rotationRate.y > 0.1 || data.rotationRate.z > 0.1 {
-                    self.gyroscopeVectorDidUpdate(motion: data, error: error)
-                }
-            }
-        }
+        gyroscopeManager.startUpdates()
     }
     
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         
-        motionManager.stopDeviceMotionUpdates()
+        gyroscopeManager.stopUpdates()
     }
     
-    public func gyroscopeVectorDidUpdate(motion: CMDeviceMotion, error: Error?) {
+    private func calculateNewVector(motion: CMDeviceMotion, error: Error?) {
         if let error = error { print(error) }
         
         let gravity: CMAcceleration = motion.gravity;
@@ -59,12 +58,22 @@ class GyroscopeManagerViewController: UIViewController {
             point.y *= -1
         default: break
         }
-        print(CGVector.init(dx: point.x, dy: 0.0 - point.y))
-        delegate?.vectorDidUpdate(with: CGVector.init(dx: point.x, dy: 0.0 - point.y))
+        let updatedVector = CGVector.init(dx: point.x, dy: 0.0 - point.y)
+        delegate?.gyroscopeVectorDidUpdate(with: updatedVector, gyroscope: self)
     }
     
-//    public func disable() {
-//        motionManager = nil
-//    }
+    public func attach() {
+        gyroscopeManager.startUpdates()
+    }
+    
+    public func detach() {
+        gyroscopeManager.stopUpdates()
+    }
+    
+}
 
+extension GyroscopeManagerViewController: GyroscopeDataTransmittable {
+    func gyroscopeDidTransferMotion(motion: CMDeviceMotion, error: Error?, gyroscope: GyroscopeManager) {
+        calculateNewVector(motion: motion, error: error)
+    }
 }
