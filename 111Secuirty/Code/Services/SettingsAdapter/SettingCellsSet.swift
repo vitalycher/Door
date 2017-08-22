@@ -11,6 +11,7 @@ import Foundation
 enum SettingType {
     case voiceRecognition
     case squaresWaterfall
+    case gyroscope
     
     var localized: String {
         switch self {
@@ -18,6 +19,8 @@ enum SettingType {
             return NSLocalizedString("Voice recognition", comment: "")
         case .squaresWaterfall:
             return NSLocalizedString("Squares waterfall", comment: "")
+        case .gyroscope:
+            return NSLocalizedString("Gyroscope", comment: "")
         }
     }
     
@@ -25,7 +28,7 @@ enum SettingType {
 
 struct SettingCellsSet {
     
-    private var cellsAlliance: [SettingType] = [.voiceRecognition, .squaresWaterfall]
+    private var cellsAlliance: [SettingType] = [.voiceRecognition, .squaresWaterfall, .gyroscope]
     
     public func settingsCells() -> [SettingType] {
         return cellsAlliance

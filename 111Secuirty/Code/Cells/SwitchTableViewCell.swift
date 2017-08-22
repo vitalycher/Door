@@ -11,6 +11,7 @@ import UIKit
 enum UserDefaultsKeys: String {
     case squaresWaterfallEnabled = "squaresWaterfall"
     case voiceRecognitionEnabled = "voiceRecognition"
+    case gyroscopeEnabled = "gyroscopeEnabled"
 }
 
 class SwitchTableViewCell: UITableViewCell {
@@ -24,6 +25,7 @@ class SwitchTableViewCell: UITableViewCell {
             switch settingType {
             case .squaresWaterfall: UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue)
             case .voiceRecognition: UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
+            case .gyroscope: UserDefaults.standard.set(sender.isOn, forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue)
             }
         }
     }
@@ -32,7 +34,11 @@ class SwitchTableViewCell: UITableViewCell {
         self.settingType = settingType
         settingLabel.text = settingType.localized
         
-        settingSwitch.isOn = (settingType == .squaresWaterfall ? UserDefaults.standard.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue) : UserDefaults.standard.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue))
+        switch settingType {
+        case .squaresWaterfall: settingSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue)
+        case .gyroscope: settingSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue)
+        case .voiceRecognition: settingSwitch.isOn = UserDefaults.standard.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
+        }
     }
     
 }

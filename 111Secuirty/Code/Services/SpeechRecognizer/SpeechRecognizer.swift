@@ -1,5 +1,5 @@
 //
-//  MrKeeSpeechRecognizer.swift
+//SpeechRecognizer.swift
 //  111Secuirty
 //
 //  Created by Vitaly Chernysh on 8/8/17.
@@ -12,14 +12,14 @@ import Foundation
 import UIKit
 import Speech
 
-protocol MrKeeRecognizerDelegate: class {
+protocol SpeechRecognizerDelegate: class {
     func didRecognizeWord(_ newPhrase: String)
-    func didFinishRecognition(recognizer: MrKeeSpeechRecognizer)
+    func didFinishRecognition(recognizer: SpeechRecognizer)
 }
 
-class MrKeeSpeechRecognizer {
+class SpeechRecognizer {
     
-    weak var mrKeeDelegate: MrKeeRecognizerDelegate?
+    weak var delegate: SpeechRecognizerDelegate?
     
     let audioEngine = AVAudioEngine()
     let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_US"))
@@ -46,6 +46,7 @@ class MrKeeSpeechRecognizer {
         request = SFSpeechAudioBufferRecognitionRequest()
         
         let recordingFormat = node.outputFormat(forBus: 0)
+        node.removeTap(onBus: 0)
         node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [unowned self]
             (buffer, _) in self.request.append(buffer) }
 
@@ -62,7 +63,7 @@ class MrKeeSpeechRecognizer {
         recognitionTask = speechRecognizer.recognitionTask(with: request) {
             [unowned self] (result, error) in
             if let result = result {
-                self.mrKeeDelegate?.didRecognizeWord(result.bestTranscription.formattedString)
+                self.delegate?.didRecognizeWord(result.bestTranscription.formattedString)
             } else if let error = error {
                 print(error)
             }
@@ -81,7 +82,6 @@ class MrKeeSpeechRecognizer {
     public func stopRecording(success: (() -> Void)? = nil) {
         guard audioEngine.isRunning else { return }
         DispatchQueue.main.async {
-            self.audioEngine.inputNode.removeTap(onBus: 0)
             self.audioEngine.stop()
             self.request.endAudio()
             self.request = nil

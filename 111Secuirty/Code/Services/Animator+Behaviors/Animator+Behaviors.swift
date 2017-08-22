@@ -62,6 +62,10 @@ class Animator {
         gravity.gravityDirection = vector
     }
     
+    public func setVerticalDownGravityDirection() {
+        gravity.gravityDirection = CGVector(dx: 0, dy: 1)
+    }
+    
     public func deleteSquaresFromSuperview(success: (() -> Void)?) {
         viewsOnTheScreen.forEach { $0.removeFromSuperview() }
         viewsOnTheScreen.removeAll()

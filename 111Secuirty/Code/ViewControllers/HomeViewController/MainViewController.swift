@@ -12,21 +12,19 @@ import PKHUD
 import Speech
 import AudioToolbox
 
-class MainViewController: UIViewController, Gyroscopable {
+class MainViewController: UIViewController {
     
     @IBOutlet weak private var glassDoorButton: UIButton!
     @IBOutlet weak private var ironDoorButton: UIButton!
     @IBOutlet weak private var quoteTextLabel: UILabel!
     @IBOutlet weak private var quoteAuthorLabel: UILabel!
     
-    private var mrKeeRecognizer = MrKeeSpeechRecognizer()
     private var animator = Animator()
     private let phraseAnalyzer = PhraseAnalyzer()
     
-    private var isSquareWaterfallEnabled: Bool!
-    private var isSpeechRecognitionEnabled: Bool!
-    
-//MARK: - Actions
+    private var isSquareWaterfallAllowed: Bool!
+    private var isSpeechRecognitionAllowed: Bool!
+    private var isGyroscopeAllowed: Bool!
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -35,13 +33,10 @@ class MainViewController: UIViewController, Gyroscopable {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        gyroscope.attach()
-
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillResignActive), name: .UIApplicationWillResignActive, object: nil)
         NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
         
-        mrKeeRecognizer.mrKeeDelegate = self
-        mrKeeRecognizer.authorize()
+        speechRecognizer.authorize()
         animator.setupBehaviorsFor(view: view)
         
         if successWithProbability(percentage: 70) {
@@ -55,13 +50,15 @@ class MainViewController: UIViewController, Gyroscopable {
         super.viewWillAppear(animated)
         
         setupSettings()
+        setupGyroscopeAccordingToSettings()
         startRecordingIfAllowedBySettings()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
 
-        mrKeeRecognizer.stopRecording()
+        speechRecognizer.stopRecording()
+        gyroscopeManager.stopUpdates()
     }
     
     override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
@@ -70,15 +67,18 @@ class MainViewController: UIViewController, Gyroscopable {
         }
     }
 
+    //MARK: - Actions
+    
     @IBAction private func openGlassDoor(_ sender: AnyObject) {
-//        openGlassDoor()
-        createFallingKeyIfAllowed()
+        openGlassDoor()
     }
 
     @IBAction private func openIronDoor(_ sender: AnyObject) {
         openIronDoor()
     }
 
+    //MARK: Door management
+    
     private func openGlassDoor() {
         createFallingKeyIfAllowed()
         HUD.show(.progress)
@@ -98,8 +98,8 @@ class MainViewController: UIViewController, Gyroscopable {
             HUD.flash(.label(message), delay: 2.0)
         }
     }
-
-//MARK: - Help functions
+    
+    //MARK: Quotes
 
     private func getQuote() {
         SessionManager.getQuote() { (quoteText, quoteAuthor) in
@@ -117,6 +117,8 @@ class MainViewController: UIViewController, Gyroscopable {
         }
         view.layoutSubviews()
     }
+    
+    //MARK: - Help functions
 
     private func randomInt(min: Int, max: Int) -> Int {
         return min + Int(arc4random_uniform(UInt32(max - min + 1)))
@@ -132,42 +134,50 @@ class MainViewController: UIViewController, Gyroscopable {
         return keyView
     }
     
+    //MARK: - Settings
+    
     private func setupSettings() {
-        isSquareWaterfallEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue)
-        isSpeechRecognitionEnabled = UserDefaults.standard.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
+        isSquareWaterfallAllowed = UserDefaults.standard.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue)
+        isSpeechRecognitionAllowed = UserDefaults.standard.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
+        isGyroscopeAllowed = UserDefaults.standard.bool(forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue)
     }
     
     private func createFallingKeyIfAllowed() {
-        guard isSquareWaterfallEnabled else { return }
+        guard isSquareWaterfallAllowed else { return }
         animator.animateObject(newFallingKey())
     }
     
     private func startRecordingIfAllowedBySettings() {
-        guard isSpeechRecognitionEnabled else { return }
-        mrKeeRecognizer.startRecordingIfAuthorized()
+        guard isSpeechRecognitionAllowed else { return }
+        speechRecognizer.startRecordingIfAuthorized()
+    }
+    
+    private func setupGyroscopeAccordingToSettings() {
+        guard isGyroscopeAllowed else {
+            gyroscopeManager.stopUpdates()
+            animator.setVerticalDownGravityDirection()
+            return
+        }
+        gyroscopeManager.startUpdates()
     }
     
     @objc private func applicationWillResignActive() {
-        mrKeeRecognizer.stopRecording()
+        speechRecognizer.stopRecording()
     }
     
     @objc private func applicationDidBecomeActive() {
         startRecordingIfAllowedBySettings()
     }
     
-    func gyroscopeVectorDidUpdate(with vector: CGVector, gyroscope: GyroscopeManagerViewController) {
-        animator.setupGravityDirection(with: vector)
-    }
-    
 }
 
-extension MainViewController: MrKeeRecognizerDelegate {
+extension MainViewController: SpeechRecognizable {
     
     func didRecognizeWord(_ newPhrase: String) {
         createFallingKeyIfAllowed()
         phraseAnalyzer.analyze(newPhrase) { (analyzableType) in
-            mrKeeRecognizer.stopRecording() {
-                self.mrKeeRecognizer.startRecordingIfAuthorized()
+            speechRecognizer.stopRecording() {
+                self.speechRecognizer.startRecordingIfAuthorized()
             }
             if let doorType = analyzableType as? DoorType {
                 switch doorType {
@@ -182,8 +192,13 @@ extension MainViewController: MrKeeRecognizerDelegate {
             }
         }
     }
-
-    func didFinishRecognition(recognizer: MrKeeSpeechRecognizer) { }
+    
+    func didFinishRecognition(recognizer: SpeechRecognizer) { }
     
 }
 
+extension MainViewController: Gyroscopable {
+    func gyroscopeDidUpdateVector(vector: CGVector, gyroscope: GyroscopeManager) {
+        animator.setupGravityDirection(with: vector)
+    }
+}
