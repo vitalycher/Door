@@ -25,12 +25,9 @@ class PhraseAnalyzer {
     private let doorKeywords: [String : Analyzable] = ["open glass door" : DoorType.glass,
                                                        "glass door" : DoorType.glass,
                                                        "bitch" : DoorType.glass,
-                                                       "second door" : DoorType.glass,
                                                        "hello minutes" : DoorType.glass,
-                                                       "it is me" : DoorType.glass,
                                                        "open iron door" : DoorType.iron,
                                                        "iron door" : DoorType.iron,
-                                                       "first door" : DoorType.iron,
                                                        "clean" : SecondaryType.clean,
                                                        "log out": SecondaryType.logout]
     
@@ -40,10 +37,7 @@ class PhraseAnalyzer {
                 if let doorType = doorKeywords[key] as? DoorType {
                     doorType == DoorType.glass ? successfulAnalysis(DoorType.glass) : successfulAnalysis(DoorType.iron)
                 } else if let secondaryType = doorKeywords[key] as? SecondaryType {
-                    switch secondaryType {
-                    case .clean: successfulAnalysis(SecondaryType.clean)
-                    default: break
-                    }
+                    if secondaryType == .clean { successfulAnalysis(SecondaryType.clean) }
                 }
                 break
             }

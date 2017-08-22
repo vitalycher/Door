@@ -14,8 +14,6 @@ class TipsGenerator {
                 NSLocalizedString("Have a nice day!", comment: ""),
                 NSLocalizedString("You are late again!", comment: ""),
                 NSLocalizedString("You look great today!", comment: ""),
-                NSLocalizedString("The favourite word of Jessie Pinkman from 'Breaking Bad' would open the glass door.", comment: ""),
-                NSLocalizedString("The key phrase to iron door is 'First Door', while glass door key phrase is 'Second Door'.", comment: ""),
                 NSLocalizedString("Just tell 'it is me' and let the magic happen.", comment: "")]
     
     public func generateTip() -> String {
