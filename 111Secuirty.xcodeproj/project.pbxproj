@@ -73,6 +73,12 @@
 		AA3DB8791F39F51000040966 /* PhraseAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */; };
 		AA8DD3641F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8DD3631F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift */; };
 		AA8DD3661F4C403000143B07 /* SpeechRecognizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8DD3651F4C403000143B07 /* SpeechRecognizable.swift */; };
+		AA8DD38D1F4C5E0700143B07 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8DD38C1F4C5E0700143B07 /* IntentHandler.swift */; };
+		AA8DD3951F4C5E0700143B07 /* IntentsUI.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AA8DD3941F4C5E0700143B07 /* IntentsUI.framework */; };
+		AA8DD3981F4C5E0700143B07 /* IntentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8DD3971F4C5E0700143B07 /* IntentViewController.swift */; };
+		AA8DD39B1F4C5E0700143B07 /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = AA8DD3991F4C5E0700143B07 /* MainInterface.storyboard */; };
+		AA8DD39F1F4C5E0700143B07 /* DoorSiriUI.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA8DD3931F4C5E0700143B07 /* DoorSiriUI.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		AA8DD3A21F4C5E0700143B07 /* DoorSiri.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA8DD38A1F4C5E0700143B07 /* DoorSiri.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA9501C41F4B1138006B206E /* GyroscopeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9501C31F4B1138006B206E /* GyroscopeManager.swift */; };
 		AA9EB9821F41D5DF00E77DE7 /* Animator+Behaviors.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */; };
 		AA9EB9851F431D1B00E77DE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */; };
@@ -91,6 +97,20 @@
 			proxyType = 1;
 			remoteGlobalIDString = 8908B46D1CD9F643005CC547;
 			remoteInfo = "Door Widget";
+		};
+		AA8DD39D1F4C5E0700143B07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74887AF71CC592D100EC677E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA8DD3921F4C5E0700143B07;
+			remoteInfo = DoorSiriUI;
+		};
+		AA8DD3A01F4C5E0700143B07 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 74887AF71CC592D100EC677E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = AA8DD3891F4C5E0700143B07;
+			remoteInfo = DoorSiri;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -111,7 +131,9 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
+				AA8DD3A21F4C5E0700143B07 /* DoorSiri.appex in Embed App Extensions */,
 				8908B47A1CD9F643005CC547 /* 111 Key Widget.appex in Embed App Extensions */,
+				AA8DD39F1F4C5E0700143B07 /* DoorSiriUI.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -169,6 +191,14 @@
 		AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseAnalyzer.swift; sourceTree = "<group>"; };
 		AA8DD3631F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeAssociatedKeys.swift; sourceTree = "<group>"; };
 		AA8DD3651F4C403000143B07 /* SpeechRecognizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizable.swift; sourceTree = "<group>"; };
+		AA8DD38A1F4C5E0700143B07 /* DoorSiri.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DoorSiri.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8DD38C1F4C5E0700143B07 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		AA8DD38E1F4C5E0700143B07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AA8DD3931F4C5E0700143B07 /* DoorSiriUI.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DoorSiriUI.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA8DD3941F4C5E0700143B07 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		AA8DD3971F4C5E0700143B07 /* IntentViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentViewController.swift; sourceTree = "<group>"; };
+		AA8DD39A1F4C5E0700143B07 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		AA8DD39C1F4C5E0700143B07 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA9501C31F4B1138006B206E /* GyroscopeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeManager.swift; sourceTree = "<group>"; };
 		AA9EB9811F41D5DF00E77DE7 /* Animator+Behaviors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Animator+Behaviors.swift"; sourceTree = "<group>"; };
 		AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -198,6 +228,21 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA8DD3871F4C5E0700143B07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA8DD3901F4C5E0700143B07 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8DD3951F4C5E0700143B07 /* IntentsUI.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -207,6 +252,7 @@
 				8908B46F1CD9F643005CC547 /* NotificationCenter.framework */,
 				4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */,
 				7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */,
+				AA8DD3941F4C5E0700143B07 /* IntentsUI.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -227,6 +273,8 @@
 			children = (
 				74887B011CC592D100EC677E /* 111Secuirty */,
 				8908B4711CD9F643005CC547 /* Door Widget */,
+				AA8DD38B1F4C5E0700143B07 /* DoorSiri */,
+				AA8DD3961F4C5E0700143B07 /* DoorSiriUI */,
 				74887B001CC592D100EC677E /* Products */,
 				12FDC339921C0EE3975054CC /* Frameworks */,
 				2EFC8E1ABD75A165E1746538 /* Pods */,
@@ -238,6 +286,8 @@
 			children = (
 				74887AFF1CC592D100EC677E /* 111Key.app */,
 				8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */,
+				AA8DD38A1F4C5E0700143B07 /* DoorSiri.appex */,
+				AA8DD3931F4C5E0700143B07 /* DoorSiriUI.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -481,6 +531,25 @@
 			path = "Runtime+AssociatedKeys";
 			sourceTree = "<group>";
 		};
+		AA8DD38B1F4C5E0700143B07 /* DoorSiri */ = {
+			isa = PBXGroup;
+			children = (
+				AA8DD38C1F4C5E0700143B07 /* IntentHandler.swift */,
+				AA8DD38E1F4C5E0700143B07 /* Info.plist */,
+			);
+			path = DoorSiri;
+			sourceTree = "<group>";
+		};
+		AA8DD3961F4C5E0700143B07 /* DoorSiriUI */ = {
+			isa = PBXGroup;
+			children = (
+				AA8DD3971F4C5E0700143B07 /* IntentViewController.swift */,
+				AA8DD3991F4C5E0700143B07 /* MainInterface.storyboard */,
+				AA8DD39C1F4C5E0700143B07 /* Info.plist */,
+			);
+			path = DoorSiriUI;
+			sourceTree = "<group>";
+		};
 		AA9501C21F4B1113006B206E /* GyroscopeManager */ = {
 			isa = PBXGroup;
 			children = (
@@ -550,6 +619,8 @@
 			);
 			dependencies = (
 				8908B4791CD9F643005CC547 /* PBXTargetDependency */,
+				AA8DD39E1F4C5E0700143B07 /* PBXTargetDependency */,
+				AA8DD3A11F4C5E0700143B07 /* PBXTargetDependency */,
 			);
 			name = 111Secuirty;
 			productName = 111Secuirty;
@@ -575,13 +646,47 @@
 			productReference = 8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
+		AA8DD3891F4C5E0700143B07 /* DoorSiri */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8DD3A61F4C5E0700143B07 /* Build configuration list for PBXNativeTarget "DoorSiri" */;
+			buildPhases = (
+				AA8DD3861F4C5E0700143B07 /* Sources */,
+				AA8DD3871F4C5E0700143B07 /* Frameworks */,
+				AA8DD3881F4C5E0700143B07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoorSiri;
+			productName = DoorSiri;
+			productReference = AA8DD38A1F4C5E0700143B07 /* DoorSiri.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		AA8DD3921F4C5E0700143B07 /* DoorSiriUI */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = AA8DD3A31F4C5E0700143B07 /* Build configuration list for PBXNativeTarget "DoorSiriUI" */;
+			buildPhases = (
+				AA8DD38F1F4C5E0700143B07 /* Sources */,
+				AA8DD3901F4C5E0700143B07 /* Frameworks */,
+				AA8DD3911F4C5E0700143B07 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = DoorSiriUI;
+			productName = DoorSiriUI;
+			productReference = AA8DD3931F4C5E0700143B07 /* DoorSiriUI.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
 /* End PBXNativeTarget section */
 
 /* Begin PBXProject section */
 		74887AF71CC592D100EC677E /* Project object */ = {
 			isa = PBXProject;
 			attributes = {
-				LastSwiftUpdateCheck = 0730;
+				LastSwiftUpdateCheck = 0900;
 				LastUpgradeCheck = 0900;
 				ORGANIZATIONNAME = "Egor Bozko";
 				TargetAttributes = {
@@ -592,6 +697,9 @@
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+							com.apple.Siri = {
 								enabled = 1;
 							};
 						};
@@ -606,6 +714,14 @@
 								enabled = 1;
 							};
 						};
+					};
+					AA8DD3891F4C5E0700143B07 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = Y6ZXAWRWJ9;
+					};
+					AA8DD3921F4C5E0700143B07 = {
+						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = Y6ZXAWRWJ9;
 					};
 				};
 			};
@@ -624,6 +740,8 @@
 			targets = (
 				74887AFE1CC592D100EC677E /* 111Secuirty */,
 				8908B46D1CD9F643005CC547 /* Door Widget */,
+				AA8DD3891F4C5E0700143B07 /* DoorSiri */,
+				AA8DD3921F4C5E0700143B07 /* DoorSiriUI */,
 			);
 		};
 /* End PBXProject section */
@@ -690,6 +808,21 @@
 				898474F21CDA3051000952B9 /* KlartextMono-Regular.ttf in Resources */,
 				898474E41CDA304B000952B9 /* SourceSansPro-ExtraLightIt.ttf in Resources */,
 				898474E81CDA304B000952B9 /* SourceSansPro-Regular.ttf in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA8DD3881F4C5E0700143B07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA8DD3911F4C5E0700143B07 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8DD39B1F4C5E0700143B07 /* MainInterface.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -809,6 +942,22 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		AA8DD3861F4C5E0700143B07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8DD38D1F4C5E0700143B07 /* IntentHandler.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		AA8DD38F1F4C5E0700143B07 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				AA8DD3981F4C5E0700143B07 /* IntentViewController.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXTargetDependency section */
@@ -816,6 +965,16 @@
 			isa = PBXTargetDependency;
 			target = 8908B46D1CD9F643005CC547 /* Door Widget */;
 			targetProxy = 8908B4781CD9F643005CC547 /* PBXContainerItemProxy */;
+		};
+		AA8DD39E1F4C5E0700143B07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA8DD3921F4C5E0700143B07 /* DoorSiriUI */;
+			targetProxy = AA8DD39D1F4C5E0700143B07 /* PBXContainerItemProxy */;
+		};
+		AA8DD3A11F4C5E0700143B07 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = AA8DD3891F4C5E0700143B07 /* DoorSiri */;
+			targetProxy = AA8DD3A01F4C5E0700143B07 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -840,6 +999,14 @@
 			isa = PBXVariantGroup;
 			children = (
 				8908B4751CD9F643005CC547 /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		AA8DD3991F4C5E0700143B07 /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AA8DD39A1F4C5E0700143B07 /* Base */,
 			);
 			name = MainInterface.storyboard;
 			sourceTree = "<group>";
@@ -953,7 +1120,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 13A7D5F116B5C8A5852EB976 /* Pods-111Secuirty.debug.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
@@ -983,7 +1150,7 @@
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 7F4F90BC5CEBE0ECA1E9A6DE /* Pods-111Secuirty.release.xcconfig */;
 			buildSettings = {
-				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = "$(inherited)";
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
 				CODE_SIGN_ENTITLEMENTS = "111Secuirty/111 Door.entitlements";
@@ -1057,6 +1224,96 @@
 			};
 			name = Release;
 		};
+		AA8DD3A41F4C5E0700143B07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DoorSiriUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.DoorSiriUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA8DD3A51F4C5E0700143B07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DoorSiriUI/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.DoorSiriUI;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		AA8DD3A71F4C5E0700143B07 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DoorSiri/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.DoorSiri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		AA8DD3A81F4C5E0700143B07 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				INFOPLIST_FILE = DoorSiri/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.DoorSiri;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
@@ -1083,6 +1340,24 @@
 			buildConfigurations = (
 				8908B47C1CD9F644005CC547 /* Debug */,
 				8908B47D1CD9F644005CC547 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA8DD3A31F4C5E0700143B07 /* Build configuration list for PBXNativeTarget "DoorSiriUI" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA8DD3A41F4C5E0700143B07 /* Debug */,
+				AA8DD3A51F4C5E0700143B07 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		AA8DD3A61F4C5E0700143B07 /* Build configuration list for PBXNativeTarget "DoorSiri" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				AA8DD3A71F4C5E0700143B07 /* Debug */,
+				AA8DD3A81F4C5E0700143B07 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

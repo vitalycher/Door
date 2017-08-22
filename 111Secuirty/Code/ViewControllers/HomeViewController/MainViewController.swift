@@ -19,12 +19,9 @@ class MainViewController: UIViewController {
     @IBOutlet weak private var quoteTextLabel: UILabel!
     @IBOutlet weak private var quoteAuthorLabel: UILabel!
     
+    private let defaults = UserDefaults.standard
     private var animator = Animator()
     private let phraseAnalyzer = PhraseAnalyzer()
-    
-    private var isSquareWaterfallAllowed: Bool!
-    private var isSpeechRecognitionAllowed: Bool!
-    private var isGyroscopeAllowed: Bool!
     
     deinit {
         NotificationCenter.default.removeObserver(self)
@@ -49,7 +46,6 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupSettings()
         setupGyroscopeAccordingToSettings()
         startRecordingIfAllowedBySettings()
     }
@@ -136,24 +132,18 @@ class MainViewController: UIViewController {
     
     //MARK: - Settings
     
-    private func setupSettings() {
-        isSquareWaterfallAllowed = UserDefaults.standard.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue)
-        isSpeechRecognitionAllowed = UserDefaults.standard.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
-        isGyroscopeAllowed = UserDefaults.standard.bool(forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue)
-    }
-    
     private func createFallingKeyIfAllowed() {
-        guard isSquareWaterfallAllowed else { return }
+        guard defaults.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue) else { return }
         animator.animateObject(newFallingKey())
     }
     
     private func startRecordingIfAllowedBySettings() {
-        guard isSpeechRecognitionAllowed else { return }
+        guard defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue) else { return }
         speechRecognizer.startRecordingIfAuthorized()
     }
     
     private func setupGyroscopeAccordingToSettings() {
-        guard isGyroscopeAllowed else {
+        guard defaults.bool(forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue) else {
             gyroscopeManager.stopUpdates()
             animator.setVerticalDownGravityDirection()
             return
