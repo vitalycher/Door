@@ -151,6 +151,8 @@ class MainViewController: UIViewController {
         gyroscopeManager.startUpdates()
     }
     
+    //MARK: App lifecycle
+    
     @objc private func applicationWillResignActive() {
         speechRecognizer.stopRecording()
     }

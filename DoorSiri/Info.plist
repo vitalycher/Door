@@ -28,15 +28,26 @@
 			<array/>
 			<key>IntentsSupported</key>
 			<array>
-				<string>INSendMessageIntent</string>
-				<string>INSearchForMessagesIntent</string>
-				<string>INSetMessageAttributeIntent</string>
+				<string>INStartWorkoutIntent</string>
 			</array>
 		</dict>
 		<key>NSExtensionPointIdentifier</key>
 		<string>com.apple.intents-service</string>
 		<key>NSExtensionPrincipalClass</key>
 		<string>$(PRODUCT_MODULE_NAME).IntentHandler</string>
+	</dict>
+	<key>NSAppTransportSecurity</key>
+	<dict>
+		<key>NSAllowsArbitraryLoads</key>
+		<true/>
+		<key>NSExceptionDomains</key>
+		<dict>
+			<key>http://api.forismatic.com/</key>
+			<dict>
+				<key>NSExceptionAllowsInsecureHTTPLoads</key>
+				<true/>
+			</dict>
+		</dict>
 	</dict>
 </dict>
 </plist>

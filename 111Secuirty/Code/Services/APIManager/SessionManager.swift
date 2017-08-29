@@ -17,7 +17,7 @@ class SessionManager {
         case iron
     }
     
-    static var defaults: UserDefaults = UserDefaults(suiteName: "group.com.111minutes.thedoor")!
+    static var defaults: UserDefaults = UserDefaults(suiteName: "Y6ZXAWRWJ9.group.com.111minutes.thedoor")!
 
     static func getUserToken() -> String? {
         return defaults.object(forKey: "kAuthToken") as? String
@@ -61,12 +61,10 @@ class SessionManager {
     }
         
     static func openGlassDoor(_ completion: @escaping (_ errorMessage: String?) -> ()) {
-        
         self.openDoor(madeOf: .glass, completion: completion)
     }
     
     static func openIronDoor(_ completion: @escaping (_ errorMessage: String?) -> ()) {
-        
         self.openDoor(madeOf: .iron, completion: completion)
     }
 

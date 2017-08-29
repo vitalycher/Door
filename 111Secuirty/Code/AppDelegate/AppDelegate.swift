@@ -8,6 +8,7 @@
 
 import UIKit
 import IQKeyboardManager
+import Intents
 
 
 @UIApplicationMain
@@ -20,7 +21,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window?.backgroundColor = UIColor.white
-        
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
         
         if SessionManager.getUserToken() != nil {
@@ -30,12 +30,24 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
         
         IQKeyboardManager.shared().isEnabled = true
-        
         window?.makeKeyAndVisible()
+        requestSiriAuthorization()
+        
+        let vocabulary = [SiriVocabulary.glassDoor, SiriVocabulary.ironDoor]
+        let vocabularySet = NSOrderedSet(array: vocabulary)
+        INVocabulary.shared().setVocabularyStrings(vocabularySet, of: .workoutActivityName)
         
         return true
     }
-
+    
+    private func requestSiriAuthorization() {
+        INPreferences.requestSiriAuthorization { status in
+            if status == .authorized {
+                print("Hi, Siri!")
+            } else {
+                print("Bye, Siri!")
+            }
+        }
+    }
 
 }
-

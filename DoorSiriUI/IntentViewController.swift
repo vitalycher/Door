@@ -2,7 +2,7 @@
 //  IntentViewController.swift
 //  DoorSiriUI
 //
-//  Created by Vitaly Chernysh on 8/22/17.
+//  Created by Vitaly Chernysh on 8/28/17.
 //  Copyright © 2017 Egor Bozko. All rights reserved.
 //
 
@@ -30,6 +30,7 @@ class IntentViewController: UIViewController, INUIHostedViewControlling {
     // MARK: - INUIHostedViewControlling
     
     // Prepare your view controller for the interaction to handle.
+    @available(iOSApplicationExtension 11.0, *)
     func configureView(for parameters: Set<INParameter>, of interaction: INInteraction, interactiveBehavior: INUIInteractiveBehavior, context: INUIHostedViewContext, completion: @escaping (Bool, Set<INParameter>, CGSize) -> Void) {
         // Do configuration here, including preparing views and calculating a desired size for presentation.
         completion(true, parameters, self.desiredSize)

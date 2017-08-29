@@ -1,5 +1,5 @@
 //
-//  Animator+Behaviors.swift
+//  Animator.swift
 //  111Secuirty
 //
 //  Created by Vitaly Chernysh on 8/14/17.
@@ -64,12 +64,6 @@ class Animator {
     
     public func setVerticalDownGravityDirection() {
         gravity.gravityDirection = CGVector(dx: 0, dy: 1)
-    }
-    
-    public func deleteSquaresFromSuperview(success: (() -> Void)?) {
-        viewsOnTheScreen.forEach { $0.removeFromSuperview() }
-        viewsOnTheScreen.removeAll()
-        success?()
     }
     
 }

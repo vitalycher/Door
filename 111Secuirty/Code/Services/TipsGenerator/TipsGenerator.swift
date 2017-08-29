@@ -10,7 +10,7 @@ import Foundation
 
 class TipsGenerator {
     
-    private let tips = [NSLocalizedString("You can open the door by saying 'Hello, Minutes!'", comment: ""),
+    private let tips = [NSLocalizedString("You can open the glass door by saying 'Hello, Minutes!'", comment: ""),
                 NSLocalizedString("Have a nice day!", comment: ""),
                 NSLocalizedString("You are late again!", comment: ""),
                 NSLocalizedString("You look great today!", comment: ""),

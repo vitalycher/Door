@@ -14,3 +14,8 @@ target 'Door Widget' do
     inherit! :search_paths
     pod 'Alamofire'
 end
+
+target 'DoorSiri' do
+    inherit! :search_paths
+    pod 'Alamofire'
+end
