@@ -24,12 +24,13 @@ class IntentHandler: INExtension, INStartWorkoutIntentHandling {
             }
         }
         
-        if let workoutName = intent.workoutName?.spokenPhrase {
-            switch workoutName {
-            case SiriVocabulary.glassDoor: openGlassDoor()
-            case SiriVocabulary.ironDoor: openIronDoor()
-            default: break
-            }
+        guard let workoutName = intent.workoutName?.spokenPhrase else {
+            openGlassDoor()
+            return
+        }
+        
+        if workoutName == SiriVocabulary.ironDoor {
+            openIronDoor()
         } else {
             openGlassDoor()
         }

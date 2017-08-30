@@ -9,6 +9,7 @@
 import Foundation
 
 struct SiriVocabulary {
-    static var glassDoor = "glass"
-    static var ironDoor = "iron"
+    static var glassDoor = "glass door"
+    static var ironDoor = "iron door"
 }
+

@@ -12,7 +12,6 @@ import Alamofire
 
 class TodayViewController: UIViewController, NCWidgetProviding {
 
-    private var defaults: UserDefaults = UserDefaults(suiteName: "group.com.111minutes.thedoor")!
     private let hSpace : CGFloat = 10
     
     @IBOutlet private weak var loginButton: UIButton!
@@ -84,17 +83,9 @@ class TodayViewController: UIViewController, NCWidgetProviding {
             }
         }
     }
-
-    private func getUserToken() -> String? {
-        return defaults.object(forKey: "kAuthToken") as? String
-    }
-    
-    private func isLoggedIn() -> Bool {
-        return getUserToken() != nil
-    }
     
     private func setupViews() {
-        isLoggedIn() ? setupViewsAuthorized() : setupViewsUnauthorized()
+        SessionManager.getUserToken() != nil ? setupViewsAuthorized() : setupViewsUnauthorized()
     }
     
     private func setupViewsAuthorized() {
