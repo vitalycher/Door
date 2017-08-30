@@ -184,9 +184,7 @@ extension MainViewController: SpeechRecognizable {
             }
         }
     }
-    
-    func didFinishRecognition(recognizer: SpeechRecognizer) { }
-    
+        
 }
 
 extension MainViewController: Gyroscopable {

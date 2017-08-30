@@ -14,7 +14,6 @@ import Speech
 
 protocol SpeechRecognizerDelegate: class {
     func didRecognizeWord(_ newPhrase: String)
-    func didFinishRecognition(recognizer: SpeechRecognizer)
 }
 
 class SpeechRecognizer {
