@@ -14,8 +14,10 @@ class TipsGenerator {
                 NSLocalizedString("Have a nice day!", comment: ""),
                 NSLocalizedString("You are late again!", comment: ""),
                 NSLocalizedString("You look great today!", comment: ""),
-                NSLocalizedString("Just tell 'it is me' and let the magic happen.", comment: "")]
-    
+                NSLocalizedString("Tell Siri: 'Start workout using Key' and see what happens.", comment: ""),
+                NSLocalizedString("Enable voice recognition in Settings to open doors by your voice.", comment: ""),
+                NSLocalizedString("Don't tell Siri that this isn't Fitness app.", comment: "")]
+
     public func generateTip() -> String {
         let randomPhraseNumber = arc4random_uniform(UInt32(tips.count))
         return tips[Int(randomPhraseNumber)]
