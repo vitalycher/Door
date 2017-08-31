@@ -19,3 +19,9 @@ target 'DoorSiri' do
     inherit! :search_paths
     pod 'Alamofire'
 end
+
+target 'WatchDoorSiri' do
+    platform :watchos, '3.0'
+    pod 'Alamofire'
+#    , :git => 'git@github.com:neonichu/Alamofire.git', :branch => 'watchos'
+end

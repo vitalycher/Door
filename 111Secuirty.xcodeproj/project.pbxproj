@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		5D5739161EEFE4C900704E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5739151EEFE4C900704E73 /* AppDelegate.swift */; };
+		6155F9A994D346FF2FE8A184 /* Pods_WatchDoorSiri.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8E6D31C322B948602F38836F /* Pods_WatchDoorSiri.framework */; };
 		74887B081CC592D100EC677E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74887B061CC592D100EC677E /* Main.storyboard */; };
 		74887B0A1CC592D100EC677E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 74887B091CC592D100EC677E /* Assets.xcassets */; };
 		74887B0D1CC592D100EC677E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74887B0B1CC592D100EC677E /* LaunchScreen.storyboard */; };
@@ -89,6 +90,10 @@
 		AACFF6E51F58232000765870 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AACFF6E71F58232000765870 /* InfoPlist.strings */; };
 		AACFF6EA1F58232100765870 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AACFF6EC1F58232100765870 /* Localizable.strings */; };
 		AACFF6EF1F58232300765870 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AACFF6F11F58232300765870 /* InfoPlist.strings */; };
+		AACFF6F91F583C6100765870 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACFF6F81F583C6100765870 /* IntentHandler.swift */; };
+		AACFF6FE1F5849FF00765870 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B1A1CC59BD400EC677E /* SessionManager.swift */; };
+		AACFF6FF1F584A0800765870 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
+		AACFF7011F584FF400765870 /* SiriVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7244B41F55A68000055684 /* SiriVocabulary.swift */; };
 		AAE7EB9D1F4333EB00C9E566 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EB9B1F4333EB00C9E566 /* SwitchTableViewCell.swift */; };
 		AAE7EB9E1F4333EB00C9E566 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE7EB9C1F4333EB00C9E566 /* SwitchTableViewCell.xib */; };
 		AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */; };
@@ -110,20 +115,6 @@
 			proxyType = 1;
 			remoteGlobalIDString = AA36B9701F54747000869794;
 			remoteInfo = DoorSiri;
-		};
-		AA7244A01F55814E00055684 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 74887AF71CC592D100EC677E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 74887AFE1CC592D100EC677E;
-			remoteInfo = 111Secuirty;
-		};
-		AA7244AE1F55836F00055684 /* PBXContainerItemProxy */ = {
-			isa = PBXContainerItemProxy;
-			containerPortal = 74887AF71CC592D100EC677E /* Project object */;
-			proxyType = 1;
-			remoteGlobalIDString = 74887AFE1CC592D100EC677E;
-			remoteInfo = 111Secuirty;
 		};
 /* End PBXContainerItemProxy section */
 
@@ -201,13 +192,12 @@
 		89CFF4A01CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "SourceSansPro-SemiboldIt.ttf"; sourceTree = "<group>"; };
 		89CFF4B71CD3ACCD00F0097E /* ResetPasswordViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; lineEnding = 0; path = ResetPasswordViewController.swift; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.swift; };
 		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
+		8E6D31C322B948602F38836F /* Pods_WatchDoorSiri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchDoorSiri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA1780D01F444933009C0D27 /* SettingCellsSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellsSet.swift; sourceTree = "<group>"; };
 		AA36B9711F54747000869794 /* DoorSiri.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DoorSiri.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA36B9731F54747000869794 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
 		AA36B9751F54747000869794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseAnalyzer.swift; sourceTree = "<group>"; };
-		AA72449B1F55814E00055684 /* 111KeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 111KeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA7244A91F55836F00055684 /* 111KeyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 111KeyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA7244B41F55A68000055684 /* SiriVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriVocabulary.swift; sourceTree = "<group>"; };
 		AA8DD3631F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeAssociatedKeys.swift; sourceTree = "<group>"; };
 		AA8DD3651F4C403000143B07 /* SpeechRecognizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizable.swift; sourceTree = "<group>"; };
@@ -226,12 +216,18 @@
 		AACFF6E61F58232000765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AACFF6EB1F58232100765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
 		AACFF6F01F58232300765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AACFF6F61F583C6100765870 /* WatchDoorSiri.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = WatchDoorSiri.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		AACFF6F81F583C6100765870 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
+		AACFF6FA1F583C6100765870 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		AACFF7001F584F4800765870 /* WatchDoorSiri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = WatchDoorSiri.entitlements; sourceTree = "<group>"; };
 		AAD407201F56CF08005ADC3A /* 111 Key Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "111 Key Widget.entitlements"; sourceTree = "<group>"; };
 		AAE7EB9B1F4333EB00C9E566 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		AAE7EB9C1F4333EB00C9E566 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
 		AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TipsGenerator.swift; sourceTree = "<group>"; };
+		BE39B8FD4CCA0899A589EFD0 /* Pods-WatchDoorSiri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchDoorSiri.release.xcconfig"; path = "Pods/Target Support Files/Pods-WatchDoorSiri/Pods-WatchDoorSiri.release.xcconfig"; sourceTree = "<group>"; };
 		D9BB408B3E06DCF5C034F9F4 /* Pods-Door Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Door Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Door Widget/Pods-Door Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		EBA873F6CEE77ABCD35C0564 /* Pods-DoorSiri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorSiri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-DoorSiri/Pods-DoorSiri.debug.xcconfig"; sourceTree = "<group>"; };
+		F0BAC56D3A9FABA7E3D7E9DF /* Pods-WatchDoorSiri.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WatchDoorSiri.debug.xcconfig"; path = "Pods/Target Support Files/Pods-WatchDoorSiri/Pods-WatchDoorSiri.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -260,17 +256,11 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA7244981F55814E00055684 /* Frameworks */ = {
+		AACFF6F31F583C6100765870 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA7244A61F55836F00055684 /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				6155F9A994D346FF2FE8A184 /* Pods_WatchDoorSiri.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -285,6 +275,7 @@
 				7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */,
 				AA8DD3941F4C5E0700143B07 /* IntentsUI.framework */,
 				7A603361C500A017BF49DD85 /* Pods_DoorSiri.framework */,
+				8E6D31C322B948602F38836F /* Pods_WatchDoorSiri.framework */,
 			);
 			name = Frameworks;
 			sourceTree = "<group>";
@@ -298,6 +289,8 @@
 				3CB95D01645E0FB6AF365BD3 /* Pods-Door Widget.release.xcconfig */,
 				EBA873F6CEE77ABCD35C0564 /* Pods-DoorSiri.debug.xcconfig */,
 				3200522FF322D9C508508180 /* Pods-DoorSiri.release.xcconfig */,
+				F0BAC56D3A9FABA7E3D7E9DF /* Pods-WatchDoorSiri.debug.xcconfig */,
+				BE39B8FD4CCA0899A589EFD0 /* Pods-WatchDoorSiri.release.xcconfig */,
 			);
 			name = Pods;
 			sourceTree = "<group>";
@@ -308,6 +301,7 @@
 				74887B011CC592D100EC677E /* 111Secuirty */,
 				8908B4711CD9F643005CC547 /* Door Widget */,
 				AA36B9721F54747000869794 /* DoorSiri */,
+				AACFF6F71F583C6100765870 /* WatchDoorSiri */,
 				74887B001CC592D100EC677E /* Products */,
 				12FDC339921C0EE3975054CC /* Frameworks */,
 				2EFC8E1ABD75A165E1746538 /* Pods */,
@@ -320,8 +314,7 @@
 				74887AFF1CC592D100EC677E /* 111Key.app */,
 				8908B46E1CD9F643005CC547 /* 111 Key Widget.appex */,
 				AA36B9711F54747000869794 /* DoorSiri.appex */,
-				AA72449B1F55814E00055684 /* 111KeyTests.xctest */,
-				AA7244A91F55836F00055684 /* 111KeyUITests.xctest */,
+				AACFF6F61F583C6100765870 /* WatchDoorSiri.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -630,6 +623,16 @@
 			path = "GyroscopeManager+Runtime";
 			sourceTree = "<group>";
 		};
+		AACFF6F71F583C6100765870 /* WatchDoorSiri */ = {
+			isa = PBXGroup;
+			children = (
+				AACFF7001F584F4800765870 /* WatchDoorSiri.entitlements */,
+				AACFF6F81F583C6100765870 /* IntentHandler.swift */,
+				AACFF6FA1F583C6100765870 /* Info.plist */,
+			);
+			path = WatchDoorSiri;
+			sourceTree = "<group>";
+		};
 		AAE7EB9A1F4333B700C9E566 /* Cells */ = {
 			isa = PBXGroup;
 			children = (
@@ -712,41 +715,24 @@
 			productReference = AA36B9711F54747000869794 /* DoorSiri.appex */;
 			productType = "com.apple.product-type.app-extension";
 		};
-		AA72449A1F55814E00055684 /* 111KeyTests */ = {
+		AACFF6F51F583C6100765870 /* WatchDoorSiri */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = AA7244A21F55814E00055684 /* Build configuration list for PBXNativeTarget "111KeyTests" */;
+			buildConfigurationList = AACFF6FB1F583C6100765870 /* Build configuration list for PBXNativeTarget "WatchDoorSiri" */;
 			buildPhases = (
-				AA7244971F55814E00055684 /* Sources */,
-				AA7244981F55814E00055684 /* Frameworks */,
-				AA7244991F55814E00055684 /* Resources */,
+				46B9EEF30A642B8D3D779572 /* [CP] Check Pods Manifest.lock */,
+				AACFF6F21F583C6100765870 /* Sources */,
+				AACFF6F31F583C6100765870 /* Frameworks */,
+				AACFF6F41F583C6100765870 /* Resources */,
+				212D1F9A24372724F4311BF9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
 			dependencies = (
-				AA7244A11F55814E00055684 /* PBXTargetDependency */,
 			);
-			name = 111KeyTests;
-			productName = 111KeyTests;
-			productReference = AA72449B1F55814E00055684 /* 111KeyTests.xctest */;
-			productType = "com.apple.product-type.bundle.unit-test";
-		};
-		AA7244A81F55836F00055684 /* 111KeyUITests */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = AA7244B01F55836F00055684 /* Build configuration list for PBXNativeTarget "111KeyUITests" */;
-			buildPhases = (
-				AA7244A51F55836F00055684 /* Sources */,
-				AA7244A61F55836F00055684 /* Frameworks */,
-				AA7244A71F55836F00055684 /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-				AA7244AF1F55836F00055684 /* PBXTargetDependency */,
-			);
-			name = 111KeyUITests;
-			productName = 111KeyUITests;
-			productReference = AA7244A91F55836F00055684 /* 111KeyUITests.xctest */;
-			productType = "com.apple.product-type.bundle.ui-testing";
+			name = WatchDoorSiri;
+			productName = WatchDoorSiri;
+			productReference = AACFF6F61F583C6100765870 /* WatchDoorSiri.appex */;
+			productType = "com.apple.product-type.app-extension.intents-service";
 		};
 /* End PBXNativeTarget section */
 
@@ -795,13 +781,14 @@
 							};
 						};
 					};
-					AA72449A1F55814E00055684 = {
+					AACFF6F51F583C6100765870 = {
 						CreatedOnToolsVersion = 9.0;
-						TestTargetID = 74887AFE1CC592D100EC677E;
-					};
-					AA7244A81F55836F00055684 = {
-						CreatedOnToolsVersion = 9.0;
-						TestTargetID = 74887AFE1CC592D100EC677E;
+						DevelopmentTeam = Y6ZXAWRWJ9;
+						SystemCapabilities = {
+							com.apple.ApplicationGroups.iOS = {
+								enabled = 1;
+							};
+						};
 					};
 				};
 			};
@@ -821,8 +808,7 @@
 				74887AFE1CC592D100EC677E /* 111Secuirty */,
 				8908B46D1CD9F643005CC547 /* Door Widget */,
 				AA36B9701F54747000869794 /* DoorSiri */,
-				AA72449A1F55814E00055684 /* 111KeyTests */,
-				AA7244A81F55836F00055684 /* 111KeyUITests */,
+				AACFF6F51F583C6100765870 /* WatchDoorSiri */,
 			);
 		};
 /* End PBXProject section */
@@ -903,14 +889,7 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA7244991F55814E00055684 /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA7244A71F55836F00055684 /* Resources */ = {
+		AACFF6F41F583C6100765870 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
@@ -950,6 +929,21 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
+		212D1F9A24372724F4311BF9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-WatchDoorSiri/Pods-WatchDoorSiri-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
 		2EFCFBFC6A534AF020DCC939 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -963,6 +957,21 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		46B9EEF30A642B8D3D779572 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
 			showEnvVarsInLog = 0;
 		};
 		8D437042894D0331458F7C38 /* [CP] Check Pods Manifest.lock */ = {
@@ -1076,17 +1085,14 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
-		AA7244971F55814E00055684 /* Sources */ = {
+		AACFF6F21F583C6100765870 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
-		AA7244A51F55836F00055684 /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
+				AACFF6FE1F5849FF00765870 /* SessionManager.swift in Sources */,
+				AACFF6F91F583C6100765870 /* IntentHandler.swift in Sources */,
+				AACFF7011F584FF400765870 /* SiriVocabulary.swift in Sources */,
+				AACFF6FF1F584A0800765870 /* APIConstants.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1102,16 +1108,6 @@
 			isa = PBXTargetDependency;
 			target = AA36B9701F54747000869794 /* DoorSiri */;
 			targetProxy = AA36B9861F54747000869794 /* PBXContainerItemProxy */;
-		};
-		AA7244A11F55814E00055684 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 74887AFE1CC592D100EC677E /* 111Secuirty */;
-			targetProxy = AA7244A01F55814E00055684 /* PBXContainerItemProxy */;
-		};
-		AA7244AF1F55836F00055684 /* PBXTargetDependency */ = {
-			isa = PBXTargetDependency;
-			target = 74887AFE1CC592D100EC677E /* 111Secuirty */;
-			targetProxy = AA7244AE1F55836F00055684 /* PBXContainerItemProxy */;
 		};
 /* End PBXTargetDependency section */
 
@@ -1439,87 +1435,50 @@
 			};
 			name = Release;
 		};
-		AA7244A31F55814E00055684 /* Debug */ = {
+		AACFF6FC1F583C6100765870 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F0BAC56D3A9FABA7E3D7E9DF /* Pods-WatchDoorSiri.debug.xcconfig */;
 			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = WatchDoorSiri/WatchDoorSiri.entitlements;
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = 111KeyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "VC.-11KeyTests";
+				INFOPLIST_FILE = WatchDoorSiri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VC.WatchDoorSiri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
 				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/111Key.app/111Key";
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Debug;
 		};
-		AA7244A41F55814E00055684 /* Release */ = {
+		AACFF6FD1F583C6100765870 /* Release */ = {
 			isa = XCBuildConfiguration;
-			buildSettings = {
-				BUNDLE_LOADER = "$(TEST_HOST)";
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = 111KeyTests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "VC.-11KeyTests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/111Key.app/111Key";
-			};
-			name = Release;
-		};
-		AA7244B11F55836F00055684 /* Debug */ = {
-			isa = XCBuildConfiguration;
+			baseConfigurationReference = BE39B8FD4CCA0899A589EFD0 /* Pods-WatchDoorSiri.release.xcconfig */;
 			buildSettings = {
 				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
+				CODE_SIGN_ENTITLEMENTS = WatchDoorSiri/WatchDoorSiri.entitlements;
+				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = 111KeyUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "VC.-11KeyUITests";
+				INFOPLIST_FILE = WatchDoorSiri/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks @executable_path/../../../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = VC.WatchDoorSiri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SDKROOT = watchos;
+				SKIP_INSTALL = YES;
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = 111Secuirty;
-			};
-			name = Debug;
-		};
-		AA7244B21F55836F00055684 /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
-				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
-				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
-				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				CODE_SIGN_IDENTITY = "iPhone Developer";
-				GCC_C_LANGUAGE_STANDARD = gnu11;
-				INFOPLIST_FILE = 111KeyUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "VC.-11KeyUITests";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				TEST_TARGET_NAME = 111Secuirty;
+				TARGETED_DEVICE_FAMILY = 4;
+				WATCHOS_DEPLOYMENT_TARGET = 3.2;
 			};
 			name = Release;
 		};
@@ -1562,20 +1521,11 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		AA7244A21F55814E00055684 /* Build configuration list for PBXNativeTarget "111KeyTests" */ = {
+		AACFF6FB1F583C6100765870 /* Build configuration list for PBXNativeTarget "WatchDoorSiri" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				AA7244A31F55814E00055684 /* Debug */,
-				AA7244A41F55814E00055684 /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
-		AA7244B01F55836F00055684 /* Build configuration list for PBXNativeTarget "111KeyUITests" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				AA7244B11F55836F00055684 /* Debug */,
-				AA7244B21F55836F00055684 /* Release */,
+				AACFF6FC1F583C6100765870 /* Debug */,
+				AACFF6FD1F583C6100765870 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
