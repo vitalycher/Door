@@ -20,10 +20,10 @@ class SpeechRecognizer {
     
     weak var delegate: SpeechRecognizerDelegate?
     
-    let audioEngine = AVAudioEngine()
-    let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_US"))
-    var request: SFSpeechAudioBufferRecognitionRequest!
-    var recognitionTask: SFSpeechRecognitionTask?
+    private let audioEngine = AVAudioEngine()
+    private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_US"))
+    private var request: SFSpeechAudioBufferRecognitionRequest!
+    private var recognitionTask: SFSpeechRecognitionTask?
     
     private var isAuthorized = false
     

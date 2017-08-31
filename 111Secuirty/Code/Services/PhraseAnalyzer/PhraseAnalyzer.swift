@@ -8,7 +8,7 @@
 
 import Foundation
 
-protocol Analyzable { }
+protocol Analyzable {}
 
 enum DoorType: Analyzable {
     case iron

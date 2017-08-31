@@ -11,6 +11,7 @@ import UIKit
 class SettingsViewController: UIViewController {
 
     @IBOutlet weak private var tableView: UITableView!
+    
     fileprivate var cellPrototypes: [SettingType] {
         return SettingCellsSet().settingsCells()
     }

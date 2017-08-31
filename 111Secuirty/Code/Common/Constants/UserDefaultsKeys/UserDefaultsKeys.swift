@@ -9,8 +9,8 @@
 import Foundation
 
 enum UserDefaultsKeys: String {
-    case squaresWaterfallEnabled = "squaresWaterfall"
-    case voiceRecognitionEnabled = "voiceRecognition"
+    case squaresWaterfallEnabled = "squaresWaterfallEnabled"
+    case voiceRecognitionEnabled = "voiceRecognitionEnabled"
     case gyroscopeEnabled = "gyroscopeEnabled"
     case siriAuthorizationEnabled = "siriAuthorizationEnabled"
 }

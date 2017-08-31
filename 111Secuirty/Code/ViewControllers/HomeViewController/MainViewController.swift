@@ -23,9 +23,7 @@ class MainViewController: UIViewController {
     private var animator = Animator()
     private let phraseAnalyzer = PhraseAnalyzer()
     
-    deinit {
-        NotificationCenter.default.removeObserver(self)
-    }
+    deinit { NotificationCenter.default.removeObserver(self) }
     
     override func viewDidLoad() {
         super.viewDidLoad()
