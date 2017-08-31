@@ -1,0 +1,33 @@
+/* Class = "UIButton"; normalTitle = "login"; ObjectID = "1x6-3S-fvB"; */
+"1x6-3S-fvB.normalTitle" = "login";
+
+/* Class = "UILabel"; text = "Instructions for resetting password will be sent to this email"; ObjectID = "2Wg-bO-tXT"; */
+"2Wg-bO-tXT.text" = "Instructions for resetting password will be sent to this email";
+
+/* Class = "UIButton"; normalTitle = "Back to login"; ObjectID = "JvD-nQ-wmu"; */
+"JvD-nQ-wmu.normalTitle" = "Back to login";
+
+/* Class = "UIButton"; normalTitle = "reset password"; ObjectID = "Kk9-Pa-w6U"; */
+"Kk9-Pa-w6U.normalTitle" = "reset password";
+
+/* Class = "UITextField"; placeholder = "Your email"; ObjectID = "Rks-u2-5Wl"; */
+"Rks-u2-5Wl.placeholder" = "Your email";
+
+/* Class = "UIButton"; normalTitle = "Back to home"; ObjectID = "ZIV-Us-oCq"; */
+"ZIV-Us-oCq.normalTitle" = "Back to home";
+
+/* Class = "UITextField"; placeholder = "Your password"; ObjectID = "anH-Au-FIM"; */
+"anH-Au-FIM.placeholder" = "Your password";
+
+/* Class = "UIButton"; normalTitle = "Forgot password?"; ObjectID = "d8a-ij-atF"; */
+"d8a-ij-atF.normalTitle" = "Forgot password?";
+
+/* Class = "UIButton"; normalTitle = "open glass door"; ObjectID = "q0j-1m-PxY"; */
+"q0j-1m-PxY.normalTitle" = "open glass door";
+
+/* Class = "UIButton"; normalTitle = "open iron door"; ObjectID = "rLM-oB-jvJ"; */
+"rLM-oB-jvJ.normalTitle" = "open iron door";
+
+/* Class = "UITextField"; placeholder = "Your email"; ObjectID = "wyB-s4-GZC"; */
+"wyB-s4-GZC.placeholder" = "Your email";
+

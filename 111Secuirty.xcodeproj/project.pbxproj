@@ -73,8 +73,6 @@
 		AA36B9741F54747000869794 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36B9731F54747000869794 /* IntentHandler.swift */; };
 		AA36B9881F54747000869794 /* DoorSiri.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA36B9711F54747000869794 /* DoorSiri.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		AA3DB8791F39F51000040966 /* PhraseAnalyzer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */; };
-		AA72449E1F55814E00055684 /* _11KeyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA72449D1F55814E00055684 /* _11KeyTests.swift */; };
-		AA7244AC1F55836F00055684 /* _11KeyUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7244AB1F55836F00055684 /* _11KeyUITests.swift */; };
 		AA7244B51F55A68000055684 /* SiriVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7244B41F55A68000055684 /* SiriVocabulary.swift */; };
 		AA7244B61F55A68000055684 /* SiriVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7244B41F55A68000055684 /* SiriVocabulary.swift */; };
 		AA8DD3641F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8DD3631F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift */; };
@@ -87,6 +85,10 @@
 		AACACB201F54759300AA0806 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 		AACB07021F39CB9300A56675 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB07011F39CB9300A56675 /* SpeechRecognizer.swift */; };
 		AACEDEA31F49DCB5000E703F /* Gyroscopable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACEDEA21F49DCB5000E703F /* Gyroscopable.swift */; };
+		AACFF6E01F58231E00765870 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AACFF6E21F58231E00765870 /* InfoPlist.strings */; };
+		AACFF6E51F58232000765870 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AACFF6E71F58232000765870 /* InfoPlist.strings */; };
+		AACFF6EA1F58232100765870 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = AACFF6EC1F58232100765870 /* Localizable.strings */; };
+		AACFF6EF1F58232300765870 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = AACFF6F11F58232300765870 /* InfoPlist.strings */; };
 		AAE7EB9D1F4333EB00C9E566 /* SwitchTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAE7EB9B1F4333EB00C9E566 /* SwitchTableViewCell.swift */; };
 		AAE7EB9E1F4333EB00C9E566 /* SwitchTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = AAE7EB9C1F4333EB00C9E566 /* SwitchTableViewCell.xib */; };
 		AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAF31FA91F3DE2A9009433A4 /* TipsGenerator.swift */; };
@@ -205,11 +207,7 @@
 		AA36B9751F54747000869794 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA3DB8781F39F51000040966 /* PhraseAnalyzer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhraseAnalyzer.swift; sourceTree = "<group>"; };
 		AA72449B1F55814E00055684 /* 111KeyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 111KeyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA72449D1F55814E00055684 /* _11KeyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _11KeyTests.swift; sourceTree = "<group>"; };
-		AA72449F1F55814E00055684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA7244A91F55836F00055684 /* 111KeyUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = 111KeyUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
-		AA7244AB1F55836F00055684 /* _11KeyUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = _11KeyUITests.swift; sourceTree = "<group>"; };
-		AA7244AD1F55836F00055684 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		AA7244B41F55A68000055684 /* SiriVocabulary.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SiriVocabulary.swift; sourceTree = "<group>"; };
 		AA8DD3631F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeAssociatedKeys.swift; sourceTree = "<group>"; };
 		AA8DD3651F4C403000143B07 /* SpeechRecognizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizable.swift; sourceTree = "<group>"; };
@@ -221,6 +219,13 @@
 		AACACB231F547DC100AA0806 /* DoorSiri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoorSiri.entitlements; sourceTree = "<group>"; };
 		AACB07011F39CB9300A56675 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		AACEDEA21F49DCB5000E703F /* Gyroscopable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gyroscopable.swift; sourceTree = "<group>"; };
+		AACFF6DB1F58230C00765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Main.strings; sourceTree = "<group>"; };
+		AACFF6DC1F58230C00765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/LaunchScreen.strings; sourceTree = "<group>"; };
+		AACFF6DD1F58230C00765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/MainInterface.strings; sourceTree = "<group>"; };
+		AACFF6E11F58231E00765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AACFF6E61F58232000765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		AACFF6EB1F58232100765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/Localizable.strings; sourceTree = "<group>"; };
+		AACFF6F01F58232300765870 /* ru */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = ru; path = ru.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		AAD407201F56CF08005ADC3A /* 111 Key Widget.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "111 Key Widget.entitlements"; sourceTree = "<group>"; };
 		AAE7EB9B1F4333EB00C9E566 /* SwitchTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwitchTableViewCell.swift; sourceTree = "<group>"; };
 		AAE7EB9C1F4333EB00C9E566 /* SwitchTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SwitchTableViewCell.xib; sourceTree = "<group>"; };
@@ -303,8 +308,6 @@
 				74887B011CC592D100EC677E /* 111Secuirty */,
 				8908B4711CD9F643005CC547 /* Door Widget */,
 				AA36B9721F54747000869794 /* DoorSiri */,
-				AA72449C1F55814E00055684 /* 111KeyTests */,
-				AA7244AA1F55836F00055684 /* 111KeyUITests */,
 				74887B001CC592D100EC677E /* Products */,
 				12FDC339921C0EE3975054CC /* Frameworks */,
 				2EFC8E1ABD75A165E1746538 /* Pods */,
@@ -326,6 +329,8 @@
 		74887B011CC592D100EC677E /* 111Secuirty */ = {
 			isa = PBXGroup;
 			children = (
+				AACFF6EC1F58232100765870 /* Localizable.strings */,
+				AACFF6E71F58232000765870 /* InfoPlist.strings */,
 				8908B4801CDA1193005CC547 /* 111 Door.entitlements */,
 				74887B061CC592D100EC677E /* Main.storyboard */,
 				74887B0B1CC592D100EC677E /* LaunchScreen.storyboard */,
@@ -359,6 +364,7 @@
 		8908B4711CD9F643005CC547 /* Door Widget */ = {
 			isa = PBXGroup;
 			children = (
+				AACFF6E21F58231E00765870 /* InfoPlist.strings */,
 				AAD407201F56CF08005ADC3A /* 111 Key Widget.entitlements */,
 				8908B4811CDA139A005CC547 /* Door Widget.entitlements */,
 				8908B4721CD9F643005CC547 /* TodayViewController.swift */,
@@ -536,6 +542,7 @@
 		AA36B9721F54747000869794 /* DoorSiri */ = {
 			isa = PBXGroup;
 			children = (
+				AACFF6F11F58232300765870 /* InfoPlist.strings */,
 				AACACB231F547DC100AA0806 /* DoorSiri.entitlements */,
 				AA36B9731F54747000869794 /* IntentHandler.swift */,
 				AA36B9751F54747000869794 /* Info.plist */,
@@ -557,24 +564,6 @@
 				AACB07011F39CB9300A56675 /* SpeechRecognizer.swift */,
 			);
 			path = SpeechRecognizer;
-			sourceTree = "<group>";
-		};
-		AA72449C1F55814E00055684 /* 111KeyTests */ = {
-			isa = PBXGroup;
-			children = (
-				AA72449D1F55814E00055684 /* _11KeyTests.swift */,
-				AA72449F1F55814E00055684 /* Info.plist */,
-			);
-			path = 111KeyTests;
-			sourceTree = "<group>";
-		};
-		AA7244AA1F55836F00055684 /* 111KeyUITests */ = {
-			isa = PBXGroup;
-			children = (
-				AA7244AB1F55836F00055684 /* _11KeyUITests.swift */,
-				AA7244AD1F55836F00055684 /* Info.plist */,
-			);
-			path = 111KeyUITests;
 			sourceTree = "<group>";
 		};
 		AA7244B31F55A65E00055684 /* SiriVocabulary */ = {
@@ -859,6 +848,8 @@
 				89CFF4AC1CD395F700F0097E /* SourceSansPro-SemiboldIt.ttf in Resources */,
 				74887B0A1CC592D100EC677E /* Assets.xcassets in Resources */,
 				89CFF4A81CD395F700F0097E /* SourceSansPro-Light.ttf in Resources */,
+				AACFF6E51F58232000765870 /* InfoPlist.strings in Resources */,
+				AACFF6EA1F58232100765870 /* Localizable.strings in Resources */,
 				89CFF4911CD395CF00F0097E /* KlartextMono-Regular.ttf in Resources */,
 				74887B081CC592D100EC677E /* Main.storyboard in Resources */,
 				89CFF48E1CD395CF00F0097E /* KlartextMono-LightItalic.ttf in Resources */,
@@ -895,6 +886,7 @@
 				8908B4761CD9F643005CC547 /* MainInterface.storyboard in Resources */,
 				898474F31CDA3051000952B9 /* KlartextMono-Thin.ttf in Resources */,
 				898474E01CDA304B000952B9 /* SourceSansPro-BlackIt.ttf in Resources */,
+				AACFF6E01F58231E00765870 /* InfoPlist.strings in Resources */,
 				898474EB1CDA3051000952B9 /* KlartextMono-Bold.ttf in Resources */,
 				898474EF1CDA3051000952B9 /* KlartextMono-LightItalic.ttf in Resources */,
 				898474F21CDA3051000952B9 /* KlartextMono-Regular.ttf in Resources */,
@@ -907,6 +899,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				AACFF6EF1F58232300765870 /* InfoPlist.strings in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1087,7 +1080,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA72449E1F55814E00055684 /* _11KeyTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1095,7 +1087,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				AA7244AC1F55836F00055684 /* _11KeyUITests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -1129,6 +1120,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				74887B071CC592D100EC677E /* Base */,
+				AACFF6DB1F58230C00765870 /* ru */,
 			);
 			name = Main.storyboard;
 			sourceTree = "<group>";
@@ -1137,6 +1129,7 @@
 			isa = PBXVariantGroup;
 			children = (
 				74887B0C1CC592D100EC677E /* Base */,
+				AACFF6DC1F58230C00765870 /* ru */,
 			);
 			name = LaunchScreen.storyboard;
 			sourceTree = "<group>";
@@ -1145,8 +1138,41 @@
 			isa = PBXVariantGroup;
 			children = (
 				8908B4751CD9F643005CC547 /* Base */,
+				AACFF6DD1F58230C00765870 /* ru */,
 			);
 			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		AACFF6E21F58231E00765870 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AACFF6E11F58231E00765870 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AACFF6E71F58232000765870 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AACFF6E61F58232000765870 /* ru */,
+			);
+			name = InfoPlist.strings;
+			sourceTree = "<group>";
+		};
+		AACFF6EC1F58232100765870 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AACFF6EB1F58232100765870 /* ru */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+		AACFF6F11F58232300765870 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				AACFF6F01F58232300765870 /* ru */,
+			);
+			name = InfoPlist.strings;
 			sourceTree = "<group>";
 		};
 /* End PBXVariantGroup section */
@@ -1156,6 +1182,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";
@@ -1210,6 +1237,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_LOCALIZABILITY_NONLOCALIZED = YES;
 				CLANG_ANALYZER_NONNULL = YES;
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
 				CLANG_CXX_LIBRARY = "libc++";

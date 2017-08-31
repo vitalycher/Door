@@ -1,0 +1,12 @@
+/* Class = "UILabel"; text = "Please check your internet connection and try again."; ObjectID = "Fix-E1-SCT"; */
+"Fix-E1-SCT.text" = "Please check your internet connection and try again.";
+
+/* Class = "UIButton"; normalTitle = "glass door"; ObjectID = "VHW-2N-YF3"; */
+"VHW-2N-YF3.normalTitle" = "glass door";
+
+/* Class = "UIButton"; normalTitle = "iron door"; ObjectID = "Ymw-R2-8gH"; */
+"Ymw-R2-8gH.normalTitle" = "iron door";
+
+/* Class = "UIButton"; normalTitle = "login"; ObjectID = "wrE-5Z-xrM"; */
+"wrE-5Z-xrM.normalTitle" = "login";
+

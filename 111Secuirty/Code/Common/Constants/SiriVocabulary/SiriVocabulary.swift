@@ -9,7 +9,6 @@
 import Foundation
 
 struct SiriVocabulary {
-    static var glassDoor = "glass door"
-    static var ironDoor = "iron door"
+    static var glassDoor = NSLocalizedString("glass door", comment: "")
+    static var ironDoor = NSLocalizedString("iron door", comment: "")
 }
-
