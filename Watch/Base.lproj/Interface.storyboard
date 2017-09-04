@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13168.3" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c6H-hv-OFr">
+    <device id="watch38" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="watchOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="13147.4"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBWatchKitPlugin" version="13042.2"/>
+    </dependencies>
+    <customFonts key="customFonts">
+        <array key="KlartextMono-Bold.ttf">
+            <string>KlartextMono-Bold</string>
+        </array>
+    </customFonts>
+    <scenes>
+        <!--Key-->
+        <scene sceneID="EIE-Jp-Hlz">
+            <objects>
+                <controller identifier="Key" id="c6H-hv-OFr" customClass="DoorInterfaceController" customModule="Watch_Extension">
+                    <items>
+                        <group alignment="center" verticalAlignment="center" layout="vertical" radius="30" id="Mbd-oZ-scr">
+                            <items>
+                                <button width="1" height="57" alignment="center" title="Open iron door" id="vsU-1A-o3v">
+                                    <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="KlartextMono-Bold" family="Klartext Mono" pointSize="15"/>
+                                    <connections>
+                                        <action selector="openIronDoor" destination="c6H-hv-OFr" id="2s5-m8-W9V"/>
+                                    </connections>
+                                </button>
+                                <button width="1" height="53" alignment="center" title="Open glass door" id="9T4-8X-vn1">
+                                    <color key="backgroundColor" red="0.70588235294117641" green="0.11764705882352941" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
+                                    <fontDescription key="font" name="KlartextMono-Bold" family="Klartext Mono" pointSize="15"/>
+                                    <connections>
+                                        <action selector="openGlassDoor" destination="c6H-hv-OFr" id="NGP-9y-7x9"/>
+                                    </connections>
+                                </button>
+                            </items>
+                        </group>
+                    </items>
+                    <edgeInsets key="margins" left="0.0" right="0.0" top="6" bottom="0.0"/>
+                </controller>
+            </objects>
+            <point key="canvasLocation" x="-134" y="81"/>
+        </scene>
+    </scenes>
+</document>

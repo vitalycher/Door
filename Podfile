@@ -21,7 +21,11 @@ target 'DoorSiri' do
 end
 
 target 'WatchDoorSiri' do
-    platform :watchos, '3.0'
+    platform :watchos, '3.2'
     pod 'Alamofire'
-#    , :git => 'git@github.com:neonichu/Alamofire.git', :branch => 'watchos'
+end
+
+target 'Watch Extension' do
+    platform :watchos, '3.2'
+    pod 'Alamofire'
 end
