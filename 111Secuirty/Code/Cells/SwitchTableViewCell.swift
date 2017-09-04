@@ -31,8 +31,8 @@ class SwitchTableViewCell: UITableViewCell {
         
         switch settingType {
         case .squaresWaterfall: settingSwitch.isOn = defaults.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue)
-        case .gyroscope: settingSwitch.isOn = defaults.bool(forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue)
         case .voiceRecognition: settingSwitch.isOn = defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
+        case .gyroscope: settingSwitch.isOn = defaults.bool(forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue)
         }
     }
     

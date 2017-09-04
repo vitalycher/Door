@@ -12,33 +12,41 @@ import WatchConnectivity
 
 class DoorInterfaceController: WKInterfaceController {
     
-    let session = WCSession.default
-    
-    override func willActivate() {
-        super.willActivate()
-        
-        initSession()
-    }
+    private let userDefaults = UserDefaults.standard
     
     @IBAction private func openGlassDoor() {
-//        SessionManager.openGlassDoor { _ in
-//            print("glass")
-//        }
+        guard let authToken = getUserToken() else {
+            showUnauthorizedAlert()
+            return
+        }
+        
+        SessionManager.openGlassDoor(hardcodedToken: authToken) { _ in
+            self.showWelcomeAlert()
+        }
     }
     
     @IBAction private func openIronDoor() {
-//        SessionManager.openIronDoor { _ in
-//            print("iron")
-//        }
+        guard let authToken = getUserToken() else {
+            showUnauthorizedAlert()
+            return
+        }
+        
+        SessionManager.openIronDoor(hardcodedToken: authToken) { _ in
+            self.showWelcomeAlert()
+        }
     }
     
-    private func initSession() {
-        session.delegate = self
-        session.activate()
+    private func showUnauthorizedAlert() {
+        presentAlert(withTitle: "Unauthorized", message: "Please, login on your device.", preferredStyle: .alert, actions: [])
     }
     
-}
+    private func showWelcomeAlert() {
+        let action = WKAlertAction(title: "Spasibo", style: .default) { }
+        presentAlert(withTitle: "Welcome!", message: nil, preferredStyle: .alert, actions: [action])
+    }
+    
+    private func getUserToken() -> String? {
+        return userDefaults.object(forKey: UserDefaultsKeys.userToken.rawValue) as? String
+    }
 
-extension DoorInterfaceController: WCSessionDelegate {
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
 }

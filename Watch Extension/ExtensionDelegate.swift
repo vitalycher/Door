@@ -10,4 +10,8 @@ import WatchKit
 
 class ExtensionDelegate: NSObject, WKExtensionDelegate {
 
+    func applicationDidFinishLaunching() {
+        WatchSessionManager.sharedManager.startSession()
+    }
+    
 }

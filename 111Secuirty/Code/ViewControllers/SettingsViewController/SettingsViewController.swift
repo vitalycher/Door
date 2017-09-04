@@ -30,7 +30,12 @@ class SettingsViewController: UIViewController {
     
     @IBAction private func logout(_ sender: Any) {
         SessionManager.logoutUser()
-        self.performSegue(withIdentifier: "loginViewControllerSegue", sender: self)
+        performSegue(withIdentifier: "loginViewControllerSegue", sender: self)
+        do {
+            try WatchSessionManager.sharedManager.updateApplicationContext(applicationContext: [ : ])
+        } catch {
+            print(error)
+        }
     }
     
     private func registerCells() {

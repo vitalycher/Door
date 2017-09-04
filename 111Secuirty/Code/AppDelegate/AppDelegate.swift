@@ -9,7 +9,6 @@
 import UIKit
 import IQKeyboardManager
 import Intents
-import WatchConnectivity
 
 
 @UIApplicationMain
@@ -19,20 +18,14 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     
     var window: UIWindow?
     
-    private let session = WCSession.default
-    
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         
         window?.backgroundColor = UIColor.white
         let storyboard = UIStoryboard(name: "Main", bundle: nil)
+        WatchSessionManager.sharedManager.startSession()
         
-        initWatchConnectivitySession()
-
         if SessionManager.getUserToken() != nil {
-            
-            
-            let message = ["auth" : SessionManager.getUserToken() != nil]
-            session.sendMessage(message, replyHandler: nil, errorHandler: nil)
+            let message = ["userToken" : SessionManager.getUserToken()]
             
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         } else {
@@ -61,23 +54,10 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         }
     }
     
-    private func initWatchConnectivitySession() {
-        session.delegate = self
-        session.activate()
-    }
-    
     private func extendSiriVocabulary() {
         let vocabulary = [SiriVocabulary.glassDoor, SiriVocabulary.ironDoor]
         let vocabularySet = NSOrderedSet(array: vocabulary)
         INVocabulary.shared().setVocabularyStrings(vocabularySet, of: .workoutActivityName)
     }
  
-}
-
-extension AppDelegate: WCSessionDelegate {
-    func sessionDidBecomeInactive(_ session: WCSession) { }
-    
-    func sessionDidDeactivate(_ session: WCSession) { }
-    
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
 }

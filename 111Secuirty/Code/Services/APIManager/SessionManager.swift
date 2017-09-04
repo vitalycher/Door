@@ -59,24 +59,31 @@ class SessionManager {
         }
     }
         
-    static func openGlassDoor(_ completion: @escaping (_ errorMessage: String?) -> ()) {
-        self.openDoor(madeOf: .glass, completion: completion)
+    static func openGlassDoor(hardcodedToken: String? = nil, _ completion: @escaping (_ errorMessage: String?) -> ()) {
+        self.openDoor(madeOf: .glass, completion: completion, hardcodedToken: hardcodedToken)
     }
     
-    static func openIronDoor(_ completion: @escaping (_ errorMessage: String?) -> ()) {
-        self.openDoor(madeOf: .iron, completion: completion)
+    static func openIronDoor(hardcodedToken: String? = nil, _ completion: @escaping (_ errorMessage: String?) -> ()) {
+        self.openDoor(madeOf: .iron, completion: completion, hardcodedToken: hardcodedToken)
     }
 
-    static func openDoor(madeOf: Door, completion: @escaping (_ errorMessage: String?) -> ()) {
+    static func openDoor(madeOf: Door, completion: @escaping (_ errorMessage: String?) -> (), hardcodedToken: String? = nil) {
+        let finalToken: String
         
-        guard let authToken = getUserToken() else {
-            completion("Unauthorized")
-            return
+        if hardcodedToken == nil {
+            if let authToken = getUserToken() {
+                finalToken = authToken
+            } else {
+                completion("Unauthorized")
+                return
+            }
+        } else {
+            finalToken = hardcodedToken!
         }
         
         let path = madeOf == .glass ? APIConstants.DoorAPI.glassDoor : APIConstants.DoorAPI.ironDoor
         
-        Alamofire.request(path, method: .post, encoding: JSONEncoding.default, headers: ["AUTH-TOKEN": authToken]).responseJSON { response in
+        Alamofire.request(path, method: .post, encoding: JSONEncoding.default, headers: ["AUTH-TOKEN": finalToken]).responseJSON { response in
             
             if response.response?.statusCode == 200 {
                 completion(nil)

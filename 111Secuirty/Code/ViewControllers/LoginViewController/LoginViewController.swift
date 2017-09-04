@@ -52,10 +52,14 @@ class LoginViewController: UIViewController, UITextFieldDelegate {
         }
         
         HUD.show(.progress)
-
+        
         SessionManager.loginUser(loginTextField.text!.lowercased(), password: passwordTextField.text!) { (token, errorMessage) in
-            
             if let token = token {
+                do {
+                    try WatchSessionManager.sharedManager.updateApplicationContext(applicationContext: [UserDefaultsKeys.userToken.rawValue : token])
+                } catch {
+                    print(error)
+                }
                 HUD.hide()
                 SessionManager.setUserToken(token)
                 self.performSegue(withIdentifier: "mainControllerSegue", sender: self)

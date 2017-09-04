@@ -94,6 +94,9 @@
 		AAB605421F586C66002B6B23 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 		AAB605441F598E59002B6B23 /* KlartextMono-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = 89CFF4801CD395CF00F0097E /* KlartextMono-Bold.ttf */; };
 		AAB605461F59970A002B6B23 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B1A1CC59BD400EC677E /* SessionManager.swift */; };
+		AAC5DC361F5D6D0B00054DD1 /* UserDefaultsKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAB02BDA1F570CBC008D6259 /* UserDefaultsKeys.swift */; };
+		AAC5DC391F5D7E0F00054DD1 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC5DC381F5D7E0F00054DD1 /* WatchSessionManager.swift */; };
+		AAC5DC3B1F5D806600054DD1 /* WatchSessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AAC5DC3A1F5D806600054DD1 /* WatchSessionManager.swift */; };
 		AACACB1F1F54751C00AA0806 /* SessionManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 74887B1A1CC59BD400EC677E /* SessionManager.swift */; };
 		AACACB201F54759300AA0806 /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 		AACB07021F39CB9300A56675 /* SpeechRecognizer.swift in Sources */ = {isa = PBXBuildFile; fileRef = AACB07011F39CB9300A56675 /* SpeechRecognizer.swift */; };
@@ -266,6 +269,8 @@
 		AAB6053F1F5869E0002B6B23 /* DoorInterfaceController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DoorInterfaceController.swift; sourceTree = "<group>"; };
 		AAB605431F586CA6002B6B23 /* Watch Extension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = "Watch Extension.entitlements"; sourceTree = "<group>"; };
 		AAB605451F5994E7002B6B23 /* Watch.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Watch.entitlements; sourceTree = "<group>"; };
+		AAC5DC381F5D7E0F00054DD1 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
+		AAC5DC3A1F5D806600054DD1 /* WatchSessionManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WatchSessionManager.swift; sourceTree = "<group>"; };
 		AACACB231F547DC100AA0806 /* DoorSiri.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = DoorSiri.entitlements; sourceTree = "<group>"; };
 		AACB07011F39CB9300A56675 /* SpeechRecognizer.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizer.swift; sourceTree = "<group>"; };
 		AACEDEA21F49DCB5000E703F /* Gyroscopable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Gyroscopable.swift; sourceTree = "<group>"; };
@@ -531,6 +536,7 @@
 		89CFF4B11CD3A72A00F0097E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AAC5DC371F5D7DFC00054DD1 /* WatchSessionManager */,
 				AA9501C21F4B1113006B206E /* GyroscopeManager */,
 				AA1780D21F44494C009C0D27 /* SettingsAdapter */,
 				AA9EB9801F41D5A700E77DE7 /* Animator+Behaviors */,
@@ -715,12 +721,22 @@
 			isa = PBXGroup;
 			children = (
 				AAB605431F586CA6002B6B23 /* Watch Extension.entitlements */,
+				AAB6053F1F5869E0002B6B23 /* DoorInterfaceController.swift */,
+				AAC5DC3A1F5D806600054DD1 /* WatchSessionManager.swift */,
 				AAB6052F1F585A92002B6B23 /* ExtensionDelegate.swift */,
 				AAB605311F585A92002B6B23 /* Assets.xcassets */,
 				AAB605331F585A92002B6B23 /* Info.plist */,
-				AAB6053F1F5869E0002B6B23 /* DoorInterfaceController.swift */,
 			);
 			path = "Watch Extension";
+			sourceTree = "<group>";
+		};
+		AAC5DC371F5D7DFC00054DD1 /* WatchSessionManager */ = {
+			isa = PBXGroup;
+			children = (
+				AAC5DC381F5D7E0F00054DD1 /* WatchSessionManager.swift */,
+			);
+			name = WatchSessionManager;
+			path = WatchConnectivityManager;
 			sourceTree = "<group>";
 		};
 		AACEDEA11F49DC90000E703F /* GyroscopeManager+Runtime */ = {
@@ -1290,6 +1306,7 @@
 				AA1780D11F444933009C0D27 /* SettingCellsSet.swift in Sources */,
 				AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */,
 				AA8DD3661F4C403000143B07 /* SpeechRecognizable.swift in Sources */,
+				AAC5DC391F5D7E0F00054DD1 /* WatchSessionManager.swift in Sources */,
 				AA9EB9821F41D5DF00E77DE7 /* Animator.swift in Sources */,
 				AA9501C41F4B1138006B206E /* GyroscopeManager.swift in Sources */,
 				AA9EB9851F431D1B00E77DE7 /* SettingsViewController.swift in Sources */,
@@ -1323,6 +1340,8 @@
 			files = (
 				AAB605421F586C66002B6B23 /* APIConstants.swift in Sources */,
 				AAB605301F585A92002B6B23 /* ExtensionDelegate.swift in Sources */,
+				AAC5DC3B1F5D806600054DD1 /* WatchSessionManager.swift in Sources */,
+				AAC5DC361F5D6D0B00054DD1 /* UserDefaultsKeys.swift in Sources */,
 				AAB605461F59970A002B6B23 /* SessionManager.swift in Sources */,
 				AAB605401F5869E0002B6B23 /* DoorInterfaceController.swift in Sources */,
 			);
