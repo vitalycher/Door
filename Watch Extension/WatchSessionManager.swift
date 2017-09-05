@@ -9,30 +9,34 @@
 import Foundation
 import WatchConnectivity
 
-class WatchSessionManager: NSObject, WCSessionDelegate {
-    
-    private let session: WCSession = WCSession.default
-    
-    public func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+import Foundation
+import WatchConnectivity
+
+class WatchSessionManager: NSObject {
     
     static let sharedManager = WatchSessionManager()
     
-    private override init() {
-        super.init()
-    }
+    private let session: WCSession? = WCSession.isSupported() ? WCSession.default : nil
     
     func startSession() {
-        session.delegate = self
-        session.activate()
+        session?.delegate = self
+        session?.activate()
     }
     
 }
+
+extension WatchSessionManager: WCSessionDelegate {
+    func session(_ session: WCSession, activationDidCompleteWith activationState: WCSessionActivationState, error: Error?) { }
+}
+
 
 extension WatchSessionManager {
     func session(_ session: WCSession, didReceiveApplicationContext applicationContext: [String : Any]) {
         DispatchQueue.main.async {
             if let token = applicationContext[UserDefaultsKeys.userToken.rawValue] as? String {
                 UserDefaults.standard.set(token, forKey: UserDefaultsKeys.userToken.rawValue)
+            } else {
+                UserDefaults.standard.set(nil, forKey: UserDefaultsKeys.userToken.rawValue)
             }
         }
     }

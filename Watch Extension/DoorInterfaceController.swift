@@ -15,14 +15,22 @@ class DoorInterfaceController: WKInterfaceController {
     @IBOutlet private var activityLoaderImage: WKInterfaceImage!
     private let userDefaults = UserDefaults.standard
     
+    override func willActivate() {
+        super.willActivate()
+        
+        activityLoaderInitialSetup()
+    }
+    
     @IBAction private func openGlassDoor() {
         showActivityLoader()
         guard let authToken = getUserToken() else {
+            WKInterfaceDevice().play(.failure)
             showUnauthorizedAlert()
             return
         }
         
         SessionManager.openGlassDoor(preparedToken: authToken) { _ in
+            WKInterfaceDevice().play(.success)
             self.hideActivityLoader()
             self.showWelcomeAlert()
         }
@@ -31,11 +39,13 @@ class DoorInterfaceController: WKInterfaceController {
     @IBAction private func openIronDoor() {
         showActivityLoader()
         guard let authToken = getUserToken() else {
+            WKInterfaceDevice().play(.failure)
             showUnauthorizedAlert()
             return
         }
         
         SessionManager.openIronDoor(preparedToken: authToken) { _ in
+            WKInterfaceDevice().play(.success)
             self.hideActivityLoader()
             self.showWelcomeAlert()
         }
@@ -63,6 +73,12 @@ class DoorInterfaceController: WKInterfaceController {
     
     private func hideActivityLoader() {
         activityLoaderImage.stopAnimating()
+        activityLoaderImage.setHidden(true)
+    }
+    
+    private func activityLoaderInitialSetup() {
+        activityLoaderImage.setHeight(25.0)
+        activityLoaderImage.setWidth(25.0)
         activityLoaderImage.setHidden(true)
     }
 

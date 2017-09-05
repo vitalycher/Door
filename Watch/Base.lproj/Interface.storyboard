@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <document type="com.apple.InterfaceBuilder.WatchKit.Storyboard" version="3.0" toolsVersion="13168.3" targetRuntime="watchKit" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="c6H-hv-OFr">
-    <device id="watch38" orientation="portrait">
+    <device id="watch42" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
@@ -19,7 +19,7 @@
             <objects>
                 <controller identifier="Key" id="c6H-hv-OFr" customClass="DoorInterfaceController" customModule="Watch_Extension">
                     <items>
-                        <imageView alignment="center" id="DRr-v1-pqT"/>
+                        <imageView width="20" height="20" alignment="center" id="DRr-v1-pqT"/>
                         <group alignment="center" verticalAlignment="center" layout="vertical" radius="30" id="Mbd-oZ-scr">
                             <items>
                                 <button width="1" height="57" alignment="center" title="Open iron door" id="vsU-1A-o3v">
