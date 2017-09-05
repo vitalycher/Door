@@ -12,41 +12,58 @@ import WatchConnectivity
 
 class DoorInterfaceController: WKInterfaceController {
     
+    @IBOutlet private var activityLoaderImage: WKInterfaceImage!
     private let userDefaults = UserDefaults.standard
     
     @IBAction private func openGlassDoor() {
+        showActivityLoader()
         guard let authToken = getUserToken() else {
             showUnauthorizedAlert()
             return
         }
         
-        SessionManager.openGlassDoor(hardcodedToken: authToken) { _ in
+        SessionManager.openGlassDoor(preparedToken: authToken) { _ in
+            self.hideActivityLoader()
             self.showWelcomeAlert()
         }
     }
     
     @IBAction private func openIronDoor() {
+        showActivityLoader()
         guard let authToken = getUserToken() else {
             showUnauthorizedAlert()
             return
         }
         
-        SessionManager.openIronDoor(hardcodedToken: authToken) { _ in
+        SessionManager.openIronDoor(preparedToken: authToken) { _ in
+            self.hideActivityLoader()
             self.showWelcomeAlert()
         }
     }
     
     private func showUnauthorizedAlert() {
-        presentAlert(withTitle: "Unauthorized", message: "Please, login on your device.", preferredStyle: .alert, actions: [])
+        let action = WKAlertAction(title: NSLocalizedString("Horosho", comment: ""), style: .default) { }
+        presentAlert(withTitle: NSLocalizedString("Unauthorized", comment: ""), message: NSLocalizedString("Please, login on your device.", comment: ""), preferredStyle: .alert, actions: [action])
     }
     
     private func showWelcomeAlert() {
-        let action = WKAlertAction(title: "Spasibo", style: .default) { }
-        presentAlert(withTitle: "Welcome!", message: nil, preferredStyle: .alert, actions: [action])
+        let action = WKAlertAction(title: NSLocalizedString("Spasibo", comment: ""), style: .default) { }
+        presentAlert(withTitle: NSLocalizedString("Welcome!", comment: ""), message: nil, preferredStyle: .alert, actions: [action])
     }
     
     private func getUserToken() -> String? {
         return userDefaults.object(forKey: UserDefaultsKeys.userToken.rawValue) as? String
+    }
+    
+    private func showActivityLoader() {
+        activityLoaderImage.setHidden(false)
+        activityLoaderImage.setImageNamed("Activity")
+        activityLoaderImage.startAnimatingWithImages(in: NSMakeRange(1, 15), duration: 3.0, repeatCount: 0)
+    }
+    
+    private func hideActivityLoader() {
+        activityLoaderImage.stopAnimating()
+        activityLoaderImage.setHidden(true)
     }
 
 }

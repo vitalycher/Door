@@ -19,6 +19,7 @@
             <objects>
                 <controller identifier="Key" id="c6H-hv-OFr" customClass="DoorInterfaceController" customModule="Watch_Extension">
                     <items>
+                        <imageView alignment="center" id="DRr-v1-pqT"/>
                         <group alignment="center" verticalAlignment="center" layout="vertical" radius="30" id="Mbd-oZ-scr">
                             <items>
                                 <button width="1" height="57" alignment="center" title="Open iron door" id="vsU-1A-o3v">
@@ -39,6 +40,9 @@
                         </group>
                     </items>
                     <edgeInsets key="margins" left="0.0" right="0.0" top="6" bottom="0.0"/>
+                    <connections>
+                        <outlet property="activityLoaderImage" destination="DRr-v1-pqT" id="sfA-Rp-2cA"/>
+                    </connections>
                 </controller>
             </objects>
             <point key="canvasLocation" x="-134" y="81"/>

@@ -59,18 +59,18 @@ class SessionManager {
         }
     }
         
-    static func openGlassDoor(hardcodedToken: String? = nil, _ completion: @escaping (_ errorMessage: String?) -> ()) {
-        self.openDoor(madeOf: .glass, completion: completion, hardcodedToken: hardcodedToken)
+    static func openGlassDoor(preparedToken: String? = nil, _ completion: @escaping (_ errorMessage: String?) -> ()) {
+        self.openDoor(madeOf: .glass, completion: completion, preparedToken: preparedToken)
     }
     
-    static func openIronDoor(hardcodedToken: String? = nil, _ completion: @escaping (_ errorMessage: String?) -> ()) {
-        self.openDoor(madeOf: .iron, completion: completion, hardcodedToken: hardcodedToken)
+    static func openIronDoor(preparedToken: String? = nil, _ completion: @escaping (_ errorMessage: String?) -> ()) {
+        self.openDoor(madeOf: .iron, completion: completion, preparedToken: preparedToken)
     }
 
-    static func openDoor(madeOf: Door, completion: @escaping (_ errorMessage: String?) -> (), hardcodedToken: String? = nil) {
+    static func openDoor(madeOf: Door, completion: @escaping (_ errorMessage: String?) -> (), preparedToken: String? = nil) {
         let finalToken: String
         
-        if hardcodedToken == nil {
+        if preparedToken == nil {
             if let authToken = getUserToken() {
                 finalToken = authToken
             } else {
@@ -78,7 +78,7 @@ class SessionManager {
                 return
             }
         } else {
-            finalToken = hardcodedToken!
+            finalToken = preparedToken!
         }
         
         let path = madeOf == .glass ? APIConstants.DoorAPI.glassDoor : APIConstants.DoorAPI.ironDoor
