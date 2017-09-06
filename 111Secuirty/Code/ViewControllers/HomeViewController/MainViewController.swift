@@ -37,7 +37,7 @@ class MainViewController: UIViewController {
         if successWithProbability(percentage: 70) {
             getQuote()
         } else {
-            setQuote(TipsGenerator().generateTip(), author: "111 team")
+            setQuote(TipsGenerator().generateTip(), author: NSLocalizedString("111 team", comment: ""))
         }
     }
     

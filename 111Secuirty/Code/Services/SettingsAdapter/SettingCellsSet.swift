@@ -27,11 +27,9 @@ enum SettingType {
 }
 
 struct SettingCellsSet {
-    
     private var cellsAlliance: [SettingType] = [.voiceRecognition, .squaresWaterfall, .gyroscope]
     
     public func settingsCells() -> [SettingType] {
         return cellsAlliance
     }
-    
 }
