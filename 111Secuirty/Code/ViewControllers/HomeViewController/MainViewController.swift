@@ -12,24 +12,20 @@ import PKHUD
 import Speech
 import AudioToolbox
 
-class MainViewController: UIViewController {
+class MainViewController: UIViewController, ApplicationActivityMonitored {
     
     @IBOutlet weak private var glassDoorButton: UIButton!
     @IBOutlet weak private var ironDoorButton: UIButton!
     @IBOutlet weak private var quoteTextLabel: UILabel!
     @IBOutlet weak private var quoteAuthorLabel: UILabel!
     
-    private let defaults = UserDefaults.standard
-    private var animator = Animator()
+    private let animator = Animator()
     private let phraseAnalyzer = PhraseAnalyzer()
-    
-    deinit { NotificationCenter.default.removeObserver(self) }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillResignActive), name: .UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        activityService.initWith(cancelClosure: { self.speechRecognizer.stopRecording() }, activeClosure: { self.speechRecognizer.startRecordingIfAllowed() })
         
         speechRecognizer.authorize()
         animator.setupBehaviorsFor(view: view)
@@ -44,8 +40,8 @@ class MainViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        setupGyroscopeAccordingToSettings()
-        startRecordingIfAllowedBySettings()
+        gyroscopeManager.startOrStopGyroscopeDependingOnSettings(gyroscopeDeactivationBlock: { self.animator.setVerticalDownGravityDirection() })
+        speechRecognizer.startRecordingIfAllowed()
     }
 
     override func viewWillDisappear(_ animated: Bool) {
@@ -74,21 +70,19 @@ class MainViewController: UIViewController {
     //MARK: Door management
     
     private func openGlassDoor() {
-        createFallingKeyIfAllowed()
+        animator.createFallingKeyIfAllowed()
         HUD.show(.progress)
         SessionManager.openGlassDoor { (completionMessage) in
             let message = completionMessage == nil ? "Welcome!" : completionMessage
-
             HUD.flash(.label(message), delay: 2.0)
         }
     }
 
     private func openIronDoor() {
-        createFallingKeyIfAllowed()
+        animator.createFallingKeyIfAllowed()
         HUD.show(.progress)
         SessionManager.openIronDoor { (completionMessage) in
             let message = completionMessage == nil ? "Welcome!" : completionMessage
-
             HUD.flash(.label(message), delay: 2.0)
         }
     }
@@ -113,78 +107,36 @@ class MainViewController: UIViewController {
     }
     
     //MARK: - Help functions
-
-    private func randomInt(min: Int, max: Int) -> Int {
-        return min + Int(arc4random_uniform(UInt32(max - min + 1)))
-    }
     
     private func successWithProbability(percentage: Int) -> Bool {
         return arc4random_uniform(100) < percentage
     }
     
-    private func newFallingKey() -> UIImageView {
-        let keyView = UIImageView(frame: CGRect(x: randomInt(min: Int(view.frame.width / 2 - view.frame.width / 4), max: Int(view.frame.width / 2 + view.frame.width / 4)), y: 80, width: 30, height: 30))
-        keyView.image = UIImage.init(named: "AppIcon")
-        return keyView
-    }
-    
     //MARK: - Settings
     
-    private func createFallingKeyIfAllowed() {
-        guard defaults.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue) else { return }
-        animator.animateObject(newFallingKey())
+    private func goToSettings() {
+        performSegue(withIdentifier: "settingsSegue", sender: self)
     }
-    
-    private func startRecordingIfAllowedBySettings() {
-        guard defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue) else { return }
-        speechRecognizer.startRecordingIfAuthorized()
-    }
-    
-    private func setupGyroscopeAccordingToSettings() {
-        guard defaults.bool(forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue) else {
-            gyroscopeManager.stopUpdates()
-            animator.setVerticalDownGravityDirection()
-            return
-        }
-        gyroscopeManager.startUpdates()
-    }
-    
-    //MARK: App lifecycle
-    
-    @objc private func applicationWillResignActive() {
-        speechRecognizer.stopRecording()
-    }
-    
-    @objc private func applicationDidBecomeActive() {
-        startRecordingIfAllowedBySettings()
-    }
-    
+
 }
 
 extension MainViewController: SpeechRecognizable {
-    
     func didRecognizeWord(_ newPhrase: String) {
-        createFallingKeyIfAllowed()
-        phraseAnalyzer.analyze(newPhrase) { (analyzableType) in
-            speechRecognizer.stopRecording() {
-                self.speechRecognizer.startRecordingIfAuthorized()
+        animator.createFallingKeyIfAllowed()
+
+        phraseAnalyzer.analyzePhrase(newPhrase) { analyzedType in
+            switch analyzedType {
+            case DoorKeyword.glass: self.openGlassDoor()
+            case DoorKeyword.iron: self.openIronDoor()
+            case SecondaryKeyword.settings: self.goToSettings()
+            case SecondaryKeyword.clean: self.animator.cleanAllKeyViews()
+            default: return
             }
-            if let doorType = analyzableType as? DoorType {
-                switch doorType {
-                case .glass: self.openGlassDoor()
-                case .iron: self.openIronDoor()
-                }
-            } else if let secondaryType = analyzableType as? SecondaryType {
-                switch secondaryType {
-                case .clean: animator.cleanAllKeyViews()
-                default: break
-                }
-            }
+            self.speechRecognizer.restart()
         }
     }
-        
 }
-
+    
 extension MainViewController: Gyroscopable {
     func gyroscopeDidUpdateVector(vector: CGVector, gyroscope: GyroscopeManager) {
         animator.setupGravityDirection(with: vector)

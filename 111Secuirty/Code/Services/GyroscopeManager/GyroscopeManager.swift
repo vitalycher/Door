@@ -18,8 +18,9 @@ class GyroscopeManager {
     
     weak var delegate: GyroscopeDataTransmittable?
     private var motionManager = CMMotionManager()
+    private let defaults = UserDefaults.standard
     
-    public func startUpdates(timeInterval: TimeInterval = 0.2) {
+    private func startUpdates(timeInterval: TimeInterval = 0.2) {
         motionManager.gyroUpdateInterval = timeInterval
         guard !motionManager.isGyroActive else { return }
         motionManager.startDeviceMotionUpdates(to: OperationQueue.current!) { (data, error) in
@@ -59,6 +60,15 @@ class GyroscopeManager {
         }
         let updatedVector = CGVector.init(dx:  point.x, dy: 0.0 - point.y)
         delegate?.gyroscopeDidUpdateVector(vector: updatedVector, gyroscope: self)
+    }
+    
+    public func startOrStopGyroscopeDependingOnSettings(gyroscopeDeactivationBlock: () -> Void) {
+        guard defaults.bool(forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue) else {
+            stopUpdates()
+            gyroscopeDeactivationBlock()
+            return
+        }
+        startUpdates()
     }
     
 }

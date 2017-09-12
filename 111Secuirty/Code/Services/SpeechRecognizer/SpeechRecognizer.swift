@@ -20,18 +20,21 @@ class SpeechRecognizer {
     
     weak var delegate: SpeechRecognizerDelegate?
     
+    private let defaults = UserDefaults.standard
     private let audioEngine = AVAudioEngine()
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_US"))
     private var request: SFSpeechAudioBufferRecognitionRequest!
     private var recognitionTask: SFSpeechRecognitionTask?
     
-    private var isAuthorized = false
+    private var isAuthorized: Bool {
+        return defaults.bool(forKey: UserDefaultsKeys.microphoneEnabled.rawValue)
+    }
     
     public func authorize() {
         SFSpeechRecognizer.requestAuthorization {
             [unowned self] (authStatus) in
             switch authStatus {
-            case .authorized: self.isAuthorized = true
+            case .authorized: self.defaults.set(true, forKey: UserDefaultsKeys.microphoneEnabled.rawValue)
             case .denied: print("Speech recognition authorization denied")
             case .restricted: print("Not available on this device")
             case .notDetermined: print("Not determined")
@@ -69,15 +72,15 @@ class SpeechRecognizer {
         }
     }
     
-    public func startRecordingIfAuthorized() {
-        guard isAuthorized else { return }
+    public func startRecordingIfAllowed() {
+        guard isAuthorized && defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue) else { return }
         do {
             try startRecording()
         } catch {
             print(error)
         }
     }
-    
+
     public func stopRecording(success: (() -> Void)? = nil) {
         guard audioEngine.isRunning else { return }
         DispatchQueue.main.async {
@@ -86,6 +89,25 @@ class SpeechRecognizer {
             self.request = nil
             self.recognitionTask?.cancel()
             success?()
+        }
+    }
+    
+    public func restart() {
+        stopRecording() {
+            self.startRecordingIfAllowed()
+        }
+    }
+    
+    public func startOrStopRecordingDependingOnSettings() {
+        guard isAuthorized && defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue) else {
+            stopRecording()
+            return
+        }
+        
+        do {
+            try startRecording()
+        } catch {
+            print(error)
         }
     }
     

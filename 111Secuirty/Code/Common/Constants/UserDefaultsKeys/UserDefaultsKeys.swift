@@ -14,4 +14,5 @@ enum UserDefaultsKeys: String {
     case gyroscopeEnabled = "gyroscopeEnabled"
     case siriAuthorizationEnabled = "siriAuthorizationEnabled"
     case userToken = "userToken"
+    case microphoneEnabled = "microphoneEnabled"
 }

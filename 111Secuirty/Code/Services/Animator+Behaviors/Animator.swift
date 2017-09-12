@@ -18,6 +18,7 @@ class Animator {
     private var gravity: UIGravityBehavior!
     private var collision: UICollisionBehavior!
     private var itemBehaviour: UIDynamicItemBehavior!
+    private let defaults = UserDefaults.standard
     
     public func setupBehaviorsFor(view: UIView, magnitude: CGFloat = 3.5, elasticity: CGFloat = 0.5) {
         parentView = view
@@ -36,7 +37,7 @@ class Animator {
         animator.addBehavior(itemBehaviour)
     }
     
-    public func animateObject(_ object: UIView) {
+    private func animateObject(_ object: UIView) {
         parentView.addSubview(object)
         viewsOnTheScreen.append(object)
         gravity.addItem(object)
@@ -64,6 +65,21 @@ class Animator {
     
     public func setVerticalDownGravityDirection() {
         gravity.gravityDirection = CGVector(dx: 0, dy: 1)
+    }
+    
+    public func newFallingKey() -> UIImageView {
+        let keyView = UIImageView(frame: CGRect(x: randomInt(min: Int(parentView.frame.width / 2 - parentView.frame.width / 4), max: Int(parentView.frame.width / 2 + parentView.frame.width / 4)), y: 80, width: 30, height: 30))
+        keyView.image = UIImage.init(named: "AppIcon")
+        return keyView
+    }
+    
+    private func randomInt(min: Int, max: Int) -> Int {
+        return min + Int(arc4random_uniform(UInt32(max - min + 1)))
+    }
+    
+    public func createFallingKeyIfAllowed() {
+        guard defaults.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue) else { return }
+        animateObject(newFallingKey())
     }
     
 }

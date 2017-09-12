@@ -11,4 +11,6 @@ import Foundation
 struct RuntimeAssociatedKeys {
     static var GyroscopeAssociatedKey = "GyroscopeAssociatedKey"
     static var SpeechRecognizerAssociatedKey = "SpeechRecognizerAssociatedKey"
+    static var AnimatedAssociatedKey = "AnimatedAssociatedKey"
+    static var ApplicationActivityAssociatedKey = "ApplicationActivityAssociatedKey"
 }

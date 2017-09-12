@@ -8,9 +8,12 @@
 
 import UIKit
 
-class SettingsViewController: UIViewController {
+class SettingsViewController: UIViewController, ApplicationActivityMonitored {
 
     @IBOutlet weak private var tableView: UITableView!
+    
+    private let phraseAnalyzer = PhraseAnalyzer()
+    private let animator = Animator()
     
     fileprivate var cellPrototypes: [SettingType] {
         return SettingCellsSet().settingsCells()
@@ -18,10 +21,31 @@ class SettingsViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-       
+        
         tableView.dataSource = self
         tableView.delegate = self
+        animator.setupBehaviorsFor(view: view)
         registerCells()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        gyroscopeManager.startOrStopGyroscopeDependingOnSettings(gyroscopeDeactivationBlock: { self.animator.setVerticalDownGravityDirection() })
+        speechRecognizer.startRecordingIfAllowed()
+    }
+    
+    override func viewWillDisappear(_ animated: Bool) {
+        super.viewWillDisappear(animated)
+        
+        speechRecognizer.stopRecording()
+        gyroscopeManager.stopUpdates()
+    }
+    
+    override func motionEnded(_ motion: UIEventSubtype, with event: UIEvent?) {
+        if motion == .motionShake {
+            animator.cleanAllKeyViews()
+        }
     }
 
     @IBAction private func backToHome(_ sender: Any) {
@@ -29,10 +53,14 @@ class SettingsViewController: UIViewController {
     }
     
     @IBAction private func logout(_ sender: Any) {
+        logout()
+    }
+    
+    private func logout() {
         SessionManager.logoutUser()
         performSegue(withIdentifier: "loginViewControllerSegue", sender: self)
         do {
-            try WatchSessionManager.sharedManager.updateApplicationContext(applicationContext: [ : ])
+            try WatchSessionManager.sharedManager.updateApplicationContext(applicationContext: [:])
         } catch {
             print(error)
         }
@@ -60,6 +88,7 @@ extension SettingsViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cellPrototype = cellPrototypes[indexPath.row]
         let cell = tableView.dequeueReusableCell(withIdentifier: "SwitchTableViewCell") as! SwitchTableViewCell
+        cell.delegate = self
         cell.fill(with: cellPrototype)
         return cell
     }
@@ -69,5 +98,37 @@ extension SettingsViewController: UITableViewDataSource {
 extension SettingsViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
         return 60.0
+    }
+}
+
+extension SettingsViewController: SpeechRecognizable {
+    func didRecognizeWord(_ newPhrase: String) {
+        animator.createFallingKeyIfAllowed()
+        
+        phraseAnalyzer.analyzePhrase(newPhrase) { analyzedType in
+            switch analyzedType {
+            case SecondaryKeyword.clean: self.animator.cleanAllKeyViews()
+            case SecondaryKeyword.back: dismiss(animated: true, completion: nil)
+            case SecondaryKeyword.logout: self.logout()
+            default: return
+            }
+            self.speechRecognizer.restart()
+        }
+    }
+}
+
+extension SettingsViewController: Gyroscopable {
+    func gyroscopeDidUpdateVector(vector: CGVector, gyroscope: GyroscopeManager) {
+        animator.setupGravityDirection(with: vector)
+    }
+}
+
+extension SettingsViewController: RealtimeSettingUpdatable {
+    func settingDidChange(setting: SettingType, cell: SwitchTableViewCell) {
+        switch setting {
+        case .gyroscope: gyroscopeManager.startOrStopGyroscopeDependingOnSettings(gyroscopeDeactivationBlock: { self.animator.setVerticalDownGravityDirection() })
+        case .voiceRecognition: speechRecognizer.startOrStopRecordingDependingOnSettings()
+        default: break
+        }
     }
 }

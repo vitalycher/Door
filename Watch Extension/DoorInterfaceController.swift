@@ -22,47 +22,42 @@ class DoorInterfaceController: WKInterfaceController {
     }
     
     @IBAction private func openGlassDoor() {
-        showActivityLoader()
-        guard let authToken = getUserToken() else {
-            WKInterfaceDevice().play(.failure)
-            showUnauthorizedAlert()
-            return
-        }
-        
-        SessionManager.openGlassDoor(preparedToken: authToken) { _ in
-            WKInterfaceDevice().play(.success)
-            self.hideActivityLoader()
-            self.showWelcomeAlert()
-        }
+        openDoor(madeOf: .glass)
     }
     
     @IBAction private func openIronDoor() {
-        showActivityLoader()
-        guard let authToken = getUserToken() else {
+       openDoor(madeOf: .iron)
+    }
+    
+    private func openDoor(madeOf doorType: SessionManager.Door) {
+        guard let authToken = userToken() else {
             WKInterfaceDevice().play(.failure)
-            showUnauthorizedAlert()
+            showAlert(with: NSLocalizedString("Unauthorized", comment: ""), message: NSLocalizedString("Please, login on your device.", comment: ""))
             return
         }
+        showActivityLoader()
         
-        SessionManager.openIronDoor(preparedToken: authToken) { _ in
+        SessionManager.openDoor(madeOf: doorType, preparedToken: authToken) { errorMessage in
+            if let errorMessage = errorMessage {
+                self.showAlert(with: NSLocalizedString("Error!", comment: ""), message: errorMessage)
+                self.hideActivityLoader()
+                WKInterfaceDevice().play(.failure)
+                return
+            }
             WKInterfaceDevice().play(.success)
             self.hideActivityLoader()
-            self.showWelcomeAlert()
+            self.showAlert(with: NSLocalizedString("Welcome!", comment: ""), message: nil)
         }
     }
     
-    private func showUnauthorizedAlert() {
-        let action = WKAlertAction(title: NSLocalizedString("Horosho", comment: ""), style: .default) { }
-        presentAlert(withTitle: NSLocalizedString("Unauthorized", comment: ""), message: NSLocalizedString("Please, login on your device.", comment: ""), preferredStyle: .alert, actions: [action])
-    }
-    
-    private func showWelcomeAlert() {
-        let action = WKAlertAction(title: NSLocalizedString("Spasibo", comment: ""), style: .default) { }
-        presentAlert(withTitle: NSLocalizedString("Welcome!", comment: ""), message: nil, preferredStyle: .alert, actions: [action])
-    }
-    
-    private func getUserToken() -> String? {
+    private func userToken() -> String? {
         return userDefaults.object(forKey: UserDefaultsKeys.userToken.rawValue) as? String
+    }
+    
+    private func activityLoaderInitialSetup() {
+        activityLoaderImage.setHeight(25.0)
+        activityLoaderImage.setWidth(25.0)
+        activityLoaderImage.setHidden(true)
     }
     
     private func showActivityLoader() {
@@ -76,10 +71,9 @@ class DoorInterfaceController: WKInterfaceController {
         activityLoaderImage.setHidden(true)
     }
     
-    private func activityLoaderInitialSetup() {
-        activityLoaderImage.setHeight(25.0)
-        activityLoaderImage.setWidth(25.0)
-        activityLoaderImage.setHidden(true)
+    private func showAlert(with title: String, message: String?, actions: [WKAlertAction] = []) {
+        let spasiboAction = WKAlertAction(title: NSLocalizedString("Spasibo", comment: ""), style: .default) { }
+        presentAlert(withTitle: title, message: message, preferredStyle: .alert, actions: actions.isEmpty ? [spasiboAction] : actions)
     }
 
 }

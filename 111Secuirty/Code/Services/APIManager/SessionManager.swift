@@ -60,14 +60,14 @@ class SessionManager {
     }
         
     static func openGlassDoor(preparedToken: String? = nil, _ completion: @escaping (_ errorMessage: String?) -> ()) {
-        self.openDoor(madeOf: .glass, completion: completion, preparedToken: preparedToken)
+        self.openDoor(madeOf: .glass, preparedToken: preparedToken, completion: completion)
     }
     
     static func openIronDoor(preparedToken: String? = nil, _ completion: @escaping (_ errorMessage: String?) -> ()) {
-        self.openDoor(madeOf: .iron, completion: completion, preparedToken: preparedToken)
+        self.openDoor(madeOf: .iron, preparedToken: preparedToken, completion: completion)
     }
 
-    static func openDoor(madeOf: Door, completion: @escaping (_ errorMessage: String?) -> (), preparedToken: String? = nil) {
+    static func openDoor(madeOf: Door, preparedToken: String? = nil, completion: @escaping (_ errorMessage: String?) -> ()) {
         let finalToken: String
         
         if preparedToken == nil {

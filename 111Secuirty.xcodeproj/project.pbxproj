@@ -71,6 +71,8 @@
 		89CFF4BF1CD3C14D00F0097E /* APIConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */; };
 		A59A4A2CCC41A049F5EB1151 /* Pods_Door_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7DADE0261B2507246A1A6842 /* Pods_Door_Widget.framework */; };
 		A5A8ED0BE510AD1A7FC28A74 /* Pods_111Secuirty.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */; };
+		AA08AB9B1F67F060004FBE8B /* ApplicationActivityViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA08AB9A1F67F060004FBE8B /* ApplicationActivityViewController.swift */; };
+		AA08AB9E1F67F16E004FBE8B /* ApplicationActivityMonitored.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA08AB9D1F67F16E004FBE8B /* ApplicationActivityMonitored.swift */; };
 		AA1780D11F444933009C0D27 /* SettingCellsSet.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA1780D01F444933009C0D27 /* SettingCellsSet.swift */; };
 		AA36B9741F54747000869794 /* IntentHandler.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA36B9731F54747000869794 /* IntentHandler.swift */; };
 		AA36B9881F54747000869794 /* DoorSiri.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = AA36B9711F54747000869794 /* DoorSiri.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
@@ -79,6 +81,7 @@
 		AA7244B61F55A68000055684 /* SiriVocabulary.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA7244B41F55A68000055684 /* SiriVocabulary.swift */; };
 		AA8DD3641F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8DD3631F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift */; };
 		AA8DD3661F4C403000143B07 /* SpeechRecognizable.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA8DD3651F4C403000143B07 /* SpeechRecognizable.swift */; };
+		AA94839D1F67EB9300F7BCA2 /* ApplicationActivityService.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA94839C1F67EB9300F7BCA2 /* ApplicationActivityService.swift */; };
 		AA9501C41F4B1138006B206E /* GyroscopeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9501C31F4B1138006B206E /* GyroscopeManager.swift */; };
 		AA9EB9821F41D5DF00E77DE7 /* Animator.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9811F41D5DF00E77DE7 /* Animator.swift */; };
 		AA9EB9851F431D1B00E77DE7 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */; };
@@ -240,6 +243,8 @@
 		89CFF4BE1CD3C14D00F0097E /* APIConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = APIConstants.swift; sourceTree = "<group>"; };
 		8A3692EBF5F1F59CA0154588 /* Pods-DoorSiri.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-DoorSiri.release.xcconfig"; path = "Pods/Target Support Files/Pods-DoorSiri/Pods-DoorSiri.release.xcconfig"; sourceTree = "<group>"; };
 		8E6D31C322B948602F38836F /* Pods_WatchDoorSiri.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WatchDoorSiri.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		AA08AB9A1F67F060004FBE8B /* ApplicationActivityViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationActivityViewController.swift; sourceTree = "<group>"; };
+		AA08AB9D1F67F16E004FBE8B /* ApplicationActivityMonitored.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ApplicationActivityMonitored.swift; path = 111Secuirty/Code/Common/Extensions/ApplicationActivityMonitored.swift; sourceTree = SOURCE_ROOT; };
 		AA1780D01F444933009C0D27 /* SettingCellsSet.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingCellsSet.swift; sourceTree = "<group>"; };
 		AA36B9711F54747000869794 /* DoorSiri.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = DoorSiri.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		AA36B9731F54747000869794 /* IntentHandler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IntentHandler.swift; sourceTree = "<group>"; };
@@ -249,6 +254,7 @@
 		AA8DD3631F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RuntimeAssociatedKeys.swift; sourceTree = "<group>"; };
 		AA8DD3651F4C403000143B07 /* SpeechRecognizable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SpeechRecognizable.swift; sourceTree = "<group>"; };
 		AA8DD3941F4C5E0700143B07 /* IntentsUI.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = IntentsUI.framework; path = System/Library/Frameworks/IntentsUI.framework; sourceTree = SDKROOT; };
+		AA94839C1F67EB9300F7BCA2 /* ApplicationActivityService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ApplicationActivityService.swift; sourceTree = "<group>"; };
 		AA9501C31F4B1138006B206E /* GyroscopeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GyroscopeManager.swift; sourceTree = "<group>"; };
 		AA9EB9811F41D5DF00E77DE7 /* Animator.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Animator.swift; sourceTree = "<group>"; };
 		AA9EB9841F431D1A00E77DE7 /* SettingsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
@@ -409,6 +415,7 @@
 		8908B4661CD9E90D005CC547 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				AA08AB9C1F67F0C7004FBE8B /* ApplicationActivityService + Runtime */,
 				AA8DD3621F4C3F6F00143B07 /* Runtime+AssociatedKeys */,
 				AA8DD3611F4C3F4C00143B07 /* SpeechRecognizer+Runtime */,
 				AACEDEA11F49DC90000E703F /* GyroscopeManager+Runtime */,
@@ -517,6 +524,7 @@
 		89CFF4B11CD3A72A00F0097E /* Services */ = {
 			isa = PBXGroup;
 			children = (
+				AA94839B1F67EB7700F7BCA2 /* ApplicationActivityService */,
 				AAC5DC371F5D7DFC00054DD1 /* WatchSessionManager */,
 				AA9501C21F4B1113006B206E /* GyroscopeManager */,
 				AA1780D21F44494C009C0D27 /* SettingsAdapter */,
@@ -596,6 +604,14 @@
 			path = APIConstants;
 			sourceTree = "<group>";
 		};
+		AA08AB9C1F67F0C7004FBE8B /* ApplicationActivityService + Runtime */ = {
+			isa = PBXGroup;
+			children = (
+				AA08AB9D1F67F16E004FBE8B /* ApplicationActivityMonitored.swift */,
+			);
+			path = "ApplicationActivityService + Runtime";
+			sourceTree = "<group>";
+		};
 		AA1780D21F44494C009C0D27 /* SettingsAdapter */ = {
 			isa = PBXGroup;
 			children = (
@@ -653,6 +669,15 @@
 				AA8DD3631F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift */,
 			);
 			path = "Runtime+AssociatedKeys";
+			sourceTree = "<group>";
+		};
+		AA94839B1F67EB7700F7BCA2 /* ApplicationActivityService */ = {
+			isa = PBXGroup;
+			children = (
+				AA94839C1F67EB9300F7BCA2 /* ApplicationActivityService.swift */,
+				AA08AB9A1F67F060004FBE8B /* ApplicationActivityViewController.swift */,
+			);
+			path = ApplicationActivityService;
 			sourceTree = "<group>";
 		};
 		AA9501C21F4B1113006B206E /* GyroscopeManager */ = {
@@ -1197,7 +1222,9 @@
 				5D5739161EEFE4C900704E73 /* AppDelegate.swift in Sources */,
 				AA3DB8791F39F51000040966 /* PhraseAnalyzer.swift in Sources */,
 				74887B1B1CC59BD400EC677E /* SessionManager.swift in Sources */,
+				AA08AB9E1F67F16E004FBE8B /* ApplicationActivityMonitored.swift in Sources */,
 				AA8DD3641F4C3F9C00143B07 /* RuntimeAssociatedKeys.swift in Sources */,
+				AA08AB9B1F67F060004FBE8B /* ApplicationActivityViewController.swift in Sources */,
 				AACB07021F39CB9300A56675 /* SpeechRecognizer.swift in Sources */,
 				74887B191CC599B100EC677E /* MainViewController.swift in Sources */,
 				AAE7EB9D1F4333EB00C9E566 /* SwitchTableViewCell.swift in Sources */,
@@ -1210,6 +1237,7 @@
 				8908B4691CD9E94D005CC547 /* String+Validation.swift in Sources */,
 				AA1780D11F444933009C0D27 /* SettingCellsSet.swift in Sources */,
 				AAF31FAA1F3DE2AA009433A4 /* TipsGenerator.swift in Sources */,
+				AA94839D1F67EB9300F7BCA2 /* ApplicationActivityService.swift in Sources */,
 				AA8DD3661F4C403000143B07 /* SpeechRecognizable.swift in Sources */,
 				AAC5DC391F5D7E0F00054DD1 /* WatchSessionManager.swift in Sources */,
 				AA9EB9821F41D5DF00E77DE7 /* Animator.swift in Sources */,
