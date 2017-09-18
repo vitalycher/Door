@@ -28,7 +28,7 @@ class SpeechRecognizer {
     private var recognitionTask: SFSpeechRecognitionTask?
     
     //This was made to avoid double completion call bug, that is being managed by Apple ¯\_(ツ)_/¯
-    private var previousRecognitionResult: String?
+    private var previousRecognizedPhrase: String?
     
     private var isAuthorized: Bool {
         return defaults.bool(forKey: UserDefaultsKeys.microphoneEnabled.rawValue)
@@ -70,8 +70,8 @@ class SpeechRecognizer {
         
         recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
             if let result = result {
-                guard result.bestTranscription.formattedString != self.previousRecognitionResult else { return }
-                self.previousRecognitionResult = result.bestTranscription.formattedString
+                guard result.bestTranscription.formattedString != self.previousRecognizedPhrase else { return }
+                self.previousRecognizedPhrase = result.bestTranscription.formattedString
                 self.delegate?.didRecognizeWord(result.bestTranscription.formattedString)
             }
         })

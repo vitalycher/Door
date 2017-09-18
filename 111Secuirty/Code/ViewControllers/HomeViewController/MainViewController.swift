@@ -9,7 +9,6 @@
 import UIKit
 import Alamofire
 import PKHUD
-import Speech
 import AudioToolbox
 
 class MainViewController: UIViewController, ApplicationActivityMonitored {

@@ -39,8 +39,7 @@ class PhraseAnalyzer {
                                            "settings" : NavigationalKeyword.settings,
                                            "back" : NavigationalKeyword.back,
                                            "first door" : DoorKeyword.iron,
-                                           "quotation" : SecondaryKeyword.quote,
-                                           "new quote" : SecondaryKeyword.quote]
+                                           "update" : SecondaryKeyword.quote]
     
     public func analyzePhrase(_ phrase: String, successfulAnalysis: (Analyzable) -> Void)  {
         for key in keywords.keys {
