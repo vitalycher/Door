@@ -21,10 +21,18 @@ class SpeechRecognizer {
     weak var delegate: SpeechRecognizerDelegate?
     
     private let defaults = UserDefaults.standard
+    
     private let audioEngine = AVAudioEngine()
     private let speechRecognizer = SFSpeechRecognizer(locale: Locale(identifier: "en_US"))
-    private var request: SFSpeechAudioBufferRecognitionRequest!
+    private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
+    
+    //This was made to avoid double completion call bug, that is being managed by Apple ¯\_(ツ)_/¯
+    private var previousRecognitionResult: String? {
+        didSet {
+            print(previousRecognitionResult)
+        }
+    }
     
     private var isAuthorized: Bool {
         return defaults.bool(forKey: UserDefaultsKeys.microphoneEnabled.rawValue)
@@ -43,33 +51,30 @@ class SpeechRecognizer {
     }
     
     private func startRecording() throws {
-        let node = audioEngine.inputNode
-        node.reset()
-        request = SFSpeechAudioBufferRecognitionRequest()
-        
-        let recordingFormat = node.outputFormat(forBus: 0)
-        node.removeTap(onBus: 0)
-        node.installTap(onBus: 0, bufferSize: 1024, format: recordingFormat) { [unowned self]
-            (buffer, _) in self.request.append(buffer) }
+        if let recognitionTask = recognitionTask {
+            recognitionTask.cancel()
+            self.recognitionTask = nil
+        }
+        recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
 
+        guard let recognitionRequest = self.recognitionRequest else { fatalError("Unable to created a SFSpeechAudioBufferRecognitionRequest object") }
+        let inputNode = audioEngine.inputNode
+        
+        let recordingFormat = inputNode.outputFormat(forBus: 0)
+        inputNode.installTap(onBus: 0, bufferSize: 2048, format: recordingFormat, block: { (buffer: AVAudioPCMBuffer, when: AVAudioTime) in
+            recognitionRequest.append(buffer)
+        })
+        
         audioEngine.prepare()
-        do {
-            try audioEngine.start()
-        } catch {
-            print(error)
-        }
+        try audioEngine.start()
         
-        guard let speechRecognizer = speechRecognizer else { return }
-        guard speechRecognizer.isAvailable else { return }
-
-        recognitionTask = speechRecognizer.recognitionTask(with: request) {
-            [unowned self] (result, error) in
+        recognitionTask = speechRecognizer?.recognitionTask(with: recognitionRequest, resultHandler: { (result, error) in
             if let result = result {
+                guard result.bestTranscription.formattedString != self.previousRecognitionResult else { return }
+                self.previousRecognitionResult = result.bestTranscription.formattedString
                 self.delegate?.didRecognizeWord(result.bestTranscription.formattedString)
-            } else if let error = error {
-                print(error)
             }
-        }
+        })
     }
     
     public func startRecordingIfAllowed() {
@@ -81,21 +86,15 @@ class SpeechRecognizer {
         }
     }
 
-    public func stopRecording(success: (() -> Void)? = nil) {
+    public func stopRecording(recordingDidStop: (() -> Void)? = nil) {
         guard audioEngine.isRunning else { return }
-        DispatchQueue.main.async {
-            self.audioEngine.stop()
-            self.request.endAudio()
-            self.request = nil
-            self.recognitionTask?.cancel()
-            success?()
-        }
-    }
-    
-    public func restart() {
-        stopRecording() {
-            self.startRecordingIfAllowed()
-        }
+        
+        audioEngine.stop()
+        audioEngine.inputNode.removeTap(onBus: 0)
+        recognitionRequest?.endAudio()
+        recognitionTask?.cancel()
+        recognitionTask = nil
+        recordingDidStop?()
     }
     
     public func startOrStopRecordingDependingOnSettings() {
@@ -103,12 +102,15 @@ class SpeechRecognizer {
             stopRecording()
             return
         }
-        
         do {
             try startRecording()
         } catch {
             print(error)
         }
+    }
+    
+    public func restart() {
+        stopRecording(recordingDidStop: { self.startRecordingIfAllowed() })
     }
     
 }

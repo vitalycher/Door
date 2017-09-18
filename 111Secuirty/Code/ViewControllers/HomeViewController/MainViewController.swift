@@ -30,11 +30,7 @@ class MainViewController: UIViewController, ApplicationActivityMonitored {
         speechRecognizer.authorize()
         animator.setupBehaviorsFor(view: view)
         
-        if successWithProbability(percentage: 70) {
-            getQuote()
-        } else {
-            setQuote(TipsGenerator().generateTip(), author: NSLocalizedString("111 team", comment: ""))
-        }
+        setupQuote()
     }
     
     override func viewWillAppear(_ animated: Bool) {
@@ -88,6 +84,14 @@ class MainViewController: UIViewController, ApplicationActivityMonitored {
     }
     
     //MARK: Quotes
+    
+    private func setupQuote() {
+        if successWithProbability(percentage: 70) {
+            getQuote()
+        } else {
+            setQuote(TipsGenerator().generateTip(), author: NSLocalizedString("111 team", comment: ""))
+        }
+    }
 
     private func getQuote() {
         SessionManager.getQuote() { (quoteText, quoteAuthor) in
@@ -112,8 +116,6 @@ class MainViewController: UIViewController, ApplicationActivityMonitored {
         return arc4random_uniform(100) < percentage
     }
     
-    //MARK: - Settings
-    
     private func goToSettings() {
         performSegue(withIdentifier: "settingsSegue", sender: self)
     }
@@ -128,15 +130,18 @@ extension MainViewController: SpeechRecognizable {
             switch analyzedType {
             case DoorKeyword.glass: self.openGlassDoor()
             case DoorKeyword.iron: self.openIronDoor()
-            case SecondaryKeyword.settings: self.goToSettings()
+            case NavigationalKeyword.settings: self.goToSettings()
             case SecondaryKeyword.clean: self.animator.cleanAllKeyViews()
+            case SecondaryKeyword.quote: self.setupQuote()
             default: return
             }
-            self.speechRecognizer.restart()
+            if !(analyzedType is NavigationalKeyword) {
+                self.speechRecognizer.restart()
+            }
         }
     }
 }
-    
+
 extension MainViewController: Gyroscopable {
     func gyroscopeDidUpdateVector(vector: CGVector, gyroscope: GyroscopeManager) {
         animator.setupGravityDirection(with: vector)

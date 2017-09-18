@@ -25,8 +25,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         WatchSessionManager.sharedManager.startSession()
         
         if SessionManager.getUserToken() != nil {
-            let message = ["userToken" : SessionManager.getUserToken()]
-            
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "MainViewController")
         } else {
             window?.rootViewController = storyboard.instantiateViewController(withIdentifier: "LoginViewController")

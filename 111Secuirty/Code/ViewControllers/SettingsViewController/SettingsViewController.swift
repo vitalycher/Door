@@ -22,6 +22,8 @@ class SettingsViewController: UIViewController, ApplicationActivityMonitored {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        activityService.initWith(cancelClosure: { self.speechRecognizer.stopRecording() }, activeClosure: { self.speechRecognizer.startRecordingIfAllowed() })
+        
         tableView.dataSource = self
         tableView.delegate = self
         animator.setupBehaviorsFor(view: view)
@@ -108,8 +110,8 @@ extension SettingsViewController: SpeechRecognizable {
         phraseAnalyzer.analyzePhrase(newPhrase) { analyzedType in
             switch analyzedType {
             case SecondaryKeyword.clean: self.animator.cleanAllKeyViews()
-            case SecondaryKeyword.back: dismiss(animated: true, completion: nil)
-            case SecondaryKeyword.logout: self.logout()
+            case NavigationalKeyword.back: dismiss(animated: true, completion: nil)
+            case NavigationalKeyword.logout: self.logout()
             default: return
             }
             self.speechRecognizer.restart()

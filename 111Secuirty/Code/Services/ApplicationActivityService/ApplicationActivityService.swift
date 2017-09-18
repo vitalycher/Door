@@ -21,8 +21,8 @@ class ApplicationActivityService: NSObject {
     override init() {
         super.init()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillResignActive), name: .UIApplicationWillResignActive, object: nil)
-        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidBecomeActive), name: .UIApplicationDidBecomeActive, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationDidEnterBackground), name: .UIApplicationDidEnterBackground, object: nil)
+        NotificationCenter.default.addObserver(self, selector: #selector(self.applicationWillEnterForeground), name: .UIApplicationWillEnterForeground, object: nil)
     }
     
     func initWith(cancelClosure: @escaping () -> Void, activeClosure: @escaping () -> Void) {
@@ -30,13 +30,13 @@ class ApplicationActivityService: NSObject {
         self.activeClosure = activeClosure
     }
     
-    @objc private func applicationWillResignActive() {
+    @objc private func applicationDidEnterBackground() {
         if let cancelClosure = cancelClosure, isActive {
             cancelClosure()
         }
     }
     
-    @objc private func applicationDidBecomeActive() {
+    @objc private func applicationWillEnterForeground() {
         if let activeClosure = activeClosure, isActive {
             activeClosure()
         }

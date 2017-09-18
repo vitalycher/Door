@@ -17,25 +17,32 @@ enum DoorKeyword: Analyzable {
 
 enum SecondaryKeyword: Analyzable {
     case clean
+    case quote
+}
+
+enum NavigationalKeyword: Analyzable {
     case logout
-    case settings
     case back
+    case settings
 }
 
 class PhraseAnalyzer {
     
-    let keywords: [String : Analyzable] = ["open glass door" : DoorKeyword.glass,
+    private let keywords: [String : Analyzable] = ["open glass door" : DoorKeyword.glass,
                                            "glass door" : DoorKeyword.glass,
                                            "bitch" : DoorKeyword.glass,
                                            "hello minutes" : DoorKeyword.glass,
                                            "open iron door" : DoorKeyword.iron,
                                            "iron door" : DoorKeyword.iron,
                                            "clean" : SecondaryKeyword.clean,
-                                           "log out" : SecondaryKeyword.logout,
-                                           "settings" : SecondaryKeyword.settings,
-                                           "back" : SecondaryKeyword.back]
+                                           "log out" : NavigationalKeyword.logout,
+                                           "settings" : NavigationalKeyword.settings,
+                                           "back" : NavigationalKeyword.back,
+                                           "first door" : DoorKeyword.iron,
+                                           "quotation" : SecondaryKeyword.quote,
+                                           "new quote" : SecondaryKeyword.quote]
     
-    func analyzePhrase(_ phrase: String, successfulAnalysis: (Analyzable) -> Void)  {
+    public func analyzePhrase(_ phrase: String, successfulAnalysis: (Analyzable) -> Void)  {
         for key in keywords.keys {
             if phrase.lowercased().contains(key) {
                 if let analyzedType = keywords[key] {
@@ -47,21 +54,3 @@ class PhraseAnalyzer {
     }
 
 }
-    
-//    func analyzePhrase(_ phrase: String, byCriteria criteria: [SecondaryKeyword], successfulAnalysis: (Analyzable) -> Void)  {
-//        for key in doorKeywords.keys {
-//            if phrase.lowercased().contains(key) {
-//                if let doorType = doorKeywords[key] as? DoorKeyword {
-//                    doorType == DoorKeyword.glass ? successfulAnalysis(DoorKeyword.glass) : successfulAnalysis(DoorKeyword.iron)
-//                } else if let secondaryType = doorKeywords[key] as? SecondaryKeyword {
-//                    switch secondaryType {
-//                    case .clean: successfulAnalysis(SecondaryKeyword.clean)
-//                    case .back: successfulAnalysis(SecondaryKeyword.back)
-//                    case .logout: successfulAnalysis(SecondaryKeyword.logout)
-//                    case .settings: successfulAnalysis(SecondaryKeyword.settings)
-//                    }
-//                }
-//                break
-//            }
-//        }
-//    }

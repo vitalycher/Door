@@ -12,7 +12,6 @@ import WatchConnectivity
 class WatchSessionManager: NSObject {
     
     static let sharedManager = WatchSessionManager()
-    
     private let session: WCSession? = WCSession.isSupported() ? WCSession.default : nil
     
     private var validSession: WCSession? {
