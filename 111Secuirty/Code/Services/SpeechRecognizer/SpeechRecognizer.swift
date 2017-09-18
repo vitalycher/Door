@@ -28,14 +28,14 @@ class SpeechRecognizer {
     private var recognitionTask: SFSpeechRecognitionTask?
     
     //This was made to avoid double completion call bug, that is being managed by Apple ¯\_(ツ)_/¯
-    private var previousRecognitionResult: String? {
-        didSet {
-            print(previousRecognitionResult)
-        }
-    }
+    private var previousRecognitionResult: String?
     
     private var isAuthorized: Bool {
         return defaults.bool(forKey: UserDefaultsKeys.microphoneEnabled.rawValue)
+    }
+    
+    private var isAllowedBySettings: Bool {
+        return defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
     }
     
     public func authorize() {
@@ -78,7 +78,7 @@ class SpeechRecognizer {
     }
     
     public func startRecordingIfAllowed() {
-        guard isAuthorized && defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue) else { return }
+        guard isAuthorized && isAllowedBySettings else { return }
         do {
             try startRecording()
         } catch {
@@ -98,7 +98,7 @@ class SpeechRecognizer {
     }
     
     public func startOrStopRecordingDependingOnSettings() {
-        guard isAuthorized && defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue) else {
+        guard isAuthorized && isAllowedBySettings else {
             stopRecording()
             return
         }

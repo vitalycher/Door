@@ -115,7 +115,7 @@ class MainViewController: UIViewController, ApplicationActivityMonitored {
     private func successWithProbability(percentage: Int) -> Bool {
         return arc4random_uniform(100) < percentage
     }
-    
+        
     private func goToSettings() {
         performSegue(withIdentifier: "settingsSegue", sender: self)
     }
