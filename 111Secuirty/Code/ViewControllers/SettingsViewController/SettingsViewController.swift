@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import PKHUD
 
 class SettingsViewController: UIViewController, ApplicationActivityMonitored {
 
@@ -55,7 +56,7 @@ class SettingsViewController: UIViewController, ApplicationActivityMonitored {
     }
     
     @IBAction private func logout(_ sender: Any) {
-        logout()
+        showAlert(withTitle: NSLocalizedString("Are you sure you want to log out?", comment: ""), andMessage: nil, actions: [UIAlertAction.init(title: "Yes", style: .default) { _ in self.logout() }, UIAlertAction.init(title: "Cancel", style: .destructive, handler: nil)])
     }
     
     private func logout() {
@@ -66,6 +67,12 @@ class SettingsViewController: UIViewController, ApplicationActivityMonitored {
         } catch {
             print(error)
         }
+    }
+    
+    private func showAlert(withTitle title: String, andMessage message: String?, actions: [UIAlertAction]) {
+        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+        actions.forEach { alertController.addAction($0) }
+        present(alertController, animated: true, completion: nil)
     }
     
     private func registerCells() {
