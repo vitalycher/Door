@@ -19,17 +19,17 @@
             <objects>
                 <controller identifier="Key" id="c6H-hv-OFr" customClass="DoorInterfaceController" customModule="Watch_Extension">
                     <items>
-                        <imageView width="20" height="20" alignment="center" id="DRr-v1-pqT"/>
+                        <imageView width="20" height="20" alignment="center" image="Activity10" id="DRr-v1-pqT"/>
                         <group alignment="center" verticalAlignment="center" layout="vertical" radius="30" id="Mbd-oZ-scr">
                             <items>
-                                <button width="1" height="50" alignment="center" title="Open iron door" id="vsU-1A-o3v">
+                                <button width="1" height="45" alignment="center" title="Open iron door" id="vsU-1A-o3v">
                                     <color key="backgroundColor" red="0.25098039215686274" green="0.25098039215686274" blue="0.25098039215686274" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" name="KlartextMono-Bold" family="Klartext Mono" pointSize="15"/>
                                     <connections>
                                         <action selector="openIronDoor" destination="c6H-hv-OFr" id="2s5-m8-W9V"/>
                                     </connections>
                                 </button>
-                                <button width="1" height="50" alignment="center" title="Open glass door" id="9T4-8X-vn1">
+                                <button width="1" height="45" alignment="center" title="Open glass door" enabled="NO" id="9T4-8X-vn1">
                                     <color key="backgroundColor" red="0.70588235294117641" green="0.11764705882352941" blue="0.19607843137254902" alpha="1" colorSpace="calibratedRGB"/>
                                     <fontDescription key="font" name="KlartextMono-Bold" family="Klartext Mono" pointSize="15"/>
                                     <connections>
@@ -42,6 +42,8 @@
                     <edgeInsets key="margins" left="0.0" right="0.0" top="6" bottom="0.0"/>
                     <connections>
                         <outlet property="activityLoaderImage" destination="DRr-v1-pqT" id="sfA-Rp-2cA"/>
+                        <outlet property="glassDoorButton" destination="9T4-8X-vn1" id="1JU-uC-xgP"/>
+                        <outlet property="ironDoorButton" destination="vsU-1A-o3v" id="EcK-z9-qdc"/>
                     </connections>
                 </controller>
             </objects>

@@ -84,7 +84,6 @@ class SessionManager {
         let path = madeOf == .glass ? APIConstants.DoorAPI.glassDoor : APIConstants.DoorAPI.ironDoor
         
         Alamofire.request(path, method: .post, encoding: JSONEncoding.default, headers: ["AUTH-TOKEN": finalToken]).responseJSON { response in
-            
             if response.response?.statusCode == 200 {
                 completion(nil)
             } else if let jsonDictionary = response.result.value as? Dictionary<String, AnyObject>,
@@ -99,7 +98,6 @@ class SessionManager {
     static func getQuote(_ completion: @escaping (_ quoteText: String?, _ quoteAuthor: String?) -> Void)  {
         
         Alamofire.request(APIConstants.ForismaticAPI.getQuote, encoding: JSONEncoding.default).responseJSON { response in
-            
             if let jsonDictionary = response.result.value as? Dictionary<String, AnyObject> {
                 completion(jsonDictionary["quoteText"] as? String,
                            jsonDictionary["quoteAuthor"] as? String)

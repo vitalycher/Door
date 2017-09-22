@@ -12,7 +12,10 @@ import WatchConnectivity
 
 class DoorInterfaceController: WKInterfaceController {
     
+    @IBOutlet private var ironDoorButton: WKInterfaceButton!
+    @IBOutlet private var glassDoorButton: WKInterfaceButton!
     @IBOutlet private var activityLoaderImage: WKInterfaceImage!
+    
     private let userDefaults = UserDefaults.standard
     
     override func willActivate() {
@@ -38,7 +41,7 @@ class DoorInterfaceController: WKInterfaceController {
         showActivityLoader()
         
         SessionManager.openDoor(madeOf: doorType, preparedToken: authToken) { errorMessage in
-            if let errorMessage = errorMessage {
+            guard errorMessage == nil else {
                 self.showAlert(with: NSLocalizedString("Error!", comment: ""), message: errorMessage)
                 self.hideActivityLoader()
                 WKInterfaceDevice().play(.failure)
@@ -55,20 +58,28 @@ class DoorInterfaceController: WKInterfaceController {
     }
     
     private func activityLoaderInitialSetup() {
+        setButtonsEnabled(true)
         activityLoaderImage.setHeight(25.0)
         activityLoaderImage.setWidth(25.0)
         activityLoaderImage.setHidden(true)
     }
     
     private func showActivityLoader() {
+        setButtonsEnabled(false)
         activityLoaderImage.setHidden(false)
         activityLoaderImage.setImageNamed("Activity")
         activityLoaderImage.startAnimatingWithImages(in: NSMakeRange(1, 15), duration: 3.0, repeatCount: 0)
     }
     
     private func hideActivityLoader() {
+        setButtonsEnabled(true)
         activityLoaderImage.stopAnimating()
         activityLoaderImage.setHidden(true)
+    }
+    
+    private func setButtonsEnabled(_ enabled: Bool) {
+        glassDoorButton.setEnabled(enabled)
+        ironDoorButton.setEnabled(enabled)
     }
     
     private func showAlert(with title: String, message: String?, actions: [WKAlertAction] = []) {
