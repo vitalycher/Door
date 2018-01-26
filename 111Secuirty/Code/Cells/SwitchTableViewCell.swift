@@ -18,9 +18,12 @@ class SwitchTableViewCell: UITableViewCell {
     @IBAction private func switchTapped(_ sender: UISwitch) {
         if let settingType = settingType {
             switch settingType {
-            case .squaresWaterfall: defaults.set(sender.isOn, forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue)
-            case .voiceRecognition: defaults.set(sender.isOn, forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
-            case .gyroscope: defaults.set(sender.isOn, forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue)
+            case .squaresWaterfall:
+                defaults.set(sender.isOn, forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue)
+            case .voiceRecognition:
+                defaults.set(sender.isOn, forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
+            case .gyroscope:
+                defaults.set(sender.isOn, forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue)
             }
         }
     }
@@ -35,5 +38,5 @@ class SwitchTableViewCell: UITableViewCell {
         case .voiceRecognition: settingSwitch.isOn = defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
         }
     }
-    
 }
+

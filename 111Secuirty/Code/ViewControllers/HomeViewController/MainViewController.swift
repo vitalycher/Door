@@ -33,7 +33,7 @@ class MainViewController: UIViewController {
         
         speechRecognizer.authorize()
         animator.setupBehaviorsFor(view: view)
-        
+
         if successWithProbability(percentage: 70) {
             getQuote()
         } else {
@@ -158,7 +158,6 @@ class MainViewController: UIViewController {
     @objc private func applicationDidBecomeActive() {
         startRecordingIfAllowedBySettings()
     }
-    
 }
 
 extension MainViewController: SpeechRecognizable {
@@ -182,7 +181,6 @@ extension MainViewController: SpeechRecognizable {
             }
         }
     }
-        
 }
 
 extension MainViewController: Gyroscopable {

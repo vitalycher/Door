@@ -31,11 +31,11 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         
         IQKeyboardManager.shared().isEnabled = true
         window?.makeKeyAndVisible()
-        
+
         if !UserDefaults.standard.bool(forKey: UserDefaultsKeys.siriAuthorizationEnabled.rawValue) {
             requestSiriAuthorization()
         }
-        
+
         return true
     }
     
