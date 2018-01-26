@@ -10,9 +10,10 @@ import UIKit
 
 class ApplicationActivityService: NSObject {
     
+    var isActive = true
+    
     private var cancelClosure: (() -> Void)?
     private var activeClosure: (() -> Void)?
-    var isActive = true
     
     deinit {
         NotificationCenter.default.removeObserver(self)

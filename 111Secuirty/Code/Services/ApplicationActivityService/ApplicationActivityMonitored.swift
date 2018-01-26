@@ -21,7 +21,6 @@ extension ApplicationActivityMonitored where Self: UIViewController {
 
             if (activityService == nil) {
                 activityService = ApplicationActivityViewController()
-
                 objc_setAssociatedObject(self, &RuntimeAssociatedKeys.ApplicationActivityAssociatedKey, activityService, .OBJC_ASSOCIATION_RETAIN_NONATOMIC)
                 attachServiceToParent()
             }
@@ -36,4 +35,3 @@ extension ApplicationActivityMonitored where Self: UIViewController {
     }
 
 }
-
