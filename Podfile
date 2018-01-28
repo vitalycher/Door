@@ -20,11 +20,6 @@ target 'DoorSiri' do
     pod 'Alamofire'
 end
 
-target 'WatchDoorSiri' do
-    platform :watchos, '3.2'
-    pod 'Alamofire'
-end
-
 target 'Watch Extension' do
     platform :watchos, '3.2'
     pod 'Alamofire'
