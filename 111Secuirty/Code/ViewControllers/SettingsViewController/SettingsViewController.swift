@@ -9,7 +9,7 @@
 import UIKit
 
 class SettingsViewController: UIViewController, ApplicationActivityMonitored {
-
+    
     @IBOutlet weak private var tableView: UITableView!
     
     private let phraseAnalyzer = PhraseAnalyzer()
@@ -49,7 +49,7 @@ class SettingsViewController: UIViewController, ApplicationActivityMonitored {
             animator.cleanAllKeyViews()
         }
     }
-
+    
     @IBAction private func backToHome(_ sender: Any) {
         dismiss(animated: true, completion: nil)
     }
@@ -69,9 +69,11 @@ class SettingsViewController: UIViewController, ApplicationActivityMonitored {
     }
     
     private func showAlert(withTitle title: String, andMessage message: String?, actions: [UIAlertAction]) {
-        let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
-        actions.forEach { alertController.addAction($0) }
-        present(alertController, animated: true, completion: nil)
+        DispatchQueue.main.async {
+            let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
+            actions.forEach { alertController.addAction($0) }
+            self.present(alertController, animated: true, completion: nil)
+        }
     }
     
     private func registerCells() {
@@ -79,6 +81,10 @@ class SettingsViewController: UIViewController, ApplicationActivityMonitored {
             self.tableView.register(UINib(nibName: String(describing: $0), bundle: nil), forCellReuseIdentifier: String(describing: $0))
         }
         registerNibForCellClass(SwitchTableViewCell.self)
+    }
+    
+    private func openAppSettings() {
+        UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
     }
     
 }
@@ -132,10 +138,37 @@ extension SettingsViewController: Gyroscopable {
 }
 
 extension SettingsViewController: RealtimeSettingUpdatable {
-    func settingDidChange(setting: SettingType, cell: SwitchTableViewCell) {
+    func cellDidRequestPermissionToChangeSetting(_ setting: SettingType, willEnableSetting: Bool?, cell: SwitchTableViewCell, permission: @escaping (Bool) -> Void) {
         switch setting {
-        case .gyroscope: gyroscopeManager.startOrStopGyroscopeDependingOnSettings(gyroscopeDeactivationBlock: { self.animator.setVerticalDownGravityDirection() })
-        case .voiceRecognition: speechRecognizer.startOrStopRecordingDependingOnSettings()
+        case .gyroscope: permission(true)
+        case .squaresWaterfall: permission(true)
+        case .voiceRecognition:
+            self.speechRecognizer.checkAuthorizationAndAuthorizeIfNeeded(authorized: { [weak self] isAuthorized in
+                if isAuthorized {
+                    permission(true)
+                } else {
+                    permission(false)
+                    self?.showAlert(withTitle: "Access Denied", andMessage: NSLocalizedString(
+                        """
+                        Seems like you didn't allow 'Key' to access the Speech Recognition.
+                        No worries! You can enable it in Settings.
+                        """, comment: ""), actions: [UIAlertAction.init(title: "Settings", style: .default) { _ in
+                            self?.openAppSettings() }, UIAlertAction.init(title: "Cancel", style: .destructive, handler: nil)])
+                }
+            })
+        }
+    }
+    
+    func settingDidChange(setting: SettingType, isEnabled: Bool, cell: SwitchTableViewCell) {
+        switch setting {
+        case .gyroscope:
+            gyroscopeManager.startOrStopGyroscopeDependingOnSettings(gyroscopeDeactivationBlock: { self.animator.setVerticalDownGravityDirection() })
+        case .voiceRecognition:
+            if isEnabled {
+                speechRecognizer.startRecordingIfAllowed()
+            } else {
+                speechRecognizer.stopRecording()
+            }
         default: break
         }
     }

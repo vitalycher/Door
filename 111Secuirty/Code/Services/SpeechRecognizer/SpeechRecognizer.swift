@@ -27,7 +27,7 @@ class SpeechRecognizer {
     private var recognitionRequest: SFSpeechAudioBufferRecognitionRequest?
     private var recognitionTask: SFSpeechRecognitionTask?
     
-    //This was made to avoid double completion call bug, that is being managed by Apple ¯\_(ツ)_/¯
+    //This was made to avoid double completion call bug caused by Apple ¯\_(ツ)_/¯
     private var previousRecognizedPhrase: String?
     
     private var isAuthorized: Bool {
@@ -38,14 +38,19 @@ class SpeechRecognizer {
         return defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
     }
     
-    public func authorize() {
+    public func checkAuthorizationAndAuthorizeIfNeeded(authorized: @escaping (Bool) -> Void) {
+        guard !isAuthorized else {
+            authorized(true)
+            return
+        }
         SFSpeechRecognizer.requestAuthorization {
             [unowned self] (authStatus) in
             switch authStatus {
-            case .authorized: self.defaults.set(true, forKey: UserDefaultsKeys.microphoneEnabled.rawValue)
-            case .denied: print("Speech recognition authorization denied")
-            case .restricted: print("Not available on this device")
-            case .notDetermined: print("Not determined")
+            case .authorized:
+                self.defaults.set(true, forKey: UserDefaultsKeys.microphoneEnabled.rawValue)
+                authorized(true)
+            case .denied, .restricted, .notDetermined:
+                authorized(false)
             }
         }
     }

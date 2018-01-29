@@ -33,29 +33,7 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         IQKeyboardManager.shared().isEnabled = true
         window?.makeKeyAndVisible()
 
-        if !UserDefaults.standard.bool(forKey: UserDefaultsKeys.siriAuthorizationEnabled.rawValue) {
-            requestSiriAuthorization()
-        }
-
         return true
-    }
-    
-    private func requestSiriAuthorization() {
-        INPreferences.requestSiriAuthorization { status in
-            if status == .authorized {
-                UserDefaults.standard.set(true, forKey: UserDefaultsKeys.siriAuthorizationEnabled.rawValue)
-                self.extendSiriVocabulary()
-                print("Hi, Siri")
-            } else {
-                print("Bye, Siri!")
-            }
-        }
-    }
-    
-    private func extendSiriVocabulary() {
-        let vocabulary = [SiriVocabulary.glassDoor, SiriVocabulary.ironDoor]
-        let vocabularySet = NSOrderedSet(array: vocabulary)
-        INVocabulary.shared().setVocabularyStrings(vocabularySet, of: .workoutActivityName)
     }
  
 }
