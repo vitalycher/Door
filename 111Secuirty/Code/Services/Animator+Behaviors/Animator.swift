@@ -78,7 +78,7 @@ class Animator {
     }
     
     public func createFallingKeyIfAllowed() {
-        guard defaults.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabled.rawValue) else { return }
+        guard defaults.bool(forKey: UserDefaultsKeys.squaresWaterfallEnabledBySettings.rawValue) else { return }
         animateObject(newFallingKey())
     }
     

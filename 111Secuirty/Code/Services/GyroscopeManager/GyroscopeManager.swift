@@ -63,7 +63,7 @@ class GyroscopeManager {
     }
     
     public func startOrStopGyroscopeDependingOnSettings(gyroscopeDeactivationBlock: () -> Void) {
-        guard defaults.bool(forKey: UserDefaultsKeys.gyroscopeEnabled.rawValue) else {
+        guard defaults.bool(forKey: UserDefaultsKeys.gyroscopeEnabledBySettings.rawValue) else {
             stopUpdates()
             gyroscopeDeactivationBlock()
             return

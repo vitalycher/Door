@@ -9,7 +9,6 @@
 import UIKit
 import PKHUD
 import AudioToolbox
-import Intents
 
 class MainViewController: UIViewController, ApplicationActivityMonitored {
     
@@ -23,10 +22,6 @@ class MainViewController: UIViewController, ApplicationActivityMonitored {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if !UserDefaults.standard.bool(forKey: UserDefaultsKeys.siriAuthorizationEnabled.rawValue) {
-            requestSiriAuthorization()
-        }
         
         activityService.initWith(cancelClosure: { self.speechRecognizer.stopRecording() }, activeClosure: { self.speechRecognizer.startRecordingIfAllowed() })
         
@@ -109,26 +104,6 @@ class MainViewController: UIViewController, ApplicationActivityMonitored {
             setQuote(TipsGenerator().generateTip(), author: "111 team")
         }
         view.layoutSubviews()
-    }
-    
-    //MARK: - Siri vocabulary/authorization
-    
-    private func requestSiriAuthorization() {
-        INPreferences.requestSiriAuthorization { status in
-            if status == .authorized {
-                UserDefaults.standard.set(true, forKey: UserDefaultsKeys.siriAuthorizationEnabled.rawValue)
-                self.extendSiriVocabulary()
-                print("Hi, Siri")
-            } else {
-                print("Bye, Siri!")
-            }
-        }
-    }
-    
-    private func extendSiriVocabulary() {
-        let vocabulary = [SiriVocabulary.glassDoor, SiriVocabulary.ironDoor]
-        let vocabularySet = NSOrderedSet(array: vocabulary)
-        INVocabulary.shared().setVocabularyStrings(vocabularySet, of: .workoutActivityName)
     }
     
     //MARK: - Help functions

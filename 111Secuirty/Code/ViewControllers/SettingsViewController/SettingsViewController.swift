@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Intents
 
 class SettingsViewController: UIViewController, ApplicationActivityMonitored {
     
@@ -69,6 +70,7 @@ class SettingsViewController: UIViewController, ApplicationActivityMonitored {
     }
     
     private func showAlert(withTitle title: String, andMessage message: String?, actions: [UIAlertAction]) {
+        //Dispatching the main queue because this code gets performed from block(not main thread) while working with UI elements.
         DispatchQueue.main.async {
             let alertController = UIAlertController(title: title, message: message, preferredStyle: .alert)
             actions.forEach { alertController.addAction($0) }
@@ -87,6 +89,15 @@ class SettingsViewController: UIViewController, ApplicationActivityMonitored {
         UIApplication.shared.open(URL(string: UIApplicationOpenSettingsURLString)!)
     }
     
+    private func extendSiriVocabularyIfNotYetExtended() {
+        let defaults = UserDefaults.standard
+        guard !defaults.bool(forKey: UserDefaultsKeys.siriVocabularyExtended.rawValue) else { return }
+        let vocabulary = [SiriVocabulary.glassDoor, SiriVocabulary.ironDoor]
+        let vocabularySet = NSOrderedSet(array: vocabulary)
+        INVocabulary.shared().setVocabularyStrings(vocabularySet, of: .workoutActivityName)
+        defaults.set(true, forKey: UserDefaultsKeys.siriVocabularyExtended.rawValue)
+        print("My vocabulary extended! Thanks")
+    }
 }
 
 extension SettingsViewController: UITableViewDataSource {
@@ -138,24 +149,43 @@ extension SettingsViewController: Gyroscopable {
 }
 
 extension SettingsViewController: RealtimeSettingUpdatable {
-    func cellDidRequestPermissionToChangeSetting(_ setting: SettingType, willEnableSetting: Bool?, cell: SwitchTableViewCell, permission: @escaping (Bool) -> Void) {
+    
+    func cellDidRequestPermissionToChangeSetting(_ setting: SettingType, cell: SwitchTableViewCell, permission: @escaping (Bool) -> Void) {
+        
+        func showPermissionAlert(for settingName: String) {
+            showAlert(withTitle: "Access Denied", andMessage: NSLocalizedString(
+                """
+                Seems like you didn't allow 'Key' to access the \(settingName).
+                No worries! You can enable it in Settings.
+                """, comment: ""), actions: [UIAlertAction.init(title: "Settings", style: .default) { [weak self] _ in
+                    self?.openAppSettings() }, UIAlertAction.init(title: "Cancel", style: .destructive, handler: nil)])
+        }
+        
         switch setting {
-        case .gyroscope: permission(true)
-        case .squaresWaterfall: permission(true)
         case .voiceRecognition:
-            self.speechRecognizer.checkAuthorizationAndAuthorizeIfNeeded(authorized: { [weak self] isAuthorized in
-                if isAuthorized {
+            speechRecognizer.checkAuthorizationAndAuthorizeIfNeeded(authorizationCompletion: { authorizationCompletion in
+                switch authorizationCompletion {
+                case .success:
+                    permission(true)
+                case .speechRecognitionDenied:
+                    permission(false)
+                    showPermissionAlert(for: "Speech Recognition")
+                case .microphoneDenied:
+                    permission(false)
+                    showPermissionAlert(for: "Microphone")
+                }
+            })
+        case .siri:
+            INPreferences.requestSiriAuthorization { status in
+                if status == .authorized {
+                    self.extendSiriVocabularyIfNotYetExtended()
                     permission(true)
                 } else {
                     permission(false)
-                    self?.showAlert(withTitle: "Access Denied", andMessage: NSLocalizedString(
-                        """
-                        Seems like you didn't allow 'Key' to access the Speech Recognition.
-                        No worries! You can enable it in Settings.
-                        """, comment: ""), actions: [UIAlertAction.init(title: "Settings", style: .default) { _ in
-                            self?.openAppSettings() }, UIAlertAction.init(title: "Cancel", style: .destructive, handler: nil)])
+                    showPermissionAlert(for: "Siri")
                 }
-            })
+            }
+        default: permission(true)
         }
     }
     
@@ -164,12 +194,9 @@ extension SettingsViewController: RealtimeSettingUpdatable {
         case .gyroscope:
             gyroscopeManager.startOrStopGyroscopeDependingOnSettings(gyroscopeDeactivationBlock: { self.animator.setVerticalDownGravityDirection() })
         case .voiceRecognition:
-            if isEnabled {
-                speechRecognizer.startRecordingIfAllowed()
-            } else {
-                speechRecognizer.stopRecording()
-            }
+            isEnabled ? speechRecognizer.startRecordingIfAllowed() : speechRecognizer.stopRecording()
         default: break
         }
     }
+    
 }

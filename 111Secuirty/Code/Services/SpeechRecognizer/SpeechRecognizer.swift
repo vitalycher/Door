@@ -7,16 +7,21 @@
 //
 
 import Foundation
-
-import Foundation
 import UIKit
 import Speech
+import AVFoundation
 
 protocol SpeechRecognizerDelegate: class {
     func didRecognizeWord(_ newPhrase: String)
 }
 
 class SpeechRecognizer {
+    
+    enum AuthorizationCompletion {
+        case success
+        case microphoneDenied
+        case speechRecognitionDenied
+    }
     
     weak var delegate: SpeechRecognizerDelegate?
     
@@ -31,26 +36,26 @@ class SpeechRecognizer {
     private var previousRecognizedPhrase: String?
     
     private var isAuthorized: Bool {
-        return defaults.bool(forKey: UserDefaultsKeys.microphoneEnabled.rawValue)
+        return AVAudioSession.sharedInstance().recordPermission() == .granted && SFSpeechRecognizer.authorizationStatus() == .authorized
     }
     
     private var isAllowedBySettings: Bool {
-        return defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabled.rawValue)
+        return defaults.bool(forKey: UserDefaultsKeys.voiceRecognitionEnabledBySettings.rawValue)
     }
     
-    public func checkAuthorizationAndAuthorizeIfNeeded(authorized: @escaping (Bool) -> Void) {
+    public func checkAuthorizationAndAuthorizeIfNeeded(authorizationCompletion: @escaping (AuthorizationCompletion) -> Void) {
         guard !isAuthorized else {
-            authorized(true)
+            authorizationCompletion(.success)
             return
         }
-        SFSpeechRecognizer.requestAuthorization {
-            [unowned self] (authStatus) in
+        SFSpeechRecognizer.requestAuthorization { (authStatus) in
             switch authStatus {
             case .authorized:
-                self.defaults.set(true, forKey: UserDefaultsKeys.microphoneEnabled.rawValue)
-                authorized(true)
-            case .denied, .restricted, .notDetermined:
-                authorized(false)
+                AVAudioSession.sharedInstance().requestRecordPermission({ (microphonePermitted) in
+                    microphonePermitted ? authorizationCompletion(.success) : authorizationCompletion(.microphoneDenied)
+                })
+            case .denied: authorizationCompletion(.speechRecognitionDenied)
+            case .restricted, .notDetermined: break
             }
         }
     }
@@ -62,7 +67,7 @@ class SpeechRecognizer {
         }
         recognitionRequest = SFSpeechAudioBufferRecognitionRequest()
 
-        guard let recognitionRequest = self.recognitionRequest else { fatalError("Unable to created a SFSpeechAudioBufferRecognitionRequest object") }
+        guard let recognitionRequest = self.recognitionRequest else { fatalError("Unable to create a SFSpeechAudioBufferRecognitionRequest object") }
         let inputNode = audioEngine.inputNode
         
         let recordingFormat = inputNode.outputFormat(forBus: 0)
