@@ -96,7 +96,6 @@ class SettingsViewController: UIViewController, ApplicationActivityMonitored {
         let vocabularySet = NSOrderedSet(array: vocabulary)
         INVocabulary.shared().setVocabularyStrings(vocabularySet, of: .workoutActivityName)
         defaults.set(true, forKey: UserDefaultsKeys.siriVocabularyExtended.rawValue)
-        print("My vocabulary extended! Thanks")
     }
 }
 
@@ -150,7 +149,7 @@ extension SettingsViewController: Gyroscopable {
 
 extension SettingsViewController: RealtimeSettingUpdatable {
     
-    func cellDidRequestPermissionToChangeSetting(_ setting: SettingType, cell: SwitchTableViewCell, permission: @escaping (Bool) -> Void) {
+    func cellDidRequestPermissionToEnableSetting(_ setting: SettingType, cell: SwitchTableViewCell, permission: @escaping (Bool) -> Void) {
         
         func showPermissionAlert(for settingName: String) {
             showAlert(withTitle: "Access Denied", andMessage: NSLocalizedString(
@@ -169,10 +168,10 @@ extension SettingsViewController: RealtimeSettingUpdatable {
                     permission(true)
                 case .speechRecognitionDenied:
                     permission(false)
-                    showPermissionAlert(for: "Speech Recognition")
+                    showPermissionAlert(for: NSLocalizedString("Speech Recognition", comment: ""))
                 case .microphoneDenied:
                     permission(false)
-                    showPermissionAlert(for: "Microphone")
+                    showPermissionAlert(for: NSLocalizedString("Microphone", comment: ""))
                 }
             })
         case .siri:

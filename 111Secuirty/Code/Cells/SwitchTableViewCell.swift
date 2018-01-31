@@ -9,7 +9,7 @@
 import UIKit
 
 protocol RealtimeSettingUpdatable: class {
-    func cellDidRequestPermissionToChangeSetting(_ setting: SettingType, cell: SwitchTableViewCell, permission: @escaping (Bool) -> Void)
+    func cellDidRequestPermissionToEnableSetting(_ setting: SettingType, cell: SwitchTableViewCell, permission: @escaping (Bool) -> Void)
     func settingDidChange(setting: SettingType, isEnabled: Bool, cell: SwitchTableViewCell)
 }
 
@@ -44,7 +44,7 @@ class SwitchTableViewCell: UITableViewCell {
         
         //Checking permissions only when toggling switch to 'ON'. Then enabling the setting if permitted.
         if sender.isOn {
-            delegate?.cellDidRequestPermissionToChangeSetting(settingType, cell: self, permission: { [weak self] (isAllowed) in
+            delegate?.cellDidRequestPermissionToEnableSetting(settingType, cell: self, permission: { [weak self] (isAllowed) in
                 if isAllowed {
                     updateUserDefaults()
                     self?.delegate?.settingDidChange(setting: settingType, isEnabled: true, cell: self!)

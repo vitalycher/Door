@@ -35,7 +35,7 @@ class DoorInterfaceController: WKInterfaceController {
     private func openDoor(madeOf doorType: SessionManager.Door) {
         guard let authToken = userToken() else {
             WKInterfaceDevice().play(.failure)
-            showAlert(with: NSLocalizedString("Unauthorized", comment: ""), message: NSLocalizedString("Please, login on your device.", comment: ""))
+            showAlert(with: NSLocalizedString("Unauthorized", comment: ""), message: NSLocalizedString("Please, log in on your device.", comment: ""))
             return
         }
         showActivityLoader()
