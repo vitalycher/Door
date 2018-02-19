@@ -9,6 +9,7 @@
 /* Begin PBXBuildFile section */
 		3933EB546B61B4144B59F0BE /* Pods_Watch_Extension.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C3F206E4A78B68FD92DAFD4B /* Pods_Watch_Extension.framework */; };
 		5D5739161EEFE4C900704E73 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D5739151EEFE4C900704E73 /* AppDelegate.swift */; };
+		5D7A59C1203B076B000B14B4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5D7A59C0203B076B000B14B4 /* Assets.xcassets */; };
 		74887B081CC592D100EC677E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74887B061CC592D100EC677E /* Main.storyboard */; };
 		74887B0A1CC592D100EC677E /* Logo@3x.png in Resources */ = {isa = PBXBuildFile; fileRef = 74887B091CC592D100EC677E /* Logo@3x.png */; };
 		74887B0D1CC592D100EC677E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 74887B0B1CC592D100EC677E /* LaunchScreen.storyboard */; };
@@ -197,6 +198,7 @@
 		13A7D5F116B5C8A5852EB976 /* Pods-111Secuirty.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-111Secuirty.debug.xcconfig"; path = "Pods/Target Support Files/Pods-111Secuirty/Pods-111Secuirty.debug.xcconfig"; sourceTree = "<group>"; };
 		4A3D9954CCFE11BC99C71DEC /* Pods_111Secuirty.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_111Secuirty.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D5739151EEFE4C900704E73 /* AppDelegate.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5D7A59C0203B076B000B14B4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		6C02B953EEA7C788E79BBE2A /* Pods-Watch Extension.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Watch Extension.release.xcconfig"; path = "Pods/Target Support Files/Pods-Watch Extension/Pods-Watch Extension.release.xcconfig"; sourceTree = "<group>"; };
 		74887AFF1CC592D100EC677E /* 111Key.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = 111Key.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		74887B071CC592D100EC677E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
@@ -399,6 +401,7 @@
 		74887B011CC592D100EC677E /* 111Secuirty */ = {
 			isa = PBXGroup;
 			children = (
+				5D7A59C0203B076B000B14B4 /* Assets.xcassets */,
 				AACFF6EC1F58232100765870 /* Localizable.strings */,
 				AACFF6E71F58232000765870 /* InfoPlist.strings */,
 				8908B4801CDA1193005CC547 /* 111 Door.entitlements */,
@@ -989,6 +992,7 @@
 				89CFF4A91CD395F700F0097E /* SourceSansPro-LightIt.ttf in Resources */,
 				AAE7EB9E1F4333EB00C9E566 /* SwitchTableViewCell.xib in Resources */,
 				89CFF48D1CD395CF00F0097E /* KlartextMono-Light.ttf in Resources */,
+				5D7A59C1203B076B000B14B4 /* Assets.xcassets in Resources */,
 				89CFF4A11CD395F700F0097E /* SourceSansPro-Black.ttf in Resources */,
 				89CFF4931CD395CF00F0097E /* KlartextMono-ThinItalic.ttf in Resources */,
 			);
