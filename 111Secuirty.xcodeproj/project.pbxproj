@@ -879,7 +879,7 @@
 				TargetAttributes = {
 					74887AFE1CC592D100EC677E = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = Y6ZXAWRWJ9;
+						DevelopmentTeam = PQRFVV76F7;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -893,7 +893,7 @@
 					};
 					8908B46D1CD9F643005CC547 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = Y6ZXAWRWJ9;
+						DevelopmentTeam = PQRFVV76F7;
 						LastSwiftMigration = 0900;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
@@ -907,6 +907,7 @@
 					};
 					AA36B9701F54747000869794 = {
 						CreatedOnToolsVersion = 9.0;
+						DevelopmentTeam = PQRFVV76F7;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
@@ -916,20 +917,20 @@
 					};
 					AAB6051B1F585A91002B6B23 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = Y6ZXAWRWJ9;
+						DevelopmentTeam = PQRFVV76F7;
 						ProvisioningStyle = Automatic;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
 					AAB605271F585A91002B6B23 = {
 						CreatedOnToolsVersion = 9.0;
-						DevelopmentTeam = Y6ZXAWRWJ9;
+						DevelopmentTeam = PQRFVV76F7;
 						SystemCapabilities = {
 							com.apple.ApplicationGroups.iOS = {
-								enabled = 0;
+								enabled = 1;
 							};
 						};
 					};
@@ -1507,7 +1508,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1516,7 +1517,7 @@
 				INFOPLIST_FILE = 111Secuirty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor1;
 				PRODUCT_NAME = 111Key;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1538,7 +1539,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				ENABLE_BITCODE = YES;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -1547,7 +1548,7 @@
 				INFOPLIST_FILE = 111Secuirty/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor;
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor1;
 				PRODUCT_NAME = 111Key;
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1566,11 +1567,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				INFOPLIST_FILE = "Door Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor1.Door-Widget";
 				PRODUCT_NAME = "111 Key Widget";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1591,11 +1592,11 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				INFOPLIST_FILE = "Door Widget/Info.plist";
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor.Door-Widget";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.111minutes.thedoor1.Door-Widget";
 				PRODUCT_NAME = "111 Key Widget";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1618,12 +1619,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = DoorSiri/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.DoorSiri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor1.DoorSiri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -1646,12 +1647,12 @@
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = "";
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = DoorSiri/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 10.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.DoorSiri;
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor1.DoorSiri;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SKIP_INSTALL = YES;
@@ -1669,15 +1670,16 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = Watch/Watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = Watch_Extension;
 				INFOPLIST_FILE = Watch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1698,15 +1700,16 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CODE_SIGN_ENTITLEMENTS = Watch/Watch.entitlements;
 				CODE_SIGN_IDENTITY = "iPhone Distribution: 111 minutes LLC";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				IBSC_MODULE = Watch_Extension;
 				INFOPLIST_FILE = Watch/Info.plist;
-				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.watchkitapp;
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor1.watchkitapp;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE_SPECIFIER = "";
 				SDKROOT = watchos;
@@ -1726,11 +1729,12 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor1.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
@@ -1750,11 +1754,12 @@
 				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
-				DEVELOPMENT_TEAM = Y6ZXAWRWJ9;
+				CODE_SIGN_ENTITLEMENTS = "Watch Extension/Watch Extension.entitlements";
+				DEVELOPMENT_TEAM = PQRFVV76F7;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = "Watch Extension/Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor.watchkitapp.watchkitextension;
+				PRODUCT_BUNDLE_IDENTIFIER = com.111minutes.thedoor1.watchkitapp.watchkitextension;
 				PRODUCT_NAME = "${TARGET_NAME}";
 				SDKROOT = watchos;
 				SKIP_INSTALL = YES;
