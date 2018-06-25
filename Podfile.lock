@@ -10,6 +10,12 @@ DEPENDENCIES:
   - PKHUD (from `https://github.com/pkluz/PKHUD.git`, branch `release/swift4`)
   - SwiftyJSON
 
+SPEC REPOS:
+  https://github.com/cocoapods/specs.git:
+    - Alamofire
+    - IQKeyboardManager
+    - SwiftyJSON
+
 EXTERNAL SOURCES:
   PKHUD:
     :branch: release/swift4
@@ -28,4 +34,4 @@ SPEC CHECKSUMS:
 
 PODFILE CHECKSUM: 6be346c1d5f7d300074c5434a7433d433e254329
 
-COCOAPODS: 1.3.1
+COCOAPODS: 1.5.3
